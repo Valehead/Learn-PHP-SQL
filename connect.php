@@ -12,9 +12,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
 
     if(isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['email']) && isset($_POST['birthday'])){
-        foreach($new_user as $key => $value){
-            $new_user[$key] = $_POST[$key];
-        };
+        // foreach($new_user as $key => $value){
+        //     $new_user[$key] = $_POST[$key];
+        // };
         $name = $_POST['name'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
