@@ -62,7 +62,7 @@
 
                             <div class="mb-3 d-flex justify-content-between">
                                 <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
-                                <button class="btn btn-warning" onClick="clear_form();">Reset</button>
+                                <button type="button" class="btn btn-warning" ignore onClick="clear_form();">Reset</button>
                             </div>
                             
                         </form>
