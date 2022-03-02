@@ -15,7 +15,7 @@
 
         <script>
             function clear_form(){
-                document.getElementByID("first-name").value="";
+                document.getElementById("first-name").value="";
             };
         </script>
     </head>
