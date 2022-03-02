@@ -16,6 +16,10 @@
         <script>
             function clear_form(){
                 document.getElementById("first-name").value="";
+                document.getElementById("last-name").value="";
+                document.getElementById("phone").value="";
+                document.getElementById("email").value="";
+                document.getElementById("birthday").value="";
             };
         </script>
     </head>
