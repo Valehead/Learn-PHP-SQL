@@ -60,17 +60,9 @@
                                 <input type="date" name="birthday" id="birthday" class="form-control" required>
                             </div>
 
-                            <div class="mb-3 row">
-                                
-                                <div class="col-2">
-                                    <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
-                                </div>
-                                
-                                <div class="col-8"></div>
-                                
-                                <div class="col-2">
-                                    <button class="btn btn-warning" onClick="clear_form();">Reset</button>
-                                </div>
+                            <div class="mb-3 d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+                                <button class="btn btn-warning" onClick="clear_form();">Reset</button>
                             </div>
                             
                         </form>
