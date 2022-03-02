@@ -53,4 +53,5 @@ function does_user_exist($sqlConnection, $new_user){
 };
 
 
+
 ?>
