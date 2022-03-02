@@ -10,36 +10,79 @@
         <title>test sql</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="">
     </head>
     <body>
 
 
+        <main class="container">
+            <div class="row">
 
-        <form action="connect.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required>
-            <br><br>
+            <!-- form container -->
+                <div class="col-4" id="entryform">
 
-            <label for="phone">Phone Number:</label>
-            <input type="text" name="phone" id="phone" required>
-            <br><br>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">New Customer:</h5>
 
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-            <br><br>
+                        <form action="connect.php" method="POST">
 
-            <label for="birthday">Birthday:</label>
-            <input type="date" name="birthday" id="birthday" required>
-            <br><br>
+                            <div class="mb-3">
+                                <label for="first-name" class="form-label">First Name:</label>
+                                <input type="text" name="first-name" id="first-name" class="form-control required>
+                            </div>
 
-            <input type="submit" name="submit" id="submit">
-            
-        </form>
+                            <div class="mb-3">
+                                <label for="last-name" class="form-label">Last Name:</label>
+                                <input type="text" name="last-name" id="last-name" class="form-control required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number:</label>
+                                <input type="text" name="phone" id="phone" class="form-control required>
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" name="email" id="email" class="form-control required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="birthday" class="form-label">Birthday:</label>
+                                <input type="date" name="birthday" id="birthday" class="form-control required>
+                            </div>
+
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                    
+
+                </div>
+                <!-- end of form -->
+
+                <div class="col-2" id="spacer">
+
+                </div>
+
+                <div class="col-8" id="customers">
+
+                </div>
+            </div>
+        </main>
+
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
         <script src="" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     </body>
 </html>
