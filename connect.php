@@ -61,7 +61,7 @@ function display_customers(){
     //$mysqli = connect_to_sql();
     $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
     //my query to select all customers
-    $sql_query = "SELECT * FROM customers";
+    $sql_query = "SELECT * FROM customers ORDER BY id";
     //parse the data sql returns
     $result = mysqli_query($mysqli, $sql_query);
     if($result){
@@ -69,7 +69,7 @@ function display_customers(){
         if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-            echo "<div class='card' id='customers'>
+            echo "<div class='card mb-3' id='customers'>
                     <div class='card-body'>
                     <h4 class='card-title'>Customer Id: {$row['id']}</h4>
                     <div class='card-header' id='first-name'>{$row['first-name']}</div>
@@ -86,19 +86,6 @@ function display_customers(){
             echo "<div class='card'><div class='card-body'><h4 class='card-title'>0 Customers</h4></div></div>";
         }}
 
-
-    echo "<div class='card' id='customers'>
-    <div class='card-body'>
-    <div class='card-header' id='first-name'>'Nick'</div>
-    <div class='card-header' id='last-name'>'Vales'</div>
-    <ul class='list-group list-group-flush'>
-    <li class='list-group-item' id='phoneNum'>'631-405-8064'</li>
-    <li class='list-group-item' id='email'></li>
-    <li class='list-group-item' id='birthday'></li>
-    <li class='list-group-item' id='idNum'></li>
-    </ul>
-    </div>
-    </div>";
 };
 
 
