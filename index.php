@@ -33,7 +33,7 @@ require __DIR__ . '/connect.php';
             <div class="row">
 
             <!-- form container -->
-                <div class="col-4" id="entryform">
+                <div class="col-5" id="entryform">
 
                 <div class="card">
                     <div class="card-body">
@@ -80,7 +80,7 @@ require __DIR__ . '/connect.php';
                 </div>
                 <!-- end of form -->
 
-                <div class="col-2" id="spacer">
+                <div class="col-3" id="spacer">
 
                 </div>
 

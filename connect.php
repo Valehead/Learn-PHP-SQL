@@ -78,7 +78,7 @@ function display_customers(){
                         <li class='list-group-item' id='email'>{$row['email']}</li>
                         <li class='list-group-item' id='birthday'>{$row['birthday']}</li>
                     </ul>
-                    <div class='mb-3 d-flex justify-content-between'>
+                    <div class='mt-2 d-flex justify-content-between'>
                         <button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button>
                         <button type='button' class='btn btn-warning' ignore>Delete Customer</button>
                     </div>
