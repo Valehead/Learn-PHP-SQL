@@ -28,12 +28,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //if(does_user_exist($mysqli, $new_user))
 
         $sql_query = "INSERT INTO `customers` (`first-name`, `last-name`, `phone`, `email`, `birthday`) VALUES ('{$new_user['first-name']}', '{$new_user['last-name']}', '{$new_user['phone']}', '{$new_user['email']}', '{$new_user['birthday']}')";
-        echo $sql_query . "\n";
         $result = mysqli_query($mysqli, $sql_query);
     };
     
     if($result){
-        echo 'Entry Successfull, Welcome!';
+        header('Location: nextpage.php');
     }
     else{
         echo 'Error Ocurred';
