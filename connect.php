@@ -58,8 +58,8 @@ function connect_to_sql(){
 
 function display_customers(){
     //open the connection
-    $mysqli = connect_to_sql();
-
+    //$mysqli = connect_to_sql();
+    $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
     //my query to select all customers
     $sql_query = "SELECT * FROM customers";
     echo $mysqli;
