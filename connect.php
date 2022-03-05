@@ -38,6 +38,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo 'Error Ocurred';
     };
 
+    //close active connection
+    mysqli_close($mysqli);
 
     //works
     // $sql_delete = "DELETE FROM customers WHERE name = 'Bert Reynolds'";
@@ -78,14 +80,17 @@ function display_customers(){
                     </ul>
                     <div class='mt-2 d-flex justify-content-between'>
                         <button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button>
-                        <button type='button' class='btn btn-warning' ignore>Delete Customer</button>
+                        <button type='button' class='btn btn-warning' ignore onClick=''>Delete Customer</button>
                     </div>
                     </div>
                     </div>";
             }
         } else {
             echo "<div class='card'><div class='card-body'><h4 class='card-title'>0 Customers</h4></div></div>";
-        }}
+        }};
+
+        //close active connection
+        mysqli_close($mysqli);
 
 };
 
