@@ -6,7 +6,7 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     //connect to the database
-    $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
+    $mysqli = connect_to_sql();
 
     //initalizes new customer
     $new_user = [
@@ -52,6 +52,54 @@ function does_user_exist($sqlConnection, $new_user){
 
 };
 
+function connect_to_sql(){
+    return mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
+};
+
+function display_customers(){
+    //open the connection
+    $mysqli = connect_to_sql();
+
+    //my query to select all customers
+    $sql_query = "SELECT * FROM customers";
+
+    //parse the data sql returns
+    if($result = mysqli_query($mysqli, $sql_query)){
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+            echo "<div class='card' id='customers'>
+                    <div class='card-body'>
+                    <h4 class='card-title'>Customer Id: {$row['id']}</h4>
+                    <div class='card-header' id='first-name'>{$row['first-name']}</div>
+                    <div class='card-header' id='last-name'>{$row['last-name']}</div>
+                    <ul class='list-group list-group-flush'>
+                    <li class='list-group-item' id='phoneNum'>{$row['phone']}</li>
+                    <li class='list-group-item' id='email'>{$row['email']}</li>
+                    <li class='list-group-item' id='birthday'>{$row['birthday']}</li>
+                    </ul>
+                    </div>
+                    </div>";
+            }
+        } else {
+            echo "<div class='card'><div class='card-body'><h4 class='card-title'>0 Customers</h4></div></div>";
+        }}
+
+
+    echo "<div class='card' id='customers'>
+    <div class='card-body'>
+    <div class='card-header' id='first-name'>'Nick'</div>
+    <div class='card-header' id='last-name'>'Vales'</div>
+    <ul class='list-group list-group-flush'>
+    <li class='list-group-item' id='phoneNum'>'631-405-8064'</li>
+    <li class='list-group-item' id='email'></li>
+    <li class='list-group-item' id='birthday'></li>
+    <li class='list-group-item' id='idNum'></li>
+    </ul>
+    </div>
+    </div>";
+};
 
 
 ?>

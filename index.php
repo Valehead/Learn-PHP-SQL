@@ -1,3 +1,6 @@
+<?php
+require __DIR__ . '/connect.php';
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -26,7 +29,7 @@
     <body>
 
 
-        <main class="container">
+        <main class="container mt-5">
             <div class="row">
 
             <!-- form container -->
@@ -82,7 +85,9 @@
                 </div>
 
                 <div class="col-8" id="customers">
-
+                <?php
+                    display_customers();
+                ?>
                 </div>
             </div>
         </main>
