@@ -62,7 +62,6 @@ function display_customers(){
     $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
     //my query to select all customers
     $sql_query = "SELECT * FROM customers";
-    echo $mysqli;
     //parse the data sql returns
     $result = mysqli_query($mysqli, $sql_query);
     if($result){
