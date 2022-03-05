@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     };
     
     if($result){
-        header('Location: nextpage.php');
+        header('Location: index.php');
     }
     else{
         echo 'Error Ocurred';
