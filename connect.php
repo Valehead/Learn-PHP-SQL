@@ -74,10 +74,14 @@ function display_customers(){
                     <h4 class='card-title'>Customer Id: {$row['id']}</h4>
                     <div class='card-header' id='first-name'>{$row['first-name']} {$row['last-name']}</div>
                     <ul class='list-group list-group-flush'>
-                    <li class='list-group-item' id='phoneNum'>{$row['phone']}</li>
-                    <li class='list-group-item' id='email'>{$row['email']}</li>
-                    <li class='list-group-item' id='birthday'>{$row['birthday']}</li>
+                        <li class='list-group-item' id='phoneNum'>{$row['phone']}</li>
+                        <li class='list-group-item' id='email'>{$row['email']}</li>
+                        <li class='list-group-item' id='birthday'>{$row['birthday']}</li>
                     </ul>
+                    <div class='mb-3 d-flex justify-content-between'>
+                        <button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button>
+                        <button type='button' class='btn btn-warning' ignore>Delete Customer</button>
+                    </div>
                     </div>
                     </div>";
             }
