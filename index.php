@@ -84,7 +84,7 @@ require __DIR__ . '/connect.php';
 
                 </div>
 
-                <div class="col-8" id="customers">
+                <div class="col-4" id="customers">
                 <?php
                     display_customers();
                 ?>
