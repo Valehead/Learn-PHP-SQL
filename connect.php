@@ -62,7 +62,7 @@ function display_customers(){
 
     //my query to select all customers
     $sql_query = "SELECT * FROM customers";
-
+    echo $mysqli;
     //parse the data sql returns
     if($result = mysqli_query($mysqli, $sql_query)){
 
