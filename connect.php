@@ -1,12 +1,9 @@
 <?php
-
+require_once "config.php";
 
 
 //check if there is a post request
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-    //connect to the database
-    $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
 
     //initalizes new customer
     $new_user = [
@@ -45,19 +42,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 };
 
 
-
+//ignore for now
 function does_user_exist($sqlConnection, $new_user){
     $sql_query = "SELECT first-name, last-name FROM customers WHERE first-name LIKE '{$new_user['first-name']}%'";
 
 };
 
-function connect_to_sql(){
-    return mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
-};
 
 function display_customers(){
-    //open the connection
-    $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
+
     //my query to select all customers
     $sql_query = "SELECT * FROM customers ORDER BY id";
     //parse the data sql returns
@@ -93,8 +86,6 @@ function display_customers(){
 };
 
 function customer_search($customerId){
-    //open the connection
-    $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
 
     //build the query
     $sql_query = "SELECT * FROM `customers` WHERE `id` = {$customerId}";
