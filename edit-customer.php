@@ -1,5 +1,5 @@
 <?php
-    require __DIR__ . '/connect.php';
+    require_once "connect.php";
     
     //get the id out of the url
     $customerId = $_GET['id'];
@@ -35,7 +35,7 @@
                             <form action="connect.php" method="POST">
 
                                 <div class="mb-3">
-                                    <label for="id" class="form-label">Id:</label>
+                                    <label for="id" class="form-label">Customer Id:</label>
                                     <input type="text" name="id" id="id" class="form-control" value="<?php echo $customer['id']; ?>" required readonly>
                                 </div>
                                 
@@ -66,7 +66,7 @@
                                 </div>
 
                                 <div class="mb-3 d-flex justify-content-between">
-                                    <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+                                    <button type="submit" class="btn btn-primary" name="submit" id="submit">Update</button>
                                     <button type="button" class="btn btn-warning" ignore onClick="">Delete?</button>
                                 </div>
                                 
