@@ -79,7 +79,7 @@ function display_customers(){
                         <li class='list-group-item' id='birthday'>{$row['birthday']}</li>
                     </ul>
                     <div class='mt-2 d-flex justify-content-between'>
-                        <a href='/edit-customer.php?id={$row['id']}'><button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button></a>
+                        <a href='edit-customer.php?id={$row['id']}'><button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button></a>
                         <button type='button' class='btn btn-warning' ignore onClick=''>Delete Customer</button>
                     </div>
                     </div>
@@ -94,10 +94,30 @@ function display_customers(){
 
 };
 
-function customer_search($customerid                                              ){
+function customer_search($customerId){
     //open the connection
     $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
 
+    //build the query
+    $sql_query = "SELECT * FROM `customers` WHERE `id` = {$customerId}";
+
+    //execute query
+    $result = mysqli_query($mysqli, $sql_query);
+
+    //if sql returned something
+    if($result){
+
+        //if we got a valid result
+        if (mysqli_num_rows($result) > 0) {
+
+            // output the customer data from the query
+            $row = mysqli_fetch_assoc($result);
+            
+            //return the customer
+            return $row;
+        } else {
+            echo "Error!";
+        }};
 };
 
 

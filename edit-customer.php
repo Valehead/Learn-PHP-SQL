@@ -1,3 +1,13 @@
+<?php
+    require __DIR__ . '/connect.php';
+    
+    //get the id out of the url
+    $customerId = $_GET['id'];
+
+    $customer = customer_search($customerId);
+
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -15,12 +25,14 @@
     </head>
     <body>
 
+
+
         <main class="container mt-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="card-title">New Customer:</h3>
+                            <h3 class="card-title">Customer Id: <?php $customer['id'] ?></h3>
 
                             <form action="connect.php" method="POST">
 
@@ -52,7 +64,7 @@
 
                                 <div class="mb-3 d-flex justify-content-between">
                                     <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
-                                    <button type="button" class="btn btn-warning" ignore onClick="clear_form();">Reset</button>
+                                    <button type="button" class="btn btn-warning" ignore onClick="">Delete?</button>
                                 </div>
                                 
                             </form>
