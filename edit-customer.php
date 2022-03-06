@@ -32,7 +32,7 @@
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="card-title">Customer Id: <?php $customer['id'] ?></h3>
+                            <h3 class="card-title">Customer Id: <?php echo $customer['id']; ?></h3>
 
                             <form action="connect.php" method="POST">
 
