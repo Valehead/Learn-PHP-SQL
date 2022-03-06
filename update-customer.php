@@ -7,10 +7,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //if the form sent valid data, fill the initialized user with data
     if(isset($_POST['id']) && isset($_POST['first-name']) && isset($_POST['last-name']) && isset($_POST['phone']) && isset($_POST['email']) && isset($_POST['birthday'])){
         
-        //iterate over the form data and fill the new user
-        foreach($new_user as $key => $value){
-            $new_user[$key] = $_POST[$key];
-        };
         $sql_query = "UPDATE `customers` SET `first-name`={$_POST['first-name']}, `last-name`={$_POST['last-name']}, `phone`={$_POST['phone']}, `email`={$_POST['email']},`birthday`={$_POST['birthday']}, WHERE id=`{$_POST['id']}`";
         $result = mysqli_query($mysqli, $sql_query);
     };
