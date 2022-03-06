@@ -32,7 +32,7 @@
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <form action="connect.php" method="POST">
+                            <form action="update-customer.php" method="POST">
 
                                 <div class="mb-3">
                                     <label for="id" class="form-label">Customer Id:</label>

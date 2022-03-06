@@ -50,7 +50,9 @@ function does_user_exist($sqlConnection, $new_user){
 
 
 function display_customers(){
+    //have the functions recognize mysqli as a global variable
     global $mysqli;
+
     //my query to select all customers
     $sql_query = "SELECT * FROM customers ORDER BY id";
     //parse the data sql returns
@@ -86,6 +88,8 @@ function display_customers(){
 };
 
 function customer_search($customerId){
+    //have the functions recognize mysqli as a global variable
+    global $mysqli;
 
     //build the query
     $sql_query = "SELECT * FROM `customers` WHERE `id` = {$customerId}";
@@ -110,10 +114,6 @@ function customer_search($customerId){
 
         //close active connection
         mysqli_close($mysqli);
-};
-
-function customer_update(){
-
 };
 
 
