@@ -1,4 +1,4 @@
 #customers {
-    max-height: 1vh;
+    max-height: 100vh;
     overflow-y: scroll;
 }

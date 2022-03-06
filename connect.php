@@ -69,7 +69,7 @@ function display_customers(){
         if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-            echo "<div class='card mb-3' id='customers'>
+            echo "<div class='card mb-3' id='customer'>
                     <div class='card-body'>
                     <h4 class='card-title'>Customer Id: {$row['id']}</h4>
                     <div class='card-header' id='first-name'>{$row['first-name']} {$row['last-name']}</div>
