@@ -51,7 +51,7 @@ function does_user_exist($sqlConnection, $new_user){
 
 function display_customers(){
     require_once 'config.php';
-
+    global $mysqli;
     //my query to select all customers
     $sql_query = "SELECT * FROM customers ORDER BY id";
     //parse the data sql returns
