@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: index.php');
     }
     else{
-        echo 'Error Ocurred';
+        echo 'Error Ocurred' . mysqli_error($mysqli);
     };
 
     //close active connection
