@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+require_once 'config.php';
 
 
 //check if there is a post request
@@ -50,6 +50,7 @@ function does_user_exist($sqlConnection, $new_user){
 
 
 function display_customers(){
+    require_once 'config.php';
 
     //my query to select all customers
     $sql_query = "SELECT * FROM customers ORDER BY id";
