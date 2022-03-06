@@ -79,7 +79,7 @@ function display_customers(){
                         <li class='list-group-item' id='birthday'>{$row['birthday']}</li>
                     </ul>
                     <div class='mt-2 d-flex justify-content-between'>
-                        <button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button>
+                        <a href='/edit-customer.php?id={$row['id']}'><button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button></a>
                         <button type='button' class='btn btn-warning' ignore onClick=''>Delete Customer</button>
                     </div>
                     </div>
@@ -91,6 +91,12 @@ function display_customers(){
 
         //close active connection
         mysqli_close($mysqli);
+
+};
+
+function customer_search($customerid                                              ){
+    //open the connection
+    $mysqli = mysqli_connect('localhost', 'valehead', 'the4kingdb$', 'ripnship') or die("Connection Failed: " . mysqli_connect_error());
 
 };
 

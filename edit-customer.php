@@ -1,40 +1,23 @@
-<?php
-require __DIR__ . '/connect.php';
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
+<head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>test sql</title>
+        <title>Edit Customer</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="index.css">
-
-        <script>
-            function clear_form(){
-                document.getElementById("first-name").value="";
-                document.getElementById("last-name").value="";
-                document.getElementById("phone").value="";
-                document.getElementById("email").value="";
-                document.getElementById("birthday").value="";
-            };
-        </script>
     </head>
     <body>
 
-
         <main class="container mt-5">
-            <div class="row">
-
-            <!-- form container -->
-                <div class="col-5" id="entryform">
-
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-5">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title">New Customer:</h3>
@@ -74,21 +57,17 @@ require __DIR__ . '/connect.php';
                                 
                             </form>
                         </div>
+                        <!-- end of card body -->
                     </div>
+                    <!-- end of card -->
                 </div>
-                <!-- end of form -->
-
-                <div class="col-2" id="spacer">
-
-                </div>
-
-                <div class="col-5" id="customers">
-                <?php
-                    display_customers();
-                ?>
-                </div>
+                <!-- end of col -->
             </div>
+            <!-- end of row -->
         </main>
+
+
+
 
 
         <!--[if lt IE 7]>
