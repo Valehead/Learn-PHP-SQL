@@ -32,10 +32,13 @@
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="card-title">Customer Id: <?php echo $customer['id']; ?></h3>
-
                             <form action="connect.php" method="POST">
 
+                                <div class="mb-3">
+                                    <label for="id" class="form-label">Id:</label>
+                                    <input type="text" name="id" id="id" class="form-control" value="<?php echo $customer['id']; ?>" required readonly>
+                                </div>
+                                
                                 <div class="mb-3">
                                     <label for="first-name" class="form-label">First Name:</label>
                                     <input type="text" name="first-name" id="first-name" class="form-control" value="<?php echo $customer['first-name']; ?>" required>

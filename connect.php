@@ -25,8 +25,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $new_user[$key] = $_POST[$key];
         };
 
-        //if(does_user_exist($mysqli, $new_user))
-
         $sql_query = "INSERT INTO `customers` (`first-name`, `last-name`, `phone`, `email`, `birthday`) VALUES ('{$new_user['first-name']}', '{$new_user['last-name']}', '{$new_user['phone']}', '{$new_user['email']}', '{$new_user['birthday']}')";
         $result = mysqli_query($mysqli, $sql_query);
     };
@@ -118,6 +116,13 @@ function customer_search($customerId){
         } else {
             echo "Error!";
         }};
+
+        //close active connection
+        mysqli_close($mysqli);
+};
+
+function customer_update(){
+
 };
 
 
