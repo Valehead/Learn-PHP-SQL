@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/config.php";
+include 'config.php';
 
 
 //check if there is a post request
