@@ -80,11 +80,11 @@ require __DIR__ . '/connect.php';
                 </div>
                 <!-- end of form -->
 
-                <div class="col-3" id="spacer">
+                <div class="col-2" id="spacer">
 
                 </div>
 
-                <div class="col-4" id="customers">
+                <div class="col-5" id="customers">
                 <?php
                     display_customers();
                 ?>
