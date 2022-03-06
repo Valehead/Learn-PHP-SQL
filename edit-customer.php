@@ -38,28 +38,28 @@
 
                                 <div class="mb-3">
                                     <label for="first-name" class="form-label">First Name:</label>
-                                    <input type="text" name="first-name" id="first-name" class="form-control" required>
+                                    <input type="text" name="first-name" id="first-name" class="form-control" value="<?php echo $customer['first-name']; ?>" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="last-name" class="form-label">Last Name:</label>
-                                    <input type="text" name="last-name" id="last-name" class="form-control" required>
+                                    <input type="text" name="last-name" id="last-name" class="form-control" value="<?php echo $customer['last-name']; ?>" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Phone Number:</label>
-                                    <input type="text" name="phone" id="phone" class="form-control" required>
+                                    <input type="text" name="phone" id="phone" class="form-control" value="<?php echo $customer['phone']; ?>" required>
 
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email:</label>
-                                    <input type="email" name="email" id="email" class="form-control" required>
+                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo $customer['email']; ?>" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="birthday" class="form-label">Birthday:</label>
-                                    <input type="date" name="birthday" id="birthday" class="form-control" required>
+                                    <input type="date" name="birthday" id="birthday" class="form-control" value="<?php echo $customer['birthday']; ?>" required>
                                 </div>
 
                                 <div class="mb-3 d-flex justify-content-between">
