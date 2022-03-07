@@ -67,7 +67,7 @@
 
                                 <div class="mb-3 d-flex justify-content-between">
                                     <button type="submit" class="btn btn-primary" name="submit" id="submit">Update</button>
-                                    <a href="../"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
+                                    <a href="/php-and-mysql"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
                                     <button type="button" class="btn btn-warning" ignore onClick="">Delete?</button>
                                 </div>
                                 
