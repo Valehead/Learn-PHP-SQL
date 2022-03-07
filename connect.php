@@ -2,56 +2,25 @@
 // require the sql config data
 require_once 'config.php';
 
-
-// //check if there is a post request
-// if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-//     //initalizes new customer
-//     $new_user = [
-//         "first-name" => "",
-//         "last-name" => "",
-//         "phone" => "",
-//         "email" => "",
-//         "birthday" => ""
-//     ];
-
-//     //if the form sent valid data, fill the initialized user with data
-//     if(isset($_POST['first-name']) && isset($_POST['last-name']) && isset($_POST['phone']) && isset($_POST['email']) && isset($_POST['birthday'])){
-        
-//         //iterate over the form data and fill the new user
-//         foreach($new_user as $key => $value){
-//             $new_user[$key] = $_POST[$key];
-//         };
-
-//         $sql_query = "INSERT INTO `customers` (`first-name`, `last-name`, `phone`, `email`, `birthday`) VALUES ('{$new_user['first-name']}', '{$new_user['last-name']}', '{$new_user['phone']}', '{$new_user['email']}', '{$new_user['birthday']}')";
-//         $result = mysqli_query($mysqli, $sql_query);
-//     };
-    
-//     if($result){
-//         header('Location: index.php');
-//     }
-//     else{
-//         echo 'Error Ocurred';
-//     };
-
-//     //close active connection
-//     mysqli_close($mysqli);
-
-// };
-
 //function to find and create cards for all customers
 function display_customers(){
+
     //have the functions recognize mysqli as a global variable
     global $mysqli;
 
-    //my query to select all customers
+    //query to select all customers
     $sql_query = "SELECT * FROM customers ORDER BY id";
-    //parse the data sql returns
+
+    //execute the query and save the result
     $result = mysqli_query($mysqli, $sql_query);
+
+    //if there is a result, meaning the query worked
     if($result){
 
+        //then iterate over the results and create the cards
         if (mysqli_num_rows($result) > 0) {
-            // output data of each row
+
+            // create a card for the data of each row
             while($row = mysqli_fetch_assoc($result)) {
             echo "<div class='card mb-3' id='customer'>
                     <div class='card-body'>
@@ -80,7 +49,9 @@ function display_customers(){
 
 };
 
+//function to search for a customer
 function customer_search($customerId){
+    
     //have the functions recognize mysqli as a global variable
     global $mysqli;
 
