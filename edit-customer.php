@@ -71,7 +71,7 @@
                                     <a href="/Learn-PHP-SQL"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
                                     
                                     <form action="actions/delete-customer.php" method="post">
-                                        <button type="submit" class="btn btn-warning" name="deleteItem" value="<?php echo $customer['id']; ?>" onClick="">Delete?</button>
+                                        <button type="submit" class="btn btn-danger" name="deleteItem" value="<?php echo $customer['id']; ?>" onClick="">Delete?</button>
                                     </form>
                                     
                                 </div>
