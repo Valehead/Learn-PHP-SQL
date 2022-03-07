@@ -67,11 +67,16 @@
 
                                 <div class="mb-3 d-flex justify-content-between">
                                     <button type="submit" class="btn btn-primary" name="submit" id="submit">Update</button>
+                                    </form>
                                     <a href="/Learn-PHP-SQL"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
-                                    <button type="button" class="btn btn-warning" ignore onClick="">Delete?</button>
+                                    
+                                    <form action="actions/delete-customer.php" method="post">
+                                        <button type="submit" class="btn btn-warning" name="deleteItem" value="<?php echo $customer['id']; ?>" onClick="">Delete?</button>
+                                    </form>
+                                    
                                 </div>
                                 
-                            </form>
+                            <!-- </form> -->
                         </div>
                         <!-- end of card body -->
                     </div>
