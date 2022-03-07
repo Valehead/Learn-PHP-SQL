@@ -1,5 +1,5 @@
 <?php
-    require_once "connect.php";
+    require_once "../connect.php";
     
     //get the id out of the url
     $customerId = $_GET['id'];
@@ -21,7 +21,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="../index.css">
     </head>
     <body>
 
@@ -32,7 +32,7 @@
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <form action="actions/update-customer.php" method="POST">
+                            <form action="../actions/update-customer.php" method="POST">
 
                                 <div class="mb-3">
                                     <label for="id" class="form-label">Customer Id:</label>
@@ -70,7 +70,7 @@
                                     </form>
                                     <a href="/Learn-PHP-SQL"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
                                     
-                                    <form action="actions/delete-customer.php" method="post">
+                                    <form action="../actions/delete-customer.php" method="post">
                                         <button type="submit" class="btn btn-danger" name="deleteItem" value="<?php echo $customer['id']; ?>" onClick="">Delete?</button>
                                     </form>
                                     
