@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     };
     
     if($result){
-        header('Location: index.php');
+        header('Location: ../index.php');
     }
     else{
         echo 'Error Ocurred' . mysqli_error($mysqli);
