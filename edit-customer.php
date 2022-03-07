@@ -32,7 +32,7 @@
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <form action="update-customer.php" method="POST">
+                            <form action="actions/update-customer.php" method="POST">
 
                                 <div class="mb-3">
                                     <label for="id" class="form-label">Customer Id:</label>
@@ -67,6 +67,7 @@
 
                                 <div class="mb-3 d-flex justify-content-between">
                                     <button type="submit" class="btn btn-primary" name="submit" id="submit">Update</button>
+                                    <a href="/"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
                                     <button type="button" class="btn btn-warning" ignore onClick="">Delete?</button>
                                 </div>
                                 

@@ -21,8 +21,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //close active connection
     mysqli_close($mysqli);
 
-    //works
-    // $sql_delete = "DELETE FROM customers WHERE name = 'Bert Reynolds'";
-    // $result2 = mysqli_query($mysqli, $sql_delete);
 };
 ?>
