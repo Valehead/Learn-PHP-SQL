@@ -54,15 +54,16 @@ require_once "connect.php";
                             infosValue = info.toUpperCase();
                         }
                         if (infosValue.indexOf(filter) > -1) {
-                            flag = 1;
+                            customerCards[i].style = "";
+                            break;
                         } else {
                             customerCards[i].style = "none";
                         };
                     };
-                    if(flag){
-                        customerCards[i].style = "";
-                        flag = 0;
-                    };
+                    // if(flag){
+                    //     customerCards[i].style = "";
+                    //     flag = 0;
+                    // };
                 };                
 
             };
