@@ -51,9 +51,9 @@ require_once "connect.php";
                     for(f=0; f < customerInfos.length; f++){
                         info = customerInfos[f].textContent;
                         if(info) {
-                            infosValue = info.textContent.toUpperCase();
+                            infosValue = info.textContent;
                         }
-                        if (infosValue.indexOf(filter) > -1) {
+                        if (infosValue.toUpperCase().indexOf(filter) > -1) {
                             flag = 1;
                         } else {
                             customerCards[i].style = "none";
