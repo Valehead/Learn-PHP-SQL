@@ -16,7 +16,7 @@ require_once "connect.php";
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="index.css">
 
-        <script>
+        <!-- <script>
             function myFunction() {
                 // Declare variables
                 var input, filter, cardContainer, tr, td, i, txtValue;
@@ -38,7 +38,7 @@ require_once "connect.php";
                     }
                 }
             }
-        </script>
+        </script> -->
     </head>
     <body>
 

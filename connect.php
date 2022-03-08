@@ -32,7 +32,7 @@ function display_customers(){
                         <li class='list-group-item' id='birthday'>{$row['birthday']}</li>
                     </ul>
                     <div class='mt-2 d-flex justify-content-between'>
-                        <a href='edit-customer.php?id={$row['id']}'><button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button></a>
+                        <a href='customers/edit-customer.php?id={$row['id']}'><button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button></a>
                         <form action='actions/delete-customer.php' method='post'>
                             <button type='submit' class='btn btn-danger' name='deleteItem' value='{$row['id']}' onClick=''>Delete?</button>
                         </form>
