@@ -55,6 +55,7 @@ require_once "connect.php";
                         }
                         if (infosValue.indexOf(filter) > -1) {
                             console.log(filter);
+                            console.log(customerCards[i]);
                             customerCards[i].style = "";
                             break;
                         } else {
