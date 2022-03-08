@@ -1,5 +1,5 @@
 <?php
-    require_once "../actions/search-customers.php";
+    require_once "../actions/search-customer.php";
     
     //get the id out of the url
     $customerId = $_GET['id'];
