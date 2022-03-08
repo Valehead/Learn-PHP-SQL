@@ -2,3 +2,7 @@
     max-height: 90vh;
     overflow-y: scroll;
 }
+
+#mySearch {
+    width: 16rem;
+}
