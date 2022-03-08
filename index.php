@@ -121,7 +121,7 @@ require_once "connect.php";
                     <form action="actions/search-customer.php" method="get">
                         <div class="my-2">
                             <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
-                            <button type="submit" class="btn btn-dark" name="submit" id="submit">Search!</button>
+                            <button type="submit" class="btn btn-secondary btn-sm" name="submit" id="submit">Search!</button>
                         </div>
                     </form>
 
