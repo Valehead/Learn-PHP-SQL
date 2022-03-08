@@ -19,14 +19,13 @@ require_once "connect.php";
         <!-- <script>
             function myFunction() {
                 // Declare variables
-                var input, filter, cardContainer, tr, td, i, txtValue;
+                var input, filter, customerCards, tr, td, i, txtValue;
                 input = document.getElementById("mySearch");
                 filter = input.value.toUpperCase();
-                cardContainer = document.getElementById("myTable");
-                tr = table.getElementsByTagName("tr");
+                customerCards = document.querySelectorAll('#customer')
 
                 // Loop through all table rows, and hide those who don't match the search query
-                for (i = 0; i < tr.length; i++) {
+                for (i = 0; i < customerCards.length; i++) {
                     td = tr[i].getElementsByTagName("td")[0];
                     if (td) {
                     txtValue = td.textContent || td.innerText;
