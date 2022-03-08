@@ -119,7 +119,7 @@ require_once "connect.php";
 
                     <!-- search box -->
                     <form action="actions/search-customer.php" method="get">
-                        <div class="my-2 d-flex align-items-center">
+                        <div class="my-2 d-flex align-items-center justify-content-between">
                             <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
                             <button type="submit" class="btn btn-secondary btn-sm" name="submit" id="submit">Search!</button>
                         </div>
