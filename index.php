@@ -109,7 +109,7 @@ require_once "connect.php";
                                 </div>
 
                                 <div class="mb-3 d-flex justify-content-between">
-                                    <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+                                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
                                     <button type="reset" class="btn btn-warning" value="reset">Reset</button>
                                 </div>
                                 
