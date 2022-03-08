@@ -52,9 +52,9 @@ require_once "connect.php";
                         info = customerInfos[f].textContent;
                         if(info) {
                             infosValue = info.toUpperCase();
-                            console.log(filter);
                         }
                         if (infosValue.indexOf(filter) > -1) {
+                            console.log(filter);
                             customerCards[i].style = "";
                             break;
                         } else {
