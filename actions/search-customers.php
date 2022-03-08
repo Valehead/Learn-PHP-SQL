@@ -1,5 +1,8 @@
 <?php
 
+require_once(__DIR__ .'/../config.php');
+
+
 //function to search for a customer
 function customer_search($customerId){
     
