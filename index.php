@@ -38,6 +38,35 @@ require_once "connect.php";
                 }
             }
         </script> -->
+        <script>
+            function mySearchFilter() {
+                var input, filter, customerCards, customerInfos, info, i, f, flag = 0, infosValue;
+                input = document.getElementById("mySearch");
+                filter = input.value.toUpperCase();
+                customerCards = document.querySelectorAll('#customer');
+
+                for (i = 0; i < customerCards.length; i++) {
+                    customerInfos = customerCards[i].getElementsByTagName('li');
+                
+                    for(f=0; f < customerInfos.length; f++){
+                        info = customerInfos[f].textContent;
+                        if(info) {
+                            infosValue = info.textContent.toUpperCase();
+                        }
+                        if (infosValue.indexOf(filter) > -1) {
+                            flag = 1;
+                        } else {
+                            customerCards[i].style = "none";
+                        };
+                    };
+                    if(flag){
+                        customerCards[i].style = "";
+                        flag = 0;
+                    };
+                };                
+
+            };
+        </script>
     </head>
     <body>
 

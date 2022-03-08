@@ -25,7 +25,6 @@ function display_customers(){
             echo "<div class='card mb-3' id='customer'>
                     <div class='card-body'>
                     <h4 class='card-title'>Customer Id: {$row['id']}</h4>
-                    <div class='card-header' id='full-name'>{$row['first-name']} {$row['last-name']}</div>
                     <ul class='list-group list-group-flush'>
                         <li class='list-group-item list-group-item-secondary' id='custName'>{$row['first-name']} {$row['last-name']}</li>
                         <li class='list-group-item' id='phoneNum'>{$row['phone']}</li>
