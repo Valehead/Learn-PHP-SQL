@@ -1,6 +1,7 @@
 <?php
 // require the sql config data
-require_once '../config.php';
+//require_once '../config.php';
+require_once(__DIR__ .'/../config.php');
 
 //function to find and create cards for all customers
 function display_customers(){
