@@ -16,58 +16,52 @@ require_once "connect.php";
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="index.css">
 
-        <!-- <script>
-            function myFunction() {
-                // Declare variables
-                var input, filter, customerCards, tr, td, i, txtValue;
-                input = document.getElementById("mySearch");
-                filter = input.value.toUpperCase();
-                customerCards = document.querySelectorAll('#customer')
-
-                // Loop through all table rows, and hide those who don't match the search query
-                for (i = 0; i < customerCards.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[0];
-                    if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                    }
-                }
-            }
-        </script> -->
         <script>
+            //function for filtering the customer cards being shown
             function mySearchFilter() {
-                var input, filter, customerCards, customerInfos, info, i, f, flag = 0, infosValue;
+                
+                //declare variables
+                var input, filter, customerCards, customerInfos, info, i, f, infosValue;
+
+                //get the search input
                 input = document.getElementById("mySearch");
+
+                //filter the search
                 filter = input.value.toUpperCase();
+
+                //get ALL of the customers
                 customerCards = document.querySelectorAll('#customer');
 
+                //loop over ALL the customers
                 for (i = 0; i < customerCards.length; i++) {
+
+                    //get ALL of the customer info stored in the li's
                     customerInfos = customerCards[i].getElementsByTagName('li');
                 
+                    //loop over ALL of the info in each card
                     for(f=0; f < customerInfos.length; f++){
+
+                        //get the data in each element
                         info = customerInfos[f].textContent;
+
                         if(info) {
+
+                            //make the data uppercase for easy comparison
                             infosValue = info.toUpperCase();
-                        }
+                        };
+
+                        //if the filtered search data exists inside ANY of the customer values
                         if (infosValue.indexOf(filter) > -1) {
-                            // console.log(filter);
-                            // console.log(customerCards[i]);
+
+                            //set the display to visible and don't check the rest of that customer's values
                             customerCards[i].style.display = "";
                             break;
+
                         } else {
-                            // console.log("off");
-                            // console.log(customerCards[i]);
+                            //if no match, hide the customer
                             customerCards[i].style.display = "none";
                         };
                     };
-                    // if(flag){
-                    //     customerCards[i].style = "";
-                    //     flag = 0;
-                    // };
                 };                
 
             };
@@ -122,11 +116,16 @@ require_once "connect.php";
                             </form>
                         </div>
                     </div>
+
+                    <!-- search box -->
                     <form action="actions/search-customer.php" method="get">
                         <div class="my-2">
                             <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
+                            <button type="submit" class="btn btn-dark" name="submit" id="submit">Search!</button>
                         </div>
                     </form>
+
+
                 </div>
                 <!-- end of form -->
 
