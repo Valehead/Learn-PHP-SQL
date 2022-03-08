@@ -54,14 +54,14 @@ require_once "connect.php";
                             infosValue = info.toUpperCase();
                         }
                         if (infosValue.indexOf(filter) > -1) {
-                            console.log(filter);
-                            console.log(customerCards[i]);
-                            customerCards[i].style = "";
+                            // console.log(filter);
+                            // console.log(customerCards[i]);
+                            customerCards[i].style.display = "";
                             break;
                         } else {
-                            console.log("off");
-                            console.log(customerCards[i]);
-                            customerCards[i].style = "none";
+                            // console.log("off");
+                            // console.log(customerCards[i]);
+                            customerCards[i].style.display = "none";
                         };
                     };
                     // if(flag){
