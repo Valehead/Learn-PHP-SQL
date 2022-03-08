@@ -30,6 +30,7 @@ function display_customers(){
                         <li class='list-group-item' id='phoneNum'>{$row['phone']}</li>
                         <li class='list-group-item' id='email'>{$row['email']}</li>
                         <li class='list-group-item' id='birthday'>{$row['birthday']}</li>
+                        <li class='list-group-item' id='custId' style='display:none;'>{$row['id']}</li>
                     </ul>
                     <div class='mt-2 d-flex justify-content-between'>
                         <a href='customers/edit-customer.php?id={$row['id']}'><button type='button' class='btn btn-primary' name='editCustomer' id='editCustomer'>Edit</button></a>
