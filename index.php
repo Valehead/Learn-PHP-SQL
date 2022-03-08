@@ -1,5 +1,5 @@
 <?php
-require_once "connect.php";
+require_once "actions/display-customers.php";
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -10,7 +10,7 @@ require_once "connect.php";
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>test sql</title>
+        <title>Test sql</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -118,7 +118,7 @@ require_once "connect.php";
                     </div>
 
                     <!-- search box -->
-                    <form action="actions/search-customer.php" method="get">
+                    <form action="actions/search-customers.php" method="get">
                         <div class="my-2 d-flex align-items-center justify-content-between">
                             <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
                             <button type="submit" class="btn btn-secondary btn-sm" id="submit">Search!</button>
