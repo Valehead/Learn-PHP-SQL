@@ -59,6 +59,8 @@ require_once "connect.php";
                             customerCards[i].style = "";
                             break;
                         } else {
+                            console.log("off");
+                            console.log(customerCards[i]);
                             customerCards[i].style = "none";
                         };
                     };
