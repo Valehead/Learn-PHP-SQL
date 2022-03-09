@@ -72,6 +72,18 @@ require_once "actions/display-customers.php";
 
         <main class="container mt-5">
             <div class="row">
+                <div class="col-5 offset-7">
+                    <!-- search box -->
+                    <form action="customers/search-customers.php" method="get">
+                        <div class="my-2 d-flex align-items-center justify-content-between">
+                            <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
+                            <button type="submit" class="btn btn-secondary btn-sm" id="submit">Search!</button>
+                        </div>
+                    </form>
+                    <!-- search box end -->
+                </div>
+            </div>
+            <div class="row">
 
             <!-- form container -->
                 <div class="col-5" id="entryform">
@@ -83,13 +95,13 @@ require_once "actions/display-customers.php";
                             <form action="actions/create-customer.php" method="POST">
 
                                 <div class="mb-3">
-                                    <label for="first-name" class="form-label">First Name:</label>
-                                    <input type="text" name="first-name" id="first-name" class="form-control" required>
+                                    <label for="firstName" class="form-label">First Name:</label>
+                                    <input type="text" name="firstName" id="firstName" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="last-name" class="form-label">Last Name:</label>
-                                    <input type="text" name="last-name" id="last-name" class="form-control" required>
+                                    <label for="lastName" class="form-label">Last Name:</label>
+                                    <input type="text" name="lastName" id="lastName" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3">
@@ -116,16 +128,6 @@ require_once "actions/display-customers.php";
                             </form>
                         </div>
                     </div>
-
-                    <!-- search box -->
-                    <form action="actions/search-customer.php" method="get">
-                        <div class="my-2 d-flex align-items-center justify-content-between">
-                            <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
-                            <button type="submit" class="btn btn-secondary btn-sm" id="submit">Search!</button>
-                        </div>
-                    </form>
-
-
                 </div>
                 <!-- end of form -->
 

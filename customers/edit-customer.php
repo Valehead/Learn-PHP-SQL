@@ -40,13 +40,13 @@
                                 </div>
                                 
                                 <div class="mb-3">
-                                    <label for="first-name" class="form-label">First Name:</label>
-                                    <input type="text" name="first-name" id="first-name" class="form-control" value="<?php echo $customer['first-name']; ?>" required>
+                                    <label for="firstName" class="form-label">First Name:</label>
+                                    <input type="text" name="firstName" id="firstName" class="form-control" value="<?php echo $customer['firstName']; ?>" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="last-name" class="form-label">Last Name:</label>
-                                    <input type="text" name="last-name" id="last-name" class="form-control" value="<?php echo $customer['last-name']; ?>" required>
+                                    <label for="lastName" class="form-label">Last Name:</label>
+                                    <input type="text" name="lastName" id="lastName" class="form-control" value="<?php echo $customer['lastName']; ?>" required>
                                 </div>
 
                                 <div class="mb-3">
