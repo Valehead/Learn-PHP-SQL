@@ -1,19 +1,19 @@
 <?php
 
 
-//work
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'adminer');
-define('DB_PASSWORD', 'sQl5124!');
-define('DB_NAME', 'ripnship');
+// //work
+// define('DB_SERVER', 'localhost');
+// define('DB_USERNAME', 'adminer');
+// define('DB_PASSWORD', 'sQl5124!');
+// define('DB_NAME', 'ripnship');
 
-/*
+
 // home
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'valehead');
 define('DB_PASSWORD', 'the4kingdb$');
 define('DB_NAME', 'ripnship');
- */
+ 
 
 // Attempt to connect to MySQL database
 $mysqli = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME) or die("Connection Failed: " . mysqli_connect_error());
