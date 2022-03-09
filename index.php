@@ -118,7 +118,7 @@ require_once "actions/display-customers.php";
                     </div>
 
                     <!-- search box -->
-                    <form action="actions/search-customers.php" method="get">
+                    <form action="actions/search-customer.php" method="get">
                         <div class="my-2 d-flex align-items-center justify-content-between">
                             <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
                             <button type="submit" class="btn btn-secondary btn-sm" id="submit">Search!</button>

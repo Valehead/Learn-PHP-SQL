@@ -1,5 +1,5 @@
 <?php
-require_once '../config.php';
+require_once(__DIR__ .'/../config.php');
 
 //check if there is a post request
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
