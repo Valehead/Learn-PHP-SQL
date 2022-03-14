@@ -7,10 +7,10 @@ function search_customers($search){
     //have the functions recognize mysqli as a global variable
     global $mysqli;
 
-    //if the form sent valid data, fill the initialized user with data
+    //if the form sent valid data, get the search query out of the url
     if(isset($_GET['searchBox'])){
 
-        $searchInput = $_GET['searchBox'];
+        $searchInput = mysqli_real_escape_string($mysqli, $_GET['searchBox']);
 
         $columns = mysqli_query($mysqli, "SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_NAME = 'customers' AND TABLE_SCHEMA = 'ripnship'");
 

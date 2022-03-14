@@ -40,6 +40,8 @@
                 <!-- search box end -->
             </div>
         </div>
+        
+        <!-- customer search display grid start -->
         <div class="row">
             <div class="col-12">
                 <table class="table">
@@ -59,6 +61,9 @@
                 </table>
             </div>
         </div>
+        <!-- customer search display grid start -->
+
+
     </main>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>

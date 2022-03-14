@@ -6,7 +6,7 @@ require_once '../config.php';
 //check if there is a post request
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    //if the form sent valid data, fill the initialized user with data
+    //if the form sent valid data, then insert that user into the database
     if(isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['phone']) && isset($_POST['email']) && isset($_POST['birthday'])){
 
         //create the insert query
