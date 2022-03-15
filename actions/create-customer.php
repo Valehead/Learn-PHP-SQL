@@ -9,8 +9,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //if the form sent valid data, then insert that user into the database
     if(isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['phone']) && isset($_POST['email']) && isset($_POST['birthday'])){
 
+        //create customer shell
+        $customer = [
+            "firstName" => "",
+            "lastName" => "",
+            "phone" => "",
+            "email" => "",
+            "birthday" => ""
+        ];
+
+        //escape the form data to hopefully avoid sql ed's sql injection
+        foreach($customer as $key => $value){
+            $customer[$key] = mysqli_real_escape_string($mysqli, $_POST[$key]);
+        };
+
         //create the insert query
-        $sql_query = "INSERT INTO `customers` (`firstName`, `lastName`, `phone`, `email`, `birthday`) VALUES ('{$_POST['firstName']}', '{$_POST['lastName']}', '{$_POST['phone']}', '{$_POST['email']}', '{$_POST['birthday']}')";
+        $sql_query = "INSERT INTO `customers` (`firstName`, `lastName`, `phone`, `email`, `birthday`) VALUES ('{$customer['firstName']}', '{$customer['lastName']}', '{$customer['phone']}', '{$customer['email']}', '{$customer['birthday']}')";
         
         //execute the query and save the query result
         $result = mysqli_query($mysqli, $sql_query);
