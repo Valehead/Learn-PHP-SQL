@@ -1,24 +1,33 @@
 <?php
-require_once '../config.php';
+require_once '../connect.php';
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    if(isset($_POST['deleteItem']))
+    //escape it just in case
+    $delItem = $conn->real_escape_string($_POST['deleteItem']);
+
+    if(isset($delItem))
     {
-        $sql_query = "DELETE FROM `customers` WHERE id={$_POST['deleteItem']}";
-        $result = mysqli_query($mysqli, $sql_query);
+        //create the query, execute and save the result
+        $result = $conn->query("DELETE FROM `customers` WHERE `id` = {$delItem};");
     };
 
     if($result){
+        //redirect to home page
         header('Location: ../index.php');
+        
+        //close the connection
+        $conn->close();
     }
     else{
-        echo 'Error Ocurred' . mysqli_error($mysqli);
+        //show the error
+        echo "Error Ocurred: {$conn->error}";
+
+        //close the connection
+        $conn->close();
     };
 
-    //close active connection
-    mysqli_close($mysqli);
 };
 
 ?>

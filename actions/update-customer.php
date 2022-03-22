@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ .'/../config.php');
+require_once(__DIR__ .'/../connect.php');
 
 //check if there is a post request
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -7,37 +7,39 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //if the form sent valid data, fill the initialized user with data
     if(isset($_POST['id']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['phone']) && isset($_POST['email']) && isset($_POST['birthday'])){
         
-        //create customer shell
-        $customer = [
+        $cust = array(
             "firstName" => "",
             "lastName" => "",
             "phone" => "",
+            "phone" => "",
             "email" => "",
             "birthday" => ""
-        ];
-
-        //escape the form data to hopefully avoid sql ed's sql injection
-        foreach($customer as $key => $value){
-            $customer[$key] = mysqli_real_escape_string($mysqli, $_POST[$key]);
+        );
+    
+        //escape everything and recreate the object
+        foreach($_POST as $key => $value)
+        {
+            $cust[$key] = $conn->real_escape_string($value);
         };
 
-        //create the update query
-        $sql_query = "UPDATE `customers` SET `firstName`='{$customer['firstName']}', `lastName`='{$customer['lastName']}', `phone`='{$customer['phone']}', `email`='{$customer['email']}',`birthday`='{$customer['birthday']}' WHERE id='{$_POST['id']}'";
-        
-        //execute the query and save the result
-        $result = mysqli_query($mysqli, $sql_query);
+        //create the update query and execute
+        $result = $conn->query("UPDATE `customers` SET `firstName`='{$cust['firstName']}', `lastName`='{$cust['lastName']}', `phone`='{$cust['phone']}', `email`='{$cust['email']}',`birthday`='{$cust['birthday']}' WHERE id='{$_POST['id']}';");
+
     };
     
     //return to home page
     if($result){
         header('Location: ../index.php');
+        
+        //close the connection
+        $conn->close();
     }
     else{
-        echo 'Error Ocurred' . mysqli_error($mysqli);
-    };
+        echo "Error Ocurred: {$conn->error}";
 
-    //close active connection
-    mysqli_close($mysqli);
+        //close the connection
+        $conn->close();
+    };
 
 };
 ?>

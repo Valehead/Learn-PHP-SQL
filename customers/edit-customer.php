@@ -2,9 +2,9 @@
     require_once "../actions/search-customer.php";
     
     //get the id out of the url
-    $customerId = $_GET['id'];
+    //$customerId = $_GET['id'];
 
-    $customer = customer_search($customerId);
+    $customer = customer_search();
 
 ?>
 

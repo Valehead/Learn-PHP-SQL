@@ -2,7 +2,7 @@
     require_once "../actions/search-customer.php";
     
     //get the id out of the url
-    $search = $_GET['searchBox'];
+    //$search = $_GET['searchBox'];
 
 
 ?>
@@ -31,7 +31,7 @@
 
             <div class="col-4 offset-3">
                 <!-- search box -->
-                <form action="./search-customers.php" method="get">
+                <form action="search-customers.php" method="get">
                     <div class="my-2 d-flex align-items-center">
                         <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
                         <button type="submit" class="btn btn-secondary btn-sm ms-2" id="submit">Search!</button>
@@ -56,7 +56,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php search_customers($search); ?>
+                        <?php search_customers(); ?>
                     </tbody>
                 </table>
             </div>

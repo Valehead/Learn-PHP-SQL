@@ -1,40 +1,60 @@
 <?php
-require_once(__DIR__ .'/../config.php');
+require_once(__DIR__ .'/../connect.php');
 
 
-function search_customers($search){
+function search_customers(){
 
-    //have the functions recognize mysqli as a global variable
-    global $mysqli;
+    //have the functions recognize conn as a global variable
+    global $conn;
 
     //if the form sent valid data, get the search query out of the url
     if(isset($_GET['searchBox'])){
 
-        $searchInput = mysqli_real_escape_string($mysqli, $_GET['searchBox']);
+        $searchInput = $conn->real_escape_string($_GET['searchBox']);
 
-        $columns = mysqli_query($mysqli, "SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_NAME = 'customers' AND TABLE_SCHEMA = 'ripnship'");
+        //----------------the following chunk of code is for dynamically generating the search query
+        $columns = $conn->query("SELECT `COLUMN_NAME` FROM information_schema.COLUMNS WHERE `TABLE_NAME` = 'customers' AND `TABLE_SCHEMA` = 'ripnship'");
 
         //build ending like clauses of query for every column in the table
         //doing this accounts for table growth without having to edit this to search new columns
         $queryAllColumns = array();
-        while ($column = mysqli_fetch_assoc($columns)) {
-            $queryAllColumns[] = $column['COLUMN_NAME'] . " LIKE '%$searchInput%'";
+
+        while ($column = $columns->fetch_assoc()) {
+            $queryAllColumns[] = "`{$column['COLUMN_NAME']}` LIKE '%{$searchInput}%'";
         };
 
         //create the full select query to search for the input in all customer columns
-        $sql_query = "SELECT * FROM customers WHERE " . implode(" OR ", $queryAllColumns);
-        
+        $sql_query = "SELECT * FROM `customers` WHERE " . implode(" OR ", $queryAllColumns) . ";";
+        //---------------chunk end
+
+
+        /*
+        if you want to manually make the query and not have it change alongside db changes
+        you can use the following:
+
+        $sql_query = "SELECT * FROM `customers`
+                     WHERE `id` LIKE '%{$searchInput}%'
+                      OR `firstName` LIKE '%{$searchInput}%'
+                       OR `lastName` LIKE '%{$searchInput}%'
+                        OR `phone` LIKE '%{$searchInput}%'
+                         OR `email` LIKE '%{$searchInput}%'
+                          OR `birthday` LIKE '%{$searchInput}%';";
+        */
+
         //execute the query and save the query result
-        $result = mysqli_query($mysqli, $sql_query);
+        $result = $conn->query($sql_query);
+
+        //close active connection
+        $conn->close();        
 
         //if there is a result, meaning the query worked
     if($result){
 
         //then iterate over the results and create the cards
-        if (mysqli_num_rows($result) > 0) {
+        if ($result->num_rows > 0) {
 
             // create a card for the data of each row
-            while($row = mysqli_fetch_assoc($result)) {
+            while($row = $result->fetch_assoc()) {
             echo "<tr>
                     <th scope='row'><a href='/Learn-PHP-SQL/customers/edit-customer.php?id={$row['id']}'>{$row['id']}</a></th>
                     <td>{$row['firstName']}</td>
@@ -55,42 +75,44 @@ function search_customers($search){
         </tr>";
         }};
     };
-    
-
-    //close active connection
-    mysqli_close($mysqli);
 
 };
 
 //function to search for a customer
-function customer_search($customerId){
+function customer_search(){
     
-    //have the functions recognize mysqli as a global variable
-    global $mysqli;
+    //have the functions recognize conn as a global variable
+    global $conn;
 
-    //build the query
-    $sql_query = "SELECT * FROM `customers` WHERE `id` = {$customerId}";
+    if(isset($_GET['id'])){
+        //escape what we get from the edit customer url
+        $customerId = $conn->real_escape_string($_GET['id']);
 
-    //execute query
-    $result = mysqli_query($mysqli, $sql_query);
-
-    //if sql returned something
-    if($result){
-
-        //if we got a valid result
-        if (mysqli_num_rows($result) > 0) {
-
-            // output the customer data from the query
-            $row = mysqli_fetch_assoc($result);
-            
-            //return the customer
-            return $row;
-        } else {
-            echo "Error!";
-        }};
-
+        //build and execute query
+        $result = $conn->query("SELECT * FROM `customers` WHERE `id` = '{$customerId}';");
+        
         //close active connection
-        mysqli_close($mysqli);
+        $conn->close();
+
+        //if sql returned something
+        if($result){
+
+            //if we got a valid result
+            if ($result->num_rows > 0) {
+
+                // output the customer data from the query
+                $row = $result->fetch_assoc();
+                
+                //return the customer
+                return $row;
+
+            } else {
+
+                echo "No Customers Found!";       
+
+            };
+        };
+    };
 };
 
 ?>

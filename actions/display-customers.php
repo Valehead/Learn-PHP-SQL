@@ -1,28 +1,27 @@
 <?php
 // require the sql config data
-//require_once '../config.php';
-require_once(__DIR__ .'/../config.php');
+require_once(__DIR__ .'/../connect.php');
 
 //function to find and create cards for all customers
 function display_customers(){
 
     //have the functions recognize mysqli as a global variable
-    global $mysqli;
+    global $conn;
 
-    //query to select all customers
-    $sql_query = "SELECT * FROM customers ORDER BY id";
+    //execute and save query to select all customers
+    $result = $conn->query("SELECT * FROM customers ORDER BY id;");
 
-    //execute the query and save the result
-    $result = mysqli_query($mysqli, $sql_query);
+    //close active connection
+    $conn->close();
 
     //if there is a result, meaning the query worked
     if($result){
 
         //then iterate over the results and create the cards
-        if (mysqli_num_rows($result) > 0) {
+        if ($result->num_rows > 0) {
 
             // create a card for the data of each row
-            while($row = mysqli_fetch_assoc($result)) {
+            while($row = $result->fetch_assoc()) {
             echo "<div class='card mb-3' id='customer'>
                     <div class='card-body'>
                     <h4 class='card-title'>Customer Id: {$row['id']}</h4>
@@ -45,12 +44,7 @@ function display_customers(){
         } else {
             echo "<div class='card'><div class='card-body'><h4 class='card-title'>0 Customers</h4></div></div>";
         }};
-
-        //close active connection
-        mysqli_close($mysqli);
-
 };
-
 
 
 ?>
