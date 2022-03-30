@@ -78,11 +78,8 @@
 
     <main class="container mt-5">
         <div class="row">
-            <div class="col-5">
-                <a href="/Learn-PHP-SQL/"><button class="btn btn-primary">Back to Home</button></a>
-            </div>
 
-            <div class="col-4 offset-3">
+            <div class="col-4 offset-8">
                 <!-- search box -->
                 <form action="search-customers.php" method="get">
                     <div class="my-2 d-flex align-items-center">
