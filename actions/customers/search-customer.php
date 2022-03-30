@@ -75,6 +75,8 @@ function search_customers(){
             </tr>";
             };
         };
+
+        //if no search query is given, aka they just went to the show all page
     } else {
         
         //blank search to get all customers

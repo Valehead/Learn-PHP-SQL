@@ -18,7 +18,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Customers</a>
+                    <a class="nav-link" href="#">Games</a>
                 </li>
                 
                 <li class="nav-item">
@@ -26,7 +26,9 @@
                 </li>
             </ul>
             
-            <form class="d-flex">
+            <?php $formDest = $_SERVER['DOCUMENT_ROOT'] . '/Learn-PHP-SQL/customers/search-customers.php';?>
+
+            <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
