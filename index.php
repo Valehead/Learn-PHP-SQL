@@ -66,8 +66,7 @@ require_once "actions/games/display-games.php";
                         <div class="card-body" id="newCustCard">
                             
                             <!-- start of new customer form -->
-                            <form action="actions/customers/create-customer.php
-" method="POST" class="needs-validation" novalidate>
+                            <form action="actions/customers/create-customer.php" method="POST" class="needs-validation" novalidate>
                                 
                                 <!-- start of customer info -->
                                 <div id="newCustInfo">
