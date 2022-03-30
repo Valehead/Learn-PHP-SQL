@@ -82,7 +82,7 @@
                 <a href="/Learn-PHP-SQL/"><button class="btn btn-primary">Add New Customer</button></a>
             </div>
 
-            <div class="col-4 offset-8">
+            <div class="col-4 offset-3">
                 <!-- search box -->
                 <form action="search-customers.php" method="get">
                     <div class="my-2 d-flex align-items-center">
