@@ -73,6 +73,8 @@
         </script>    
     </head>
     <body>
+        
+    <?php include("partials/navbar.php") ?>
 
     <main class="container mt-5">
         <div class="row">

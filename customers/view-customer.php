@@ -25,7 +25,7 @@
     </head>
     <body>
 
-
+    <?php include("partials/navbar.php") ?>
 
         <main class="container mt-5">
             <div class="row d-flex justify-content-center align-items-center">

@@ -69,6 +69,10 @@
     </head>
 
     <body>
+
+    <?php include("partials/navbar.php") ?>
+
+
         <main class="container mt-4">
 
             <!-- start navigation row -->
