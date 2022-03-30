@@ -26,22 +26,10 @@ require_once "actions/games/display-games.php";
 
         <main class="container mt-4">
             <!-- start of header row -->
-            <div class="row mb-2">
-
-                <!-- new games link start -->
-                <div class="col-5">
-                    <div class="my-2 d-flex align-items-center">
-                        <a href="games/show-games.php" class="btn btn-primary">Add New Games?</a>
-                    </div>
-                </div>
-                <!-- new games link end -->
-
-                <!-- spacer start -->
-                <div class="col-2"></div>
-                <!-- spacer end -->
+            <div class="row mb-1">
 
                 <!-- search box start -->
-                <div class="col-5">
+                <div class="col-5 offset-7">
                     <form action="customers/search-customers.php" method="get">
                         <div class="my-2 d-flex align-items-center justify-content-between">
                             <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
