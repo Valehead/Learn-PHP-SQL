@@ -21,7 +21,12 @@ require_once "actions/games/display-games.php";
         <script src="public/js/newCustForm.js"></script>
     </head>
     <body>
-
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">Rip N Ship</a>
+            </div>
+        </nav>
 
         <main class="container mt-4">
             <!-- start of header row -->
