@@ -1,5 +1,5 @@
 <?php
-require_once '../connect.php';
+require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/connect.php');
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -11,11 +11,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     {
         //create the query, execute and save the result
         $result = $conn->query("DELETE FROM `customers` WHERE `id` = {$delItem};");
+        
+        //reset all games played for this user
+        $clearResult = $conn->query("DELETE FROM `gamesPlayed` WHERE `customerId` = '{$delItem}';");
+    
     };
 
     if($result){
         //redirect to home page
-        header('Location: ../index.php');
+        header('Location: ../../index.php');
         
         //close the connection
         $conn->close();

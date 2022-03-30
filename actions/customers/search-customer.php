@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ .'/../connect.php');
+require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/connect.php');
 
 
 function search_customers(){
@@ -55,8 +55,8 @@ function search_customers(){
 
             // create a card for the data of each row
             while($row = $result->fetch_assoc()) {
-            echo "<tr>
-                    <th scope='row'><a href='/Learn-PHP-SQL/customers/edit-customer.php?id={$row['id']}'>{$row['id']}</a></th>
+            echo "<tr id='customer'>
+                    <th scope='row'><a href='/Learn-PHP-SQL/customers/view-customer.php?id={$row['id']}'>{$row['id']}</a></th>
                     <td>{$row['firstName']}</td>
                     <td>{$row['lastName']}</td>
                     <td>{$row['phone']}</td>
@@ -91,8 +91,8 @@ function customer_search(){
         //build and execute query
         $result = $conn->query("SELECT * FROM `customers` WHERE `id` = '{$customerId}';");
         
-        //close active connection
-        $conn->close();
+        //don't close active connection because we still need to find games
+        //$conn->close();
 
         //if sql returned something
         if($result){

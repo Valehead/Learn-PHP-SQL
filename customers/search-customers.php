@@ -1,5 +1,5 @@
 <?php
-    require_once "../actions/search-customer.php";
+    require_once "../actions/customers/search-customer.php";
     
     //get the id out of the url
     //$search = $_GET['searchBox'];
@@ -19,7 +19,58 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../public/stylesheets/index.css">
+        
+        <script>
+            //function for filtering the customer cards being shown
+            function mySearchFilter() {
+                
+                //declare variables
+                var input, filter, customerCards, customerInfos, info, i, f, infosValue;
+
+                //get the search input
+                input = document.getElementById("mySearch");
+
+                //filter the search
+                filter = input.value.toUpperCase();
+
+                //get ALL of the customers
+                customerCards = document.querySelectorAll('#customer');
+
+                //loop over ALL the customers
+                for (i = 0; i < customerCards.length; i++) {
+
+                    //get ALL of the customer info stored in the td's
+                    customerInfos = customerCards[i].getElementsByTagName('td');
+                
+                    //loop over ALL of the info in each row
+                    for(f=0; f < customerInfos.length; f++){
+
+                        //get the data in each element
+                        info = customerInfos[f].textContent;
+
+                        if(info) {
+
+                            //make the data uppercase for easy comparison
+                            infosValue = info.toUpperCase();
+                        };
+
+                        //if the filtered search data exists inside ANY of the customer values
+                        if (infosValue.indexOf(filter) > -1) {
+
+                            //set the display to visible and don't check the rest of that customer's values
+                            customerCards[i].style.display = "";
+                            break;
+
+                        } else {
+                            //if no match, hide the customer
+                            customerCards[i].style.display = "none";
+                        };
+                    };
+                };                
+
+            };
+        </script>    
     </head>
     <body>
 
@@ -51,7 +102,7 @@
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
                             <th scope="col">Phone</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Email address</th>
                             <th scope="col">Birthday</th>
                         </tr>
                     </thead>

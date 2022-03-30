@@ -6,3 +6,7 @@
 #mySearch {
     width: 16rem;
 }
+
+#newCustGames {
+    display: none;
+}
