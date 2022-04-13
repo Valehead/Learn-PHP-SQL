@@ -14,7 +14,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/customers/search-customers.php") { echo 'active'; }; ?>" href="/Learn-PHP-SQL/customers/search-customers.php">Customers</a>
+                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/customers/search-customers.php" || $_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/customers/view-customer.php") { echo 'active'; }; ?>" href="/Learn-PHP-SQL/customers/search-customers.php">Customers</a>
                 </li>
                 
                 <li class="nav-item">
