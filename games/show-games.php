@@ -98,7 +98,7 @@
                             <form action="../actions/games/create-game.php" method="POST">
                                 <div class="mt-3">
                                     <input type="text" name="gameTitle" id="newGame" placeholder="New Game Title..." required>
-                                    <button type="submit" class="btn btn-secondary btn-sm mt-3" id="submit">Add Game!</button>
+                                    <button type="submit" class="btn btn-secondary btn-sm mt-3 d-block" id="submit">Add Game!</button>
                                 </div>
                             </form>
                         </div>
