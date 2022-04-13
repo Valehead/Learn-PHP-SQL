@@ -22,7 +22,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/games/show-games.php" || $_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/games/edit-games.php") { echo 'active'; }; ?>" 
+                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/games/show-games.php" || $_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/games/edit-game.php") { echo 'active'; }; ?>" 
                     href="/Learn-PHP-SQL/games/show-games.php">Games</a>
                 </li>
                 
