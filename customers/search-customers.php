@@ -86,7 +86,7 @@
                 <!-- search box -->
                 <form action="search-customers.php" method="get">
                     <div class="my-2 d-flex align-items-center">
-                        <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
+                        <input type="search" class="form-control" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
                         <button type="submit" class="btn btn-secondary btn-sm ms-2" id="submit">Search!</button>
                     </div>
                 </form>
