@@ -75,22 +75,6 @@
 
         <main class="container mt-4">
 
-            start navigation row -->
-            <div class="row mb-2 d-flex align-items-center justify-content-between">
-
-                <div class="col-4">
-                    <a href="/Learn-PHP-SQL" class="btn btn-secondary">&#8592; Back to Home</a>
-                </div>
-
-                <div class="col-4 offset-4">
-                <!-- search box -->
-                    <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
-                <!-- search box end -->
-                </div>
-
-            </div>
-            <!-- end navigation row
-
             <!-- game display grid start -->
             <div class="row mt-5">
                 <!-- start of new game form -->
