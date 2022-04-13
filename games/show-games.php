@@ -75,7 +75,7 @@
 
         <main class="container mt-4">
 
-            <!-- start navigation row -->
+            start navigation row -->
             <div class="row mb-2 d-flex align-items-center justify-content-between">
 
                 <div class="col-4">
@@ -89,12 +89,12 @@
                 </div>
 
             </div>
-            <!-- end navigation row -->
+            <!-- end navigation row
 
             <!-- game display grid start -->
             <div class="row mt-5">
                 <!-- start of new game form -->
-                <div class="col-3 offset-2">
+                <div class="col-4 offset-1">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Add a new Game?</h5>
@@ -125,6 +125,13 @@
                     </table>
                 </div>
                 <!-- end of games table -->
+
+                <div class="col-4">
+                <!-- search box -->
+                    <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
+                <!-- search box end -->
+                </div>
+
             </div>
             <!-- game display grid end -->
 
