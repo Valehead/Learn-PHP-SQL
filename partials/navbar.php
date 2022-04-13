@@ -34,7 +34,7 @@
 
 
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
-                <input class="form-control me-2" name="searchBox" type="search" id="mySearch" placeholder="Search Customers..." aria-label="Search">
+                <input class="form-control me-2" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
                 <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
             </form>
         </div>
