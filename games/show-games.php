@@ -78,7 +78,7 @@
             <!-- game display grid start -->
             <div class="row mt-5">
                 <!-- start of new game form -->
-                <div class="col-3">
+                <div class="col-3 offset-1">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Add a new Game?</h5>
@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- start of games table -->
-                <div class="col-3 offset-1">
+                <div class="col-3">
                     <table class="table border">
                         <thead>
                             <tr>
