@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- start of games table -->
-                <div class="col-3 offset-1">
+                <div class="col-3">
                     <table class="table border">
                         <thead>
                             <tr>
