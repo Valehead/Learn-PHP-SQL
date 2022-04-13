@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL") { echo 'active'; }; ?>" aria-current="page" href="/Learn-PHP-SQL/">Home</a>
+                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/index.php") { echo 'active'; }; ?>" aria-current="page" href="/Learn-PHP-SQL/">Home</a>
                 </li>
                 <?php echo $_SERVER['SCRIPT_NAME']; ?>
                 
