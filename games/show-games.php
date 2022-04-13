@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- start of games table -->
-                <div class="col-3">
+                <div class="col-2">
                     <table class="table border">
                         <thead>
                             <tr>
