@@ -15,6 +15,7 @@
                 
                 <li class="nav-item">
                     <a class="nav-link<?php if($_SERVER['SCRIPT_NAME']=="/search-customers.php") { echo 'active'; };?>" href="/Learn-PHP-SQL/customers/search-customers.php">Customers</a>
+                    <?php echo $_SERVER['SCRIPT_NAME'];?>
                 </li>
                 
                 <li class="nav-item">
