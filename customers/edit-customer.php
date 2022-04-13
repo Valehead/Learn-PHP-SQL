@@ -22,7 +22,7 @@
     </head>
     <body>
 
-
+    <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/partials/navbar.php") ?>
 
         <main class="container mt-5">
             <div class="row d-flex justify-content-center align-items-center">

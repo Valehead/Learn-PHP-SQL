@@ -74,10 +74,12 @@
     </head>
     <body>
 
+    <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/partials/navbar.php") ?>
+
     <main class="container mt-5">
         <div class="row">
             <div class="col-5">
-                <a href="/Learn-PHP-SQL/"><button class="btn btn-primary">Back to Home</button></a>
+                <a href="/Learn-PHP-SQL/"><button class="btn btn-primary">Add New Customer</button></a>
             </div>
 
             <div class="col-4 offset-3">
