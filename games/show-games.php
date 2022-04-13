@@ -95,6 +95,7 @@
                 <!-- end of new game form -->
 
                 <div class="col-3">
+                    <label for="mySearch">First, try searching to see if it already exists!</label>
                 <!-- search box -->
                     <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
                 <!-- search box end -->
