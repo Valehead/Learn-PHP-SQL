@@ -78,7 +78,7 @@
             <!-- game display grid start -->
             <div class="row mt-5">
                 <!-- start of new game form -->
-                <div class="col-3 offset-1">
+                <div class="col-3">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Add a new Game?</h5>
@@ -94,14 +94,19 @@
                 </div>
                 <!-- end of new game form -->
 
+                <div class="col-3">
+                <!-- search box -->
+                    <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
+                <!-- search box end -->
+                </div>
+
                 <!-- start of games table -->
-                <div class="col-6">
+                <div class="col-3 offset-1">
                     <table class="table border">
                         <thead>
                             <tr>
                                 <th scope="col">Id#</th>
                                 <th scope="col">Game Title</th>
-                                <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
                             </tr>
                         </thead>
                         <tbody>
