@@ -12,6 +12,7 @@
                 <li class="nav-item">
                     <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL") { echo 'active'; }; ?>" aria-current="page" href="/Learn-PHP-SQL/">Home</a>
                 </li>
+                <?php echo $_SERVER['SCRIPT_NAME']; ?>
                 
                 <li class="nav-item">
                     <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/customers/search-customers.php") { echo 'active'; }; ?>" href="/Learn-PHP-SQL/customers/search-customers.php">Customers</a>
