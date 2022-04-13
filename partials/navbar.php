@@ -10,15 +10,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/Learn-PHP-SQL/">Home</a>
+                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL") { echo 'active'; }; ?>" aria-current="page" href="/Learn-PHP-SQL/">Home</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/customers/search-customers.php") { echo 'active'; };?>" href="/Learn-PHP-SQL/customers/search-customers.php">Customers</a>
+                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/customers/search-customers.php") { echo 'active'; }; ?>" href="/Learn-PHP-SQL/customers/search-customers.php">Customers</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/Learn-PHP-SQL/games/show-games.php">Games</a>
+                    <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/games/show-games.php") { echo 'active'; }; ?>" href="/Learn-PHP-SQL/games/show-games.php">Games</a>
                 </li>
                 
                 <li class="nav-item">
