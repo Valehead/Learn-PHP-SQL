@@ -94,14 +94,14 @@
                 </div>
                 <!-- end of new game form -->
 
-                <div class="col-4">
+                <div class="col-3">
                 <!-- search box -->
                     <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
                 <!-- search box end -->
                 </div>
 
                 <!-- start of games table -->
-                <div class="col-2">
+                <div class="col-3">
                     <table class="table border">
                         <thead>
                             <tr>
