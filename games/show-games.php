@@ -75,10 +75,22 @@
 
         <main class="container mt-4">
 
+            <!-- start navigation row -->
+            <div class="row mb-2 d-flex align-items-center justify-content-between">
+
+                <div class="col-4 offset-8">
+                <!-- search box -->
+                    <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
+                <!-- search box end -->
+                </div>
+
+            </div>
+            <!-- end navigation row -->
+
             <!-- game display grid start -->
             <div class="row mt-5">
                 <!-- start of new game form -->
-                <div class="col-3 offset-1">
+                <div class="col-3 offset-3">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Add a new Game?</h5>
@@ -94,15 +106,9 @@
                 </div>
                 <!-- end of new game form -->
 
-                <div class="col-3 d-flex justify-content-center">
-                    <label for="mySearch">First, search to see if the desired game already exists!</label>
-                <!-- search box -->
-                    <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
-                <!-- search box end -->
-                </div>
 
                 <!-- start of games table -->
-                <div class="col-3">
+                <div class="col-3 offset-2">
                     <table class="table border">
                         <thead>
                             <tr>
