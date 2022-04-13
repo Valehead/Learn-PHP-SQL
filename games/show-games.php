@@ -100,7 +100,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">Id#</th>
-                                <th scope="col">Game Title <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title..."></th>
+                                <th scope="col">Game Title</th>
+                                <input type="text" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search by Title...">
                             </tr>
                         </thead>
                         <tbody>
