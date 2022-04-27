@@ -27,15 +27,21 @@
                     href="/Learn-PHP-SQL/games/show-games.php">Games</a>
                 </li>
                 
-                <li class="nav-item">
-                    <a class="nav-link disabled">Accounts</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/accounts/login.php" || 
+                    $_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/accounts/signup.php") { echo 'active'; }; ?>"
+                     id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Accounts</a>
+                    
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a href="/Learn-PHP-SQL/accounts/login.php" class="dropdown-item">Login</a></li>
+                        <li><a href="/Learn-PHP-SQL/accounts/signup.php" class="dropdown-item">Sign Up</a></li>
+                    </ul>
                 </li>
             </ul>
 
 
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
                 <input class="form-control me-2" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
             </form>
         </div>
     </div>
