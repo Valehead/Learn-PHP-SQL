@@ -1,6 +1,6 @@
 <?php
-    require_once "../actions/customers/search-customer.php";
-    require_once "../actions/games/display-games.php";
+    require_once "../src/libs/customers/search-customer.php";
+    require_once "../src/libs/games/display-games.php";
     
     $customer = customer_search();
 
@@ -29,7 +29,7 @@
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <form action="../actions/customers/update-customer.php" method="POST">
+                            <form action="../src/libs/customers/update-customer.php" method="POST">
 
                                 <div class="mb-3">
                                     <label for="id" class="form-label">Customer Id:</label>
@@ -81,7 +81,7 @@
                                     </form>
                                     <a href="/Learn-PHP-SQL"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
                                     
-                                    <form action="../actions/customers/delete-customer.php" method="post">
+                                    <form action="../src/libs/customers/delete-customer.php" method="post">
                                         <button type="submit" class="btn btn-danger" name="deleteItem" value="<?php echo $customer['id']; ?>" onClick="">Delete?</button>
                                     </form>
                                     

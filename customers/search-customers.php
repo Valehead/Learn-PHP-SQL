@@ -1,5 +1,5 @@
 <?php
-    require_once "../actions/customers/search-customer.php";
+    require_once "../src/libs/customers/search-customer.php";
     
     //get the id out of the url
     //$search = $_GET['searchBox'];

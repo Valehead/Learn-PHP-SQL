@@ -1,5 +1,5 @@
 <?php
-    require_once "../actions/games/search-game.php";
+    require_once "../src/libs/games/search-game.php";
     
     //get the id out of the url
     //$gameId = $_GET['id'];
@@ -31,7 +31,7 @@
                 <div class="col-5">
                     <div class="card">
                         <div class="card-body">
-                            <form action="../actions/games/update-game.php" method="POST">
+                            <form action="../src/libs/games/update-game.php" method="POST">
 
                                 <div class="mb-3">
                                     <label for="id" class="form-label">Game Id:</label>
@@ -48,7 +48,7 @@
                                     </form>
                                     <a href="/Learn-PHP-SQL/games/show-games.php"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
                                     
-                                    <form action="../actions/games/delete-game.php" method="post">
+                                    <form action="../src/libs/games/delete-game.php" method="post">
                                         <button type="submit" class="btn btn-danger" name="deleteGame" value="<?php echo $game['id']; ?>" onClick="">Delete?</button>
                                     </form>
                                     
