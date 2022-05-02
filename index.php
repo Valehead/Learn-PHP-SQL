@@ -1,6 +1,6 @@
 <?php
-require_once "actions/customers/display-customers.php";
-require_once "actions/games/display-games.php";
+require_once "src/libs/customers/display-customers.php";
+require_once "src/libs/games/display-games.php";
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -55,7 +55,7 @@ require_once "actions/games/display-games.php";
                         <div class="card-body" id="newCustCard">
                             
                             <!-- start of new customer form -->
-                            <form action="actions/customers/create-customer.php" method="POST" class="needs-validation" novalidate>
+                            <form action="src/libs/customers/create-customer.php" method="POST" class="needs-validation" novalidate>
                                 
                                 <!-- start of customer info -->
                                 <div id="newCustInfo">
