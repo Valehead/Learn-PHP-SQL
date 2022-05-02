@@ -74,7 +74,7 @@
     </head>
     <body>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/partials/navbar.php") ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/src/inc/navbar.php") ?>
 
     <main class="container mt-5">
         <div class="row">

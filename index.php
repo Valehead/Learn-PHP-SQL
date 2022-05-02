@@ -22,7 +22,7 @@ require_once "src/libs/games/display-games.php";
     </head>
     <body>
         
-        <?php include("partials/navbar.php") ?>
+        <?php include("src/inc/navbar.php") ?>
 
         <main class="container mt-4">
             <!-- start of header row -->
