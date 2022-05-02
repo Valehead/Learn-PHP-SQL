@@ -1,6 +1,6 @@
 <?php
-    require_once "../src/libs/customers/search-customer.php";
-    require_once "../src/libs/games/search-game.php";
+    require_once "../actions/customers/search-customer.php";
+    require_once "../actions/games/search-game.php";
     
     //get the id out of the url
     //$customerId = $_GET['id'];

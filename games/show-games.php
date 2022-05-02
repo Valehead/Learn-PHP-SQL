@@ -1,5 +1,5 @@
 <?php
-    require_once "../src/libs/games/search-game.php";
+    require_once "../actions/games/search-game.php";
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +95,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Add a new Game?</h5>
 
-                            <form action="../src/libs/games/create-game.php" method="POST">
+                            <form action="../actions/games/create-game.php" method="POST">
                                 <div class="mt-3">
                                     <input type="search" class="form-control" name="gameTitle" id="newGame" placeholder="New Game Title..." required>
                                     <button type="submit" class="btn btn-secondary btn-sm mt-3 d-block" id="submit">Add Game!</button>
