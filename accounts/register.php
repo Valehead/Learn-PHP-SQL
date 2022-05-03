@@ -32,7 +32,7 @@ require_once "../src/libs/helpers.php";
                         <div class="card-body">
                             <form action="../src/libs/customers/update-customer.php" method="POST">
 
-                                <div class="mb-3">
+                                <div class="mb-3 d-flex justify-content-center">
                                     <h2 class="card-title">Sign Up</h1>
                                 </div>
                                 
