@@ -29,12 +29,12 @@
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/accounts/login.php" || 
-                    $_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/accounts/signup.php") { echo 'active'; }; ?>"
+                    $_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/accounts/register.php") { echo 'active'; }; ?>"
                      id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Accounts</a>
                     
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a href="/Learn-PHP-SQL/accounts/login.php" class="dropdown-item">Login</a></li>
-                        <li><a href="/Learn-PHP-SQL/accounts/signup.php" class="dropdown-item">Sign Up</a></li>
+                        <li><a href="/Learn-PHP-SQL/accounts/register.php" class="dropdown-item">Sign Up</a></li>
                     </ul>
                 </li>
             </ul>
