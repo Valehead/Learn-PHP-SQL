@@ -56,12 +56,12 @@ require_once "../src/libs/helpers.php";
                                     <input type="password" name="password" id="password2" class="form-control" required>
                                 </div>
 
+                                <p>Already have an account? <a href="login.php">Login Here.</a></p>
 
                                 <div class="mb-2 d-flex justify-content-between">
                                     <button type="submit" class="btn btn-info" name="submit" id="submit">Submit</button>
                                     </form>
                                     
-                                    <p>Already have an account? <a href="login.php">Login Here.</a></p>
                                     
                                 </div>
                                 
