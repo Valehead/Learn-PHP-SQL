@@ -23,9 +23,9 @@ require_once "../src/libs/helpers.php";
     </head>
     
     <style>
-    p {
-        font-size: 1em;
-    }
+        p {
+            font-size: 0.75em;
+        }
     </style>
     
     <body>
@@ -42,16 +42,16 @@ require_once "../src/libs/helpers.php";
                                 <div class="mb-3 d-flex justify-content-center">
                                     <h2 class="card-title">Sign Up</h1>
                                 </div>
-                                
-                                <div class="mb-3">
-                                    <label for="firstName" class="form-label">Username:</label>
-                                    <input type="text" name="firstName" id="firstName" class="form-control" required>
-                                </div>
 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email:</label>
                                     <input type="email" name="email" id="email" class="form-control" required>
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username:</label>
+                                    <input type="text" name="username" id="username" class="form-control" required>
+                                </div>                                
 
                                 <div class="mb-3">
                                     <label for="password1" class="form-label">Password:</label>
