@@ -21,6 +21,13 @@ require_once "../src/libs/helpers.php";
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
+    
+    <style>
+    p {
+        font-size: 1em;
+    }
+    </style>
+    
     <body>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/src/inc/navbar.php") ?>
@@ -56,7 +63,7 @@ require_once "../src/libs/helpers.php";
                                     <input type="password" name="password" id="password2" class="form-control" required>
                                 </div>
 
-                                <p>Already have an account? <a href="login.php">Login Here.</a></p>
+                                <p style="">Already have an account? <a href="login.php">Login Here.</a></p>
 
                                 <div class="mb-2 d-flex justify-content-center">
                                     <button type="submit" class="btn-lg btn-info" name="submit" id="submit">Register!</button>
