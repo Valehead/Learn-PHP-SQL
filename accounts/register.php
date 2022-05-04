@@ -37,47 +37,28 @@ require_once "../src/libs/helpers.php";
                                 </div>
                                 
                                 <div class="mb-3">
-                                    <label for="firstName" class="form-label">First Name:</label>
-                                    <input type="text" name="firstName" id="firstName" class="form-control" value="<?php echo $customer['firstName']; ?>" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="lastName" class="form-label">Last Name:</label>
-                                    <input type="text" name="lastName" id="lastName" class="form-control" value="<?php echo $customer['lastName']; ?>" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">Phone Number:</label>
-                                    <input type="text" name="phone" id="phone" class="form-control" value="<?php echo $customer['phone']; ?>" required>
-
+                                    <label for="firstName" class="form-label">Username:</label>
+                                    <input type="text" name="firstName" id="firstName" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email:</label>
-                                    <input type="email" name="email" id="email" class="form-control" value="<?php echo $customer['email']; ?>" required>
+                                    <input type="email" name="email" id="email" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="birthday" class="form-label">Birthday:</label>
-                                    <input type="date" name="birthday" id="birthday" class="form-control" value="<?php echo $customer['birthday']; ?>" required>
+                                    <label for="password1" class="form-label">Password:</label>
+                                    <input type="password" name="password" id="password1" class="form-control" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="password2" class="form-label">Re-Enter Password:</label>
+                                    <input type="password" name="password" id="password2" class="form-control" required>
                                 </div>
 
-                                <!-- start of games choices -->
-                                <div class="d-flex flex-wrap justify-content-center mb-3" id="newCustGames">
 
-                                    <h3 class="card-title mb-3">What games do they play?</h3>
-
-                                    <!-- display games and check the ones they play-->
-
-                                    <?php display_games(); ?>
-
-                                    <!-- end of games -->
-
-                                </div>
-
-                                <!-- end of games choices -->
                                 <div class="mb-2 d-flex justify-content-between">
-                                    <button type="submit" class="btn btn-info" name="submit" id="submit">Update</button>
+                                    <button type="submit" class="btn btn-info" name="submit" id="submit">Submit</button>
                                     </form>
                                     <a href="/Learn-PHP-SQL"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
                                     
