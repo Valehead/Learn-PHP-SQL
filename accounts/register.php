@@ -58,8 +58,8 @@ require_once "../src/libs/helpers.php";
 
                                 <p>Already have an account? <a href="login.php">Login Here.</a></p>
 
-                                <div class="mb-2 d-flex justify-content-between">
-                                    <button type="submit" class="btn btn-info" name="submit" id="submit">Submit</button>
+                                <div class="mb-2 d-flex justify-content-center">
+                                    <button type="submit" class="btn-lg btn-info" name="submit" id="submit">Register!</button>
                                     </form>
                                     
                                     
