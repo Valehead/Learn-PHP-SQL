@@ -60,10 +60,9 @@ require_once "../src/libs/helpers.php";
                                 <div class="mb-2 d-flex justify-content-between">
                                     <button type="submit" class="btn btn-info" name="submit" id="submit">Submit</button>
                                     </form>
-                                    <a href="/Learn-PHP-SQL"><button type="button" class="btn btn-secondary" ignore onClick="">Cancel</button></a>
                                     
                                     <form action="../src/libs/customers/delete-customer.php" method="post">
-                                        <button type="submit" class="btn btn-danger" name="deleteItem" value="<?php echo $customer['id']; ?>" onClick="">Delete?</button>
+                                        <button type="submit" class="btn btn-danger" name="deleteItem" value="" onClick="">Delete?</button>
                                     </form>
                                     
                                 </div>
