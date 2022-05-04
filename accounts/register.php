@@ -28,7 +28,7 @@ require_once "../src/libs/helpers.php";
         <main class="container mt-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-5">
-                    <div class="card">
+                    <div class="card mt-5">
                         <div class="card-body">
                             <form action="../src/libs/customers/update-customer.php" method="POST">
 
@@ -61,9 +61,7 @@ require_once "../src/libs/helpers.php";
                                     <button type="submit" class="btn btn-info" name="submit" id="submit">Submit</button>
                                     </form>
                                     
-                                    <form action="../src/libs/customers/delete-customer.php" method="post">
-                                        <button type="submit" class="btn btn-danger" name="deleteItem" value="" onClick="">Delete?</button>
-                                    </form>
+                                    <p>Already have an account? <a href="login.php">Login Here.</a></p>
                                     
                                 </div>
                                 
