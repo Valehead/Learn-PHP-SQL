@@ -75,7 +75,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
                                      <small><?= $errors['password2'] ?? '' ?></small>
                                 </div>
 
-                                <div>
+                                <div class="mb-3">
                                     <label for="agree">
                                         <input type="checkbox" name="agree" id="agree" value="checked" <?= $inputs['agree'] ?? '' ?> >
                                         I
@@ -86,13 +86,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
                                     <small><?= $errors['agree'] ?? '' ?></small>
                                 </div>
 
-                                <div class="mb-2 d-flex justify-content-center">
+                                <div class="mb-4 d-flex justify-content-center">
                                     <button type="submit" class="btn-lg btn-info" name="submit" id="submit">Register!</button>
                                     </form>                                    
                                     
                                 </div>
-                                
-                                <p style="">Already have an account? <a href="login.php">Login Here.</a></p>
+
+                                <p>Already have an account? <a href="login.php">Login Here.</a></p>
                                 
                         </div>
                         <!-- end of card body -->
