@@ -81,19 +81,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
                                         I
                                         agree
                                         with the
-                                        <a href="#" title="term of services">term of services</a>
+                                        <a href="#" title="term of services">terms of service.</a>
                                     </label>
                                     <small><?= $errors['agree'] ?? '' ?></small>
                                 </div>
 
-                                <p style="">Already have an account? <a href="login.php">Login Here.</a></p>
-
                                 <div class="mb-2 d-flex justify-content-center">
                                     <button type="submit" class="btn-lg btn-info" name="submit" id="submit">Register!</button>
-                                    </form>
-                                    
+                                    </form>                                    
                                     
                                 </div>
+                                
+                                <p style="">Already have an account? <a href="login.php">Login Here.</a></p>
                                 
                         </div>
                         <!-- end of card body -->
