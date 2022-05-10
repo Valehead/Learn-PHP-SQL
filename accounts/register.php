@@ -1,11 +1,3 @@
-<?php
-
-require_once "../src/libs/helpers.php";
-
-
-
-?>
-
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -37,30 +29,53 @@ require_once "../src/libs/helpers.php";
                 <div class="col-5">
                     <div class="card mt-5">
                         <div class="card-body">
-                            <form action="../src/libs/customers/update-customer.php" method="POST">
+                            <form action="../src/libs/accounts/register.php" method="POST">
 
                                 <div class="mb-3 d-flex justify-content-center">
-                                    <h2 class="card-title">Sign Up</h1>
+                                    <h2 class="card-title">Sign Up</h2>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email:</label>
-                                    <input type="email" name="email" id="email" class="form-control" required>
+                                    <input type="email" name="email" id="email" class="form-control <?= error_class($errors, 'email') ?>"
+                                     value="<?= $inputs['email'] ?? '' ?>" required>
+
+                                     <small><?= $errors['email'] ?? '' ?></small>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username:</label>
-                                    <input type="text" name="username" id="username" class="form-control" required>
+                                    <input type="text" name="username" id="username" class="form-control <?= error_class($errors, 'username') ?>"
+                                     value="<?= $inputs['username'] ?? '' ?>" required>
+
+                                     <small><?= $errors['username'] ?? '' ?></small>
                                 </div>                                
 
                                 <div class="mb-3">
-                                    <label for="password1" class="form-label">Password:</label>
-                                    <input type="password" name="password" id="password1" class="form-control" required>
+                                    <label for="password" class="form-label">Password:</label>
+                                    <input type="password" name="password" id="password" class="form-control <?= error_class($errors, 'password') ?>"
+                                     value="<?= $inputs['password'] ?? '' ?>" required>
+
+                                     <small><?= $errors['password'] ?? '' ?></small>
                                 </div>
                                 
                                 <div class="mb-3">
                                     <label for="password2" class="form-label">Re-Enter Password:</label>
-                                    <input type="password" name="password" id="password2" class="form-control" required>
+                                    <input type="password" name="password2" id="password2" class="form-control <?= error_class($errors, 'password2') ?>"
+                                     value="<?= $inputs['password2'] ?? '' ?>" required>
+
+                                     <small><?= $errors['password2'] ?? '' ?></small>
+                                </div>
+
+                                <div>
+                                    <label for="agree">
+                                        <input type="checkbox" name="agree" id="agree" value="checked" <?= $inputs['agree'] ?? '' ?> >
+                                        I
+                                        agree
+                                        with the
+                                        <a href="#" title="term of services">term of services</a>
+                                    </label>
+                                    <small><?= $errors['agree'] ?? '' ?></small>
                                 </div>
 
                                 <p style="">Already have an account? <a href="login.php">Login Here.</a></p>
