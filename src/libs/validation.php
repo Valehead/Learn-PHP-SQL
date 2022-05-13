@@ -220,5 +220,5 @@ function is_unique(array $data, string $field, string $table, string $column): b
 
     print_r($stmt->get_result());
 
-    return $stmt->fetchColumn() === false;
+    return $stmt->num_rows == 0;
 }
