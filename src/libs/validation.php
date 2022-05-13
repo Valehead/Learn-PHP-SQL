@@ -206,7 +206,7 @@ function is_secure(array $data, string $field): bool
 function is_unique(array $data, string $field, string $table, string $column): bool
 {
     global $conn;
-
+echo "hello";
     if (!isset($data[$field])) {
         return true;
     }
