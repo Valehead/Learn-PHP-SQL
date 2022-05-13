@@ -1,5 +1,4 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/connect.php');
 
 
 const DEFAULT_VALIDATION_ERRORS = [
@@ -206,6 +205,8 @@ function is_secure(array $data, string $field): bool
 */
 function is_unique(array $data, string $field, string $table, string $column): bool
 {
+    global $conn;
+
     if (!isset($data[$field])) {
         return true;
     }
