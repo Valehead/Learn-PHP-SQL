@@ -22,6 +22,8 @@ function filter(array $data, array $fields, array $messages = []): array
         }
     }
 
+    print_r($sanitization);
+
     $inputs = sanitize($data, $sanitization);
     $errors = validate($inputs, $validation, $messages);
 
