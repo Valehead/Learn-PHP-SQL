@@ -1,7 +1,6 @@
 <?php
 
 //tie in our session and all our helper files
-require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/register.php');
 
 ?>
