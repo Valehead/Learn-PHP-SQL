@@ -53,6 +53,7 @@ function array_trim(array $items): array
 */
 function sanitize(array $inputs, array $fields = [], int $default_filter = FILTER_SANITIZE_STRING, array $filters = FILTERS, bool $trim = true): array
 {
+    fn($field) => $filters[$field];
     print_r($fields);
     echo "hi";
     if ($fields) {
