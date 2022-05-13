@@ -211,10 +211,10 @@ function is_unique(array $data, string $field, string $table, string $column): b
         return true;
     }
 
-    $sql = "SELECT $column FROM $table WHERE $column = :value";
+    $sql = "SELECT $column FROM $table WHERE $column = ?";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bindValue(":value", $data[$field]);
+    $stmt->bind_param("i", $data[$field]);
 
     $stmt->execute();
 
