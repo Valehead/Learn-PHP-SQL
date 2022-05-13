@@ -1,14 +1,14 @@
 <?php
 const FILTERS = [
-    'string' => FILTER_SANITIZE_STRING,
-    'string[]' => [
-        'filter' => FILTER_SANITIZE_STRING,
-        'flags' => FILTER_REQUIRE_ARRAY
-    ],
     'email' => FILTER_SANITIZE_EMAIL,
     'int' => [
         'filter' => FILTER_SANITIZE_NUMBER_INT,
         'flags' => FILTER_REQUIRE_SCALAR
+    ],
+    'string' => FILTER_SANITIZE_STRING,
+    'string[]' => [
+        'filter' => FILTER_SANITIZE_STRING,
+        'flags' => FILTER_REQUIRE_ARRAY
     ],
     'int[]' => [
         'filter' => FILTER_SANITIZE_NUMBER_INT,
@@ -51,7 +51,7 @@ function array_trim(array $items): array
 * @param bool $trim
 * @return array
 */
-function sanitize(array $inputs, array $fields = [], int $default_filter = FILTER_SANITIZE_STRING, array $filters = FILTERS, bool $trim = true): array
+function sanitize(array $inputs, array $fields = [], $default_filter = FILTER_SANITIZE_STRING, $filters = FILTERS, bool $trim = true): array
 {
     if ($fields) {
         $options = array_map(fn($field) => $filters[$field], $fields);
