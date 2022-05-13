@@ -213,7 +213,7 @@ function is_unique(array $data, string $field, string $table, string $column): b
 
     $sql = "SELECT $column FROM $table WHERE $column = :value";
 
-    $stmt = conn()->prepare($sql);
+    $stmt = $conn->prepare($sql);
     $stmt->bindValue(":value", $data[$field]);
 
     $stmt->execute();
