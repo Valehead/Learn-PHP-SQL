@@ -206,7 +206,7 @@ function is_secure(array $data, string $field): bool
 function is_unique(array $data, string $field, string $table, string $column): bool
 {
     global $conn;
-echo "hello";
+
     if (!isset($data[$field])) {
         return true;
     }
@@ -217,6 +217,8 @@ echo "hello";
     $stmt->bind_param("i", $data[$field]);
 
     $stmt->execute();
+
+    echo $stmt->get_result();
 
     return $stmt->fetchColumn() === false;
 }
