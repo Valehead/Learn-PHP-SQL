@@ -218,7 +218,7 @@ function is_unique(array $data, string $field, string $table, string $column): b
 
     $stmt->execute();
 
-    print_r($stmt->get_result());
+    //print_r($stmt->get_result());
 
     return $stmt->num_rows == 0;
 }
