@@ -1,6 +1,4 @@
 <?php
-// require the sql config data
-require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/connect.php');
 
 
 function register_user(string $email, string $username, string $password, bool $is_admin = false): bool {
