@@ -51,8 +51,10 @@ function array_trim(array $items): array
 * @param bool $trim
 * @return array
 */
-function sanitize(array $inputs, array $fields = [], $default_filter = FILTER_SANITIZE_STRING, $filters = FILTERS, bool $trim = true): array
+function sanitize(array $inputs, array $fields = [], int $default_filter = FILTER_SANITIZE_STRING, array $filters = FILTERS, bool $trim = true): array
 {
+    print_r($fields);
+    echo "hi";
     if ($fields) {
         $options = array_map(fn($field) => $filters[$field], $fields);
         $data = filter_var_array($inputs, $options);
