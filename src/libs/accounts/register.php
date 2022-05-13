@@ -11,8 +11,8 @@ if(is_post_request()){
 
     //set the rules for the fields
     $fields = [
-        'username' => 'string | required | alphanumeric | between: 3, 25 | unique: users, username',
         'email' => 'email | required | email | unique: users, email',
+        'username' => 'string | required | alphanumeric | between: 3, 25 | unique: users, username',
         'password' => 'string | required | secure',
         'password2' => 'string | required | same: password',
         'agree' => 'string | required'
