@@ -36,7 +36,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
                 <div class="col-5">
                     <div class="card mt-5">
                         <div class="card-body">
-                            <form action="../src/libs/accounts/register.php" method="POST">
+                            <form action="register.php" method="POST">
 
                                 <div class="mb-3 d-flex justify-content-center">
                                     <h2 class="card-title">Sign Up</h2>
