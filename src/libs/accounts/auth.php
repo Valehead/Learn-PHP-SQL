@@ -1,7 +1,7 @@
 <?php
 
 
-function register_user(string $email, string $username, string $password, bool $is_admin = false): bool {
+function register_user(string $email, string $username, string $password, int $is_admin = 0): bool {
 
     global $conn;
     echo "hi";
