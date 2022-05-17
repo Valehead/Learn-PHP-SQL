@@ -48,6 +48,7 @@ function redirect_with(string $url, array $items): void
 
 function redirect_with_message(string $url, string $message, string $type=FLASH_SUCCESS)
 {
+    echo "hi";
     echo $message;
     flash('flash_' . uniqid(), $message, $type);
     redirect_to($url);
