@@ -3,6 +3,8 @@
 
 function register_user(string $email, string $username, string $password, bool $is_admin = false): bool {
 
+    global $conn;
+
     $user = array(
         "email" => $email,
         "username" => $username,
