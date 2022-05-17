@@ -23,6 +23,7 @@ function register_user(string $email, string $username, string $password, bool $
     $result = $conn->query("INSERT INTO `users` (`email`, `username`, `password`, `is_admin`) 
     VALUES ('{$user['email']}', '{$user['username']}', '{$user['password']}', '{$is_admin}');");
     
+    echo $result;
 
     //return the success or fail
     return $result;
