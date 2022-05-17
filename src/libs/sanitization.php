@@ -56,6 +56,7 @@ function sanitize(array $inputs, array $fields = [], int $default_filter = FILTE
     //$options = array_map(fn($field) => $filters[$field], $fields);
     print_r($fields);
     echo "hi";
+    print_r($filters);
     if ($fields) {
         $options = array_map(fn($field) => $filters[$field], $fields);
         $data = filter_var_array($inputs, $options);
