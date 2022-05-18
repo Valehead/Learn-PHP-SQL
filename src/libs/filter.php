@@ -1,31 +1,31 @@
 <?php
 
 
-/**
- * Sanitize and validate data
- * @param array $data
- * @param array $fields
- * @param array $messages
- * @return array
- */
-function filter(array $data, array $fields, array $messages = []): array
+
+function filter(array $userData): array
 {
-    $sanitization = [];
-    $validation = [];
+    $errors = [];
+    
+    if(!is_email($userData['email'])){
+        $errors['email'] = 'This is not a valid email address.';
+    };
 
-    // extract sanitization & validation rules
-    foreach ($fields as $field => $rules) {
-        if (strpos($rules, '|')) {
-            [$sanitization[$field], $validation[$field]] = explode('|', $rules, 2);
-        } else {
-            $sanitization[$field] = $rules;
-        }
-    }
+    if(!good_username($userData['username'])){
+        $errors['username'] = 'This is not a valid username. Please use only letters and numbers between 4 and 12 characters.';
+    };
 
-    //print_r($sanitization);
+    if(!good_password($userData['password'], $userData['password2'])){
+        $errors['password'] = 'This password does not meet the password requirements. Your password must have between 8 and 64 characters and contain at least one number, one upper case letter, one lower case letter and one special character.';
+    };
 
-    $inputs = sanitize($data, $sanitization);
-    $errors = validate($inputs, $validation, $messages);
+    if(!unique_email($userData['email'])){
+        $errors['email'] = 'This email address is already in use.';
+    };
 
-    return [$inputs, $errors];
+    if(!unique_username($userData['username'])){
+        $errors['email'] = 'This username is not available.';
+    };
+
+
+    return [$userData, $errors];
 }

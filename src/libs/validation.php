@@ -14,213 +14,98 @@ const DEFAULT_VALIDATION_ERRORS = [
 ];
 
 
-/**
-* Validate
-* @param array $data
-* @param array $fields
-* @param array $messages
-* @return array
-*/
-function validate(array $data, array $fields, array $messages = []): array
+function is_email(string $email): bool
 {
-    // Split the array by a separator, trim each element
-    // and return the array
-    $split = fn($str, $separator) => array_map('trim', explode($separator, $str));
-
-    // get the message rules
-    $rule_messages = array_filter($messages, fn($message) => is_string($message));
-    // overwrite the default message
-    $validation_errors = array_merge(DEFAULT_VALIDATION_ERRORS, $rule_messages);
-
-    $errors = [];
-
-    foreach ($fields as $field => $option) {
-
-        $rules = $split($option, '|');
-
-        foreach ($rules as $rule) {
-            // get rule name params
-            $params = [];
-            // if the rule has parameters e.g., min: 1
-            if (strpos($rule, ':')) {
-                [$rule_name, $param_str] = $split($rule, ':');
-                $params = $split($param_str, ',');
-            } else {
-                $rule_name = trim($rule);
-            }
-            // by convention, the callback should be is_<rule> e.g.,is_required
-            $fn = 'is_' . $rule_name;
-
-            if (is_callable($fn)) {
-                $pass = $fn($data, $field, ...$params);
-                if (!$pass) {
-                    // get the error message for a specific field and rule if exists
-                    // otherwise get the error message from the $validation_errors
-                    $errors[$field] = sprintf(
-                        $messages[$field][$rule_name] ?? $validation_errors[$rule_name],
-                        $field,
-                        ...$params
-                    );
-                }
-            }
-        }
-    }
-
-    return $errors;
-}
-
-/**
-* Return true if a string is not empty
-* @param array $data
-* @param string $field
-* @return bool
-*/
-function is_required(array $data, string $field): bool
-{
-    return isset($data[$field]) && trim($data[$field]) !== '';
-}
-
-/**
-* Return true if the value is a valid email
-* @param array $data
-* @param string $field
-* @return bool
-*/
-function is_email(array $data, string $field): bool
-{
-    if (empty($data[$field])) {
-        return true;
-    }
-
-    return filter_var($data[$field], FILTER_VALIDATE_EMAIL);
-}
-
-/**
-* Return true if a string has at least min length
-* @param array $data
-* @param string $field
-* @param int $min
-* @return bool
-*/
-function is_min(array $data, string $field, int $min): bool
-{
-    if (!isset($data[$field])) {
-        return true;
-    }
-
-    return mb_strlen($data[$field]) >= $min;
-}
-
-/**
-* Return true if a string cannot exceed max length
-* @param array $data
-* @param string $field
-* @param int $max
-* @return bool
-*/
-function is_max(array $data, string $field, int $max): bool
-{
-    if (!isset($data[$field])) {
-        return true;
-    }
-
-    return mb_strlen($data[$field]) <= $max;
-}
-
-/**
-* @param array $data
-* @param string $field
-* @param int $min
-* @param int $max
-* @return bool
-*/
-function is_between(array $data, string $field, int $min, int $max): bool
-{
-    if (!isset($data[$field])) {
-        return true;
-    }
-
-    $len = mb_strlen($data[$field]);
-    return $len >= $min && $len <= $max;
-}
-
-/**
-* Return true if a string equals the other
-* @param array $data
-* @param string $field
-* @param string $other
-* @return bool
-*/
-function is_same(array $data, string $field, string $other): bool
-{
-    if (isset($data[$field], $data[$other])) {
-        return $data[$field] === $data[$other];
-    }
-
-    if (!isset($data[$field]) && !isset($data[$other])) {
-        return true;
-    }
-
-    return false;
-}
-
-/**
-* Return true if a string is alphanumeric
-* @param array $data
-* @param string $field
-* @return bool
-*/
-function is_alphanumeric(array $data, string $field): bool
-{
-    if (!isset($data[$field])) {
-        return true;
-    }
-
-    return ctype_alnum($data[$field]);
-}
-
-/**
-* Return true if a password is secure
-* @param array $data
-* @param string $field
-* @return bool
-*/
-function is_secure(array $data, string $field): bool
-{
-    if (!isset($data[$field])) {
+    if(!isset($email)){
         return false;
-    }
+    };
 
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+};
+
+function good_username(string $username): bool
+{
+    if(!isset($username)){
+        return false;
+    };
+    //if the username is alphanumeric and between 4 and 12 char it's good for now
+
+    if(is_alphanumeric($username)){
+        return is_between($username, 4, 12);
+    }
+    else{
+        return false;
+    };
+
+};
+
+function good_password(string $password, $password2): bool
+{
+    if(!isset($password, $password2)){
+        return false;
+    };
+
+    if(!is_same($password, $password2)){
+        return false;
+    };
+
+    if(!is_secure($password)){
+        return false;
+    };
+
+    return true;
+
+};
+
+function is_between(string $data, int $min, int $max): bool
+{
+    $len = mb_strlen($data);
+    return $len >= $min && $len <= $max;
+};
+
+
+function is_same(string $data1, string $data2): bool
+{
+    return $data1 === $data2;
+};
+
+
+function is_alphanumeric(string $data): bool
+{
+    return ctype_alnum($data);
+};
+
+
+function is_secure(array $data): bool
+{
     $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
     return preg_match($pattern, $data[$field]);
-}
+};
 
-/**
-* Return true if the $value is unique in the column of a table
-* @param array $data
-* @param string $field
-* @param string $table
-* @param string $column
-* @return bool
-*/
-function is_unique(array $data, string $field, string $table, string $column): bool
+function unique_email(string $email){
+    //check if username already exists
+    return is_unique($email, 'users', 'email');
+};
+
+function unique_username(string $username){
+    //check if username already exists
+    return is_unique($username, 'users', 'username');
+};
+
+function is_unique(string $data, string $table, string $column): bool
 {
     global $conn;
-
-    if (!isset($data[$field])) {
-        return true;
-    }
 
     $sql = "SELECT $column FROM $table WHERE $column = ?";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $data[$field]);
+    $stmt->bind_param("s", $data);
 
     $stmt->execute();
 
     //print_r($stmt->get_result());
-    $temp = $stmt->num_rows == 0;
-    echo $temp;
+    //$temp = $stmt->num_rows == 0;
+    //echo $temp;
 
     return $stmt->num_rows == 0;
-}
+};

@@ -32,7 +32,7 @@ if(is_post_request()){
 
     //take the form data, and filter through the rules
     //and supply the corresponding messages if there are any errors
-    [$inputs, $errors] = filter($_POST, $fields, $messages);
+    [$inputs, $errors] = filter($_POST);
 
     // print_r($errors);
 

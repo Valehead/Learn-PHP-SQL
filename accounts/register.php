@@ -69,9 +69,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
                                 <div class="mb-3">
                                     <label for="password2" class="form-label">Re-Enter Password:</label>
                                     <input type="password" name="password2" id="password2" class="form-control <?= error_class($errors, 'password2') ?>"
-                                     value="<?= $inputs['password2'] ?? '' ?>" required>
+                                     value="<?= $inputs['password'] ?? '' ?>" required>
 
-                                     <small><?= $errors['password2'] ?? '' ?></small>
+                                     <small><?= $errors['password'] ?? '' ?></small>
                                 </div>
 
                                 <div class="mb-3">
