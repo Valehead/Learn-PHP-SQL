@@ -22,6 +22,9 @@ function register_user(string $email, string $username, string $password, int $i
     //create the insert query, execute the query and save the query result
     $result = $conn->query("INSERT INTO `users` (`email`, `username`, `password`, `is_admin`) VALUES ('{$user['email']}', '{$user['username']}', '{$user['password']}', '{$is_admin}');");
     
+    //close the connection because the user was created
+    $conn->close();
+
     //return the success or fail
     return $result;
 
