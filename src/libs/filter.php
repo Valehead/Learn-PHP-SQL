@@ -7,7 +7,7 @@ function filter(array $userData): array
     $errors = [];
     
     if(!is_email($userData['email'])){
-        $errors['email'] = 'This is not a valid email address.';
+        $errors['email'] = 'This is not a valid email addresss.';
     };
 
     if(!good_username($userData['username'])){
