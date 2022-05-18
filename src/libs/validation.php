@@ -93,16 +93,11 @@ function is_unique(string $data, string $table, string $column): bool
 {
     global $conn;
 
-    $sql = "SELECT $column FROM $table WHERE $column = ?";
+    $data = $conn->real_escape_string($data);
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $data);
+    $result = $conn->query("SELECT {$column} FROM {$table} WHERE {$column} = '{$data}';");
 
-    $stmt->execute();
+    // $conn->close();
 
-    //print_r($stmt->get_result());
-    //$temp = $stmt->num_rows == 0;
-    //echo $temp;
-
-    return $stmt->num_rows == 0;
+    return $result->num_rows == 0;
 };
