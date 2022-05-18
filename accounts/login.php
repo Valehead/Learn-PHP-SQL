@@ -1,3 +1,10 @@
+<?php
+
+//tie in our session and all our helper files
+require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/login.php');
+
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -28,7 +35,7 @@
                 <div class="col-5">
                     <div class="card mt-5">
                         <div class="card-body">
-                            <form action="../src/libs/customers/update-customer.php" method="POST">
+                            <form action="login.php" method="POST">
 
                                 <div class="mb-3 d-flex justify-content-center">
                                     <h2 class="card-title">Log In</h1>

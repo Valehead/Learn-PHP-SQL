@@ -2,7 +2,7 @@
 
 
 //function for finding out where the user is screwing up
-function filter(array $userData): array
+function filterSignUp(array $userData): array
 {
     //initialize the variable
     $errors = [];
@@ -50,4 +50,20 @@ function filter(array $userData): array
 
 
     return [$userData, $errors];
-}
+};
+
+
+
+function filterLogin(array $loginData): array
+{
+    $errors = [];
+
+    if(!isset($loginData['username'])){}
+
+
+    return [$loginData, $errors];
+
+};
+
+
+?>
