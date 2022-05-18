@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     //return to home page
     if($result){
-        header('Location: ../../index.php');
+        header('Location:' . $_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/index.php');
         
         //close active connection
         $conn->close();        

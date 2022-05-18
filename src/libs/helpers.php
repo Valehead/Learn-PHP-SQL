@@ -1,42 +1,32 @@
 <?php
 
-/**
- * Display a view
- *
- * @param string $filename
- * @param array $data
- * @return void
- */
-function view(string $filename, array $data = []): void
-{
-    // create variables from the associative array
-    foreach ($data as $key => $value) {
-        $$key = $value;
-    }
-    require_once __DIR__ . '/../inc/' . $filename . '.php';
-};
 
+//check if any errors are set
 function error_class(array $errors, string $field): string
 {
     return isset($errors[$field]) ? 'error' : '';
 };
 
+//simplify checking for post request
 function is_post_request(): bool
 {
     return strtoupper($_SERVER['REQUEST_METHOD']) === 'POST';
 };
 
+//simplify checking for get request
 function is_get_request(): bool
 {
     return strtoupper($_SERVER['REQUEST_METHOD']) === 'GET';
 };
 
+//simplify redirecting user with reusable function
 function redirect_to(string $url): void
 {
     header('Location:' . $url);
     exit;
 };
 
+//simplify redirecting user with data they entered by storing it in the session
 function redirect_with(string $url, array $items): void
 {
     foreach ($items as $key => $value) {
@@ -46,7 +36,7 @@ function redirect_with(string $url, array $items): void
     redirect_to($url);
 };
 
-function redirect_with_message(string $url)
+function redirect_with_message(string $url, string $message)
 {
     // flash('flash_' . uniqid(), $message, $type);
     redirect_to($url);
