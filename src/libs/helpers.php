@@ -46,9 +46,9 @@ function redirect_with(string $url, array $items): void
     redirect_to($url);
 };
 
-function redirect_with_message(string $url, string $message, string $type=FLASH_SUCCESS)
+function redirect_with_message(string $url)
 {
-    flash('flash_' . uniqid(), $message, $type);
+    // flash('flash_' . uniqid(), $message, $type);
     redirect_to($url);
 
 };
