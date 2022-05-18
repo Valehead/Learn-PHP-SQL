@@ -25,7 +25,7 @@ function filter(array $userData): array
                 $errors['password'] = 'This password does not meet the password requirements. Your password must have between 8 and 64 characters and contain at least one number, one upper case letter, one lower case letter and one special character.';
                 break;
             case 3:
-                $errors['password'] = '';
+                break;
         };
     };
 
