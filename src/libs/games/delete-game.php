@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($result){
         //redirect to home page
-        header('Location: ../../games/show-games.php');
+        header('Location:' . '/Learn-PHP-SQL/games/show-games.php');
         
         //close the connection
         $conn->close();

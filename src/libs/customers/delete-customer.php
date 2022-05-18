@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($result){
         //redirect to home page
-        header('Location: ../../index.php');
+        header('Location:' . '/Learn-PHP-SQL/index.php');
         
         //close the connection
         $conn->close();

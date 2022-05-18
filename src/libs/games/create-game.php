@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     //return to games page
     if($result){
-        header('Location: ../../games/show-games.php');
+        header('Location:' . '/Learn-PHP-SQL/games/show-games.php');
         
         //close active connection
         $conn->close();        

@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     //return to home page
     if($result){
-        header('Location: ../../index.php');
+        header('Location:' . '/Learn-PHP-SQL/index.php');
         
         //close the connection
         $conn->close();
