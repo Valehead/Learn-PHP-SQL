@@ -52,6 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         //close active connection
         $conn->close();        
+        exit;
     }
     else{
         echo "Error Ocurred: {$conn->error}";
