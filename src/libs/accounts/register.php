@@ -34,6 +34,7 @@ if(is_post_request()){
     //and supply the corresponding messages if there are any errors
     [$inputs, $errors] = filter($_POST, $fields, $messages);
 
+    print_r($errors);
 
     //if there are any errors, send them back to the registration page with their data and the *error* messages
     if($errors){
