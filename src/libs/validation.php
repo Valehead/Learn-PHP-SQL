@@ -79,7 +79,7 @@ function is_alphanumeric(string $data): bool
 function is_secure(string $data): bool
 {
     $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
-    return preg_match($pattern, $data[$field]);
+    return preg_match($pattern, $data);
 };
 
 function unique_email(string $email){
