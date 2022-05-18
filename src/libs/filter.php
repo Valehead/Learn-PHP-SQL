@@ -37,6 +37,10 @@ function filter(array $userData): array
         $errors['username'] = 'This username is not available.';
     };
 
+    if(!isset($userData['agree'])){
+        $errors['agree'] = 'You must agree to the terms of service in order to create an account.';
+    };
+
 
     return [$userData, $errors];
 }
