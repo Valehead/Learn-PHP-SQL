@@ -34,7 +34,7 @@ function filter(array $userData): array
     };
 
     if(!unique_username($userData['username'])){
-        $errors['email'] = 'This username is not available.';
+        $errors['username'] = 'This username is not available.';
     };
 
 
