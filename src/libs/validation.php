@@ -39,21 +39,18 @@ function good_username(string $username): bool
 
 };
 
-function good_password(string $password, $password2): bool
+function good_password(string $password, $password2): int
 {
-    if(!isset($password, $password2)){
-        return false;
-    };
 
     if(!is_same($password, $password2)){
-        return false;
+        return 1;
     };
 
     if(!is_secure($password)){
-        return false;
+        return 2;
     };
 
-    return true;
+    return 3;
 
 };
 
