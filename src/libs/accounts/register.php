@@ -34,7 +34,7 @@ if(is_post_request()){
     //and supply the corresponding messages if there are any errors
     [$inputs, $errors] = filter($_POST, $fields, $messages);
 
-    print_r($errors);
+    // print_r($errors);
 
     //if there are any errors, send them back to the registration page with their data and the *error* messages
     if($errors){
@@ -59,6 +59,7 @@ if(is_post_request()){
 
     };
 
+    print_r($_SESSION);
 //if the page is loaded with a get request, that means they probably got redirected to
 //here by our error functions. This takes their input data out of the session and puts
 //it back into the form, as well as displays their *error* messages on screen with flash
