@@ -63,6 +63,7 @@ if(is_post_request()){
 //it back into the form, as well as displays their *error* messages on screen with flash
 } else if (is_get_request()){
 
+    print_r($errors);
     //deconstruct the user inputs and errors from the session
     [$inputs, $errors] = session_flash('inputs', 'errors');
 
