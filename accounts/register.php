@@ -3,6 +3,7 @@
 //tie in our session and all our helper files
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/register.php');
 
+
 ?>
 
 
@@ -20,6 +21,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
+
+    <script>
+        function agreeTerms(){
+            var agreeBox, agreeBoxVal;
+
+            agreeBox = document.getElementById("agree");
+
+            agreeBoxVal = 
+
+            if()
+        }
+    </script>
     
     <style>
         p {
@@ -76,7 +89,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
 
                                 <div class="mb-3">
                                     <label for="agree">
-                                        <input type="checkbox" name="agree" id="agree" value="checked" <?= $inputs['agree'] ?? '' ?> >
+                                        <input type="checkbox" name="agree" id="agree" value="" <?= $inputs['agree'] ?? '' ?> >
                                         I
                                         agree
                                         with the
@@ -86,7 +99,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
                                 </div>
 
                                 <div class="mb-4 d-flex justify-content-center">
-                                    <button type="submit" class="btn-lg btn-info" name="submit" id="submit">Register!</button>
+                                    <button type="submit" class="btn-lg btn-info" name="submit" id="submit" disabled>Register!</button>
                                     </form>                                    
                                     
                                 </div>
