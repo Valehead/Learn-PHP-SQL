@@ -58,8 +58,15 @@ function filterLogin(array $loginData): array
 {
     $errors = [];
 
-    if(!isset($loginData['username'])){}
+    //check if username is set
+    if(!isset($loginData['username'])){
+        $errors['username'] = 'You must enter a username!';
+    };
 
+    //check if password is set
+    if(!isset($loginData['password'])){
+        $errors['password'] = 'You must enter a password!';
+    };
 
     return [$loginData, $errors];
 

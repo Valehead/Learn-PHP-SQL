@@ -31,6 +31,9 @@ if(is_post_request()){
         //function to redirect to the login page with just a supplied message
         redirect_to('/Learn-PHP-SQL/index.php');
 
+    } else {
+        //function to redirect to the login page with just a supplied message
+        redirect_to('login.php?message=invalid_login');
     };
 
     print_r($_SESSION);

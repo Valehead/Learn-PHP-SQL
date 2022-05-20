@@ -38,8 +38,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/login.
                             <form action="login.php" method="POST">
 
                                 <div class="mb-3 d-flex justify-content-center">
-                                    <h2 class="card-title">Log In</h1>
+                                    <h2 class="card-title">Log In</h2>
                                 </div>
+
+                                <?php if(isset($_GET['message'])){ ?>
+                                    <div class="mb-3 d-flex justify-content-center">
+                                        <h2 class="card-title">Invalid Username or Password!</h2>
+                                    </div>
+                                <?php }; ?>
+
 
                                 <div class="form-floating mb-3">
                                     <input type="email" name="email" id="email" class="form-control" required>
