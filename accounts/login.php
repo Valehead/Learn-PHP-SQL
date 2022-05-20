@@ -43,7 +43,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/login.
 
                                 <?php if(isset($_GET['message'])){ ?>
                                     <div class="mb-3 d-flex justify-content-center">
-                                        <h2 class="card-title">Invalid Username or Password!</h2>
+                                        <h6 class="card-title">Invalid Username or Password!</h6>
                                     </div>
                                 <?php }; ?>
 
