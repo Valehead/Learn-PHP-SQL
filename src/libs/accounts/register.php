@@ -18,8 +18,6 @@ if(is_post_request()){
     //if there are any errors, send them back to the registration page with their data and the *error* messages
     if($errors){
 
-        print_r($inputs);
-        print_r($errors);
 
         //close connection because errors mean we're done
         $conn->close();

@@ -77,7 +77,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
 
                                 <div class="mb-3">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" name="agree" id="agree" value="" <?= $inputs['agree'] ?? '' ?> >
+                                        <input type="checkbox" class="form-check-input" name="agree" id="agree" value="<?= $inputs['agree'] ?? '' ?>" >
                                         <label for="agree" class="form-check-label">I agree with the <a href="#" title="term of services">terms of service.</a></label>
                                     </div>
                                     <small><?= $errors['agree'] ?? '' ?></small>
