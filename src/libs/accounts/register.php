@@ -13,7 +13,6 @@ if(is_post_request()){
     //and supply the corresponding messages if there are any errors
     [$inputs, $errors] = filterSignUp($_POST);
 
-    echo "hi";
     
     //if there are any errors, send them back to the registration page with their data and the *error* messages
     if($errors){
@@ -30,6 +29,7 @@ if(is_post_request()){
 
     };
 
+    echo "hi";
 
     //if there aren't any errors, create the user and send them to the login page
     //along with the positive confirmation message
