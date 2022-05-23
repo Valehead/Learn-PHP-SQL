@@ -11,7 +11,6 @@ function filterSignUp(array $userData): array
     if(!is_email($userData['email'])){
         $errors['email'] = 'This is not a valid email addresss.';
     };
-    echo "test 2";
 
     //check if the username is valid
     if(!good_username($userData['username'])){
@@ -48,6 +47,7 @@ function filterSignUp(array $userData): array
     if(!isset($userData['agree'])){
         $errors['agree'] = 'You must agree to the terms of service in order to create an account.';
     };
+    echo "test 2";
 
 
     return [$userData, $errors];
