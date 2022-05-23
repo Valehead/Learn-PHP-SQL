@@ -51,10 +51,7 @@ function good_password(string $password, $password2): int
 //helper function for checking if something is between 2 strlengths
 function is_between(string $data, int $min, int $max): bool
 {
-    echo "hi";
-    var_dump(mb_strlen($data, 'utf-8'));
     $len = mb_strlen($data);
-    echo "test isbetween";
 
     return $len >= $min && $len <= $max;
 };
