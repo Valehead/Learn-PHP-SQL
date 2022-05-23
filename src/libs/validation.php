@@ -16,6 +16,7 @@ function is_email(string $email): bool
 //check if the username meets our requirements
 function good_username(string $username): bool
 {
+    echo $username;
     //check is the value is set
     if(!isset($username)){
         return false;
