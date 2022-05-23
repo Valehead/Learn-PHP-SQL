@@ -26,7 +26,7 @@ if(is_post_request()){
 
     //if there aren't any errors, create the user and send them to the login page
     //along with the positive confirmation message
-    if(loginUser($inputs['username'], $inputs['password'])){
+    if(login_user($inputs['email'], $inputs['password'])){
 
         //function to redirect to the login page with just a supplied message
         redirect_to('/Learn-PHP-SQL/index.php');
