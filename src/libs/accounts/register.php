@@ -5,10 +5,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 $errors = [];
 $inputs = [];
 
-echo "test";
 
 //if someone tries to register for an account
 if(is_post_request()){
+    echo "test 2";
 
     //take the form data, and filter through the rules
     //and supply the corresponding messages if there are any errors
