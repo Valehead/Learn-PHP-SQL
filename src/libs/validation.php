@@ -23,7 +23,6 @@ function good_username(string $username): bool
     
     //if the username is alphanumeric and between 4 and 12 char it's good for now
     if(is_alphanumeric($username)){
-        echo "test isbetween";
         return is_between($username, 4, 12);
     }
     else{
@@ -52,6 +51,7 @@ function good_password(string $password, $password2): int
 //helper function for checking if something is between 2 strlengths
 function is_between(string $data, int $min, int $max): bool
 {
+    echo "test isbetween";
     $len = mb_strlen($data);
     return $len >= $min && $len <= $max;
 };
