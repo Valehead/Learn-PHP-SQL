@@ -14,6 +14,7 @@ function filterSignUp(array $userData): array
 
     //check if the username is valid
     if(!good_username($userData['username'])){
+        echo "test gooduser";
         $errors['username'] = 'This is not a valid username. Please use only letters and numbers between 4 and 12 characters.';
     };
 
