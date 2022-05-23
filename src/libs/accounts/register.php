@@ -14,11 +14,13 @@ if(is_post_request()){
     [$inputs, $errors] = filterSignUp($_POST);
 
 
-print_r($errors);
     
     //if there are any errors, send them back to the registration page with their data and the *error* messages
     if($errors){
-        
+
+        print_r($inputs);
+        print_r($errors);
+
         //close connection because errors mean we're done
         $conn->close();
         //redirect the user back to the same registration page
