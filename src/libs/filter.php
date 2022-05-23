@@ -6,7 +6,8 @@ function filterSignUp(array $userData): array
 {
     //initialize the variable
     $errors = [];
-    
+    echo "test 2";
+
     //check if the email address is valid
     if(!is_email($userData['email'])){
         $errors['email'] = 'This is not a valid email addresss.';

@@ -12,7 +12,6 @@ if(is_post_request()){
     //take the form data, and filter through the rules
     //and supply the corresponding messages if there are any errors
     [$inputs, $errors] = filterSignUp($_POST);
-    echo "test 2";
 
 
     
