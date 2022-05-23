@@ -84,7 +84,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/regist
                                 </div>
 
                                 <div class="mb-4 d-flex justify-content-center">
-                                    <button type="submit" class="btn-lg btn-info" name="submit" id="submit">Register!</button>
+                                    <button type="submit" class="btn btn-lg btn-info" name="submit" id="submit">Register!</button>
                                     </form>                                    
                                     
                                 </div>

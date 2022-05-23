@@ -61,7 +61,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/login.
                                 <p style="">Don't have an account? <a href="register.php">Sign Up!</a></p>
 
                                 <div class="mb-2 d-flex justify-content-center">
-                                    <button type="submit" class="btn-lg btn-info" name="login" id="login">Login!</button>
+                                    <button type="submit" class="btn btn-lg btn-info" name="login" id="login">Login!</button>
                                     </form>
                                     
                                     
