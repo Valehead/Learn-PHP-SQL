@@ -22,6 +22,7 @@ if(is_post_request()){
         //redirect the user back to the same registration page
         //but include their data they already entered along with
         //the corresponding *error* messages
+        echo "test";
         redirect_with('register.php', [
             'inputs' => $inputs,
             'errors' => $errors
