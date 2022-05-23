@@ -52,7 +52,7 @@ function good_password(string $password, $password2): int
 function is_between(string $data, int $min, int $max): bool
 {
     echo "hi";
-    echo mb_strlen($data, 'UTF-8');
+    echo mb_strlen($data, 'utf-8');
     $len = mb_strlen($data);
     echo "test isbetween";
 
