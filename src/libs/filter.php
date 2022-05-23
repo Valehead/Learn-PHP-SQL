@@ -16,6 +16,7 @@ function filterSignUp(array $userData): array
     if(!good_username($userData['username'])){
         $errors['username'] = 'This is not a valid username. Please use only letters and numbers between 4 and 12 characters.';
     };
+    echo "test 2";
 
     //check if the passwords match and meet requirements
     if(isset($userData['password'], $userData['password2'])){
@@ -47,7 +48,6 @@ function filterSignUp(array $userData): array
     if(!isset($userData['agree'])){
         $errors['agree'] = 'You must agree to the terms of service in order to create an account.';
     };
-    echo "test 2";
 
 
     return [$userData, $errors];
