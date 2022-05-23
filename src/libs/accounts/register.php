@@ -14,6 +14,7 @@ if(is_post_request()){
     [$inputs, $errors] = filterSignUp($_POST);
 
 
+print_r($errors);
     
     //if there are any errors, send them back to the registration page with their data and the *error* messages
     if($errors){
@@ -23,7 +24,6 @@ if(is_post_request()){
         //redirect the user back to the same registration page
         //but include their data they already entered along with
         //the corresponding *error* messages
-        echo "test";
         redirect_with('register.php', [
             'inputs' => $inputs,
             'errors' => $errors
