@@ -16,7 +16,6 @@ function is_email(string $email): bool
 //check if the username meets our requirements
 function good_username(string $username): bool
 {
-    echo $username;
     //check is the value is set
     if(!isset($username)){
         return false;
@@ -24,6 +23,8 @@ function good_username(string $username): bool
     
     //if the username is alphanumeric and between 4 and 12 char it's good for now
     if(is_alphanumeric($username)){
+        echo $username;
+
         return is_between($username, 4, 12);
     }
     else{
