@@ -96,4 +96,17 @@ function is_user_logged_in(): bool
     return isset($_SESSION['username']);
 };
 
+
+function logout(): void
+{
+    if(is_user_logged_in()){
+
+        unset($_SESSION['username']);
+        session_destroy();
+
+        redirect_to('login.php');
+    };
+
+};
+
 ?>

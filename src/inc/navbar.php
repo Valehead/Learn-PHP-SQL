@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
+ ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
@@ -42,10 +43,14 @@
             </ul>
 
 
-            <?php if(isset($_SESSION['username'])) { ?>
-                <li class="nav-item">
+            <?php if(is_user_logged_in()) { ?>
+                <li class="nav-item dropdown">
                     <a class="nav-link active" 
                     href=""><?php echo $_SESSION['username']; ?></a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a href="" class="dropdown-item"></a></li>
+                    </ul>
                 </li>
                 <?php };?>
                 
