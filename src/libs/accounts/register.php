@@ -29,7 +29,7 @@ if(is_post_request()){
         ]);
 
     };
-
+    
 
     //if there aren't any errors, create the user and send them to the login page
     //along with the positive confirmation message

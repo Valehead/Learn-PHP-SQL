@@ -4,6 +4,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/accounts/register.php');
 print_r($inputs);
 print_r($errors);
+echo $_SERVER['REQUEST_METHOD'];
 
 ?>
 
