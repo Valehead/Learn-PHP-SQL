@@ -8,11 +8,13 @@ $inputs = [];
 
 //if someone tries to register for an account
 if(is_post_request()){
-    echo "test 2";
 
     //take the form data, and filter through the rules
     //and supply the corresponding messages if there are any errors
     [$inputs, $errors] = filterSignUp($_POST);
+    echo "test 2";
+    print_r($errors);
+    print_r($inputs);
 
     
     //if there are any errors, send them back to the registration page with their data and the *error* messages
