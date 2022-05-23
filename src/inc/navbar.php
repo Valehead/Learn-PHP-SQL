@@ -29,13 +29,6 @@
                     href="/Learn-PHP-SQL/games/show-games.php">Games</a>
                 </li>
                 
-                <?php if(isset($_SESSION['username'])) { ?>
-                <li class="nav-item">
-                    <a class="nav-link active" 
-                    href=""><?php echo $_SESSION['username']; ?></a>
-                </li>
-                <?php };?>
-                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/accounts/login.php" || 
                     $_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/accounts/register.php") { echo 'active'; }; ?>"
@@ -47,6 +40,15 @@
                     </ul>
                 </li>
             </ul>
+
+
+            <?php if(isset($_SESSION['username'])) { ?>
+                <li class="nav-item">
+                    <a class="nav-link active" 
+                    href=""><?php echo $_SESSION['username']; ?></a>
+                </li>
+                <?php };?>
+                
 
 
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
