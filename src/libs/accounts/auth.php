@@ -5,6 +5,8 @@ function register_user(string $email, string $username, string $password, int $i
 
     global $conn;
 
+    echo "test";
+    
     $user = array(
         "email" => $email,
         "username" => $username,
