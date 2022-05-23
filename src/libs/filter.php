@@ -11,12 +11,12 @@ function filterSignUp(array $userData): array
     if(!is_email($userData['email'])){
         $errors['email'] = 'This is not a valid email addresss.';
     };
+    echo "test 2";
 
     //check if the username is valid
     if(!good_username($userData['username'])){
         $errors['username'] = 'This is not a valid username. Please use only letters and numbers between 4 and 12 characters.';
     };
-    echo "test 2";
 
     //check if the passwords match and meet requirements
     if(isset($userData['password'], $userData['password2'])){
