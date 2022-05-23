@@ -23,7 +23,7 @@ function good_username(string $username): bool
     
     //if the username is alphanumeric and between 4 and 12 char it's good for now
     if(is_alphanumeric($username)){
-        echo is_between($username, 4, 12);
+        echo "test isbetween";
         return is_between($username, 4, 12);
     }
     else{
