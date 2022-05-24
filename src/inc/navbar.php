@@ -44,7 +44,7 @@ session_start();
                 </li>
 
 
-
+            <?php    echo is_user_logged_in(); ?>
             <?php if(is_user_logged_in()) {
                 echo "
                 <li class='nav-item dropdown'>
