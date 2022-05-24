@@ -13,8 +13,7 @@ session_start();
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav">
-            <ul class=" me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/index.php") { echo 'active'; }; ?>" 
                     href="/Learn-PHP-SQL/">Home</a>
@@ -44,7 +43,7 @@ session_start();
                     </ul>
                 </li>
             </ul>
-
+            
            <?php if(is_user_logged_in()){?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown2" 
@@ -56,7 +55,7 @@ session_start();
                     </ul>
                 </li>;
              <?php };?>
-             </div>    
+                
 
 
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
