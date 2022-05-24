@@ -44,16 +44,17 @@ session_start();
             </ul>
 
 
-            <?php if(is_user_logged_in()) { ?>
-                <li class="nav-item dropdown">
-                    <a class="nav-link active" 
-                    href=""><?php echo $_SESSION['username']; ?></a>
+            <?php if(is_user_logged_in()) {
+                echo "
+                <li class='nav-item dropdown'>
+                    <a class='nav-link active' 
+                    href=''> {$_SESSION['username']}</a>
 
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a href="" class="dropdown-item"></a></li>
+                    <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                        <li><a href='' class='dropdown-item'></a></li>
                     </ul>
-                </li>
-                <?php };?>
+                </li>";
+             };?>
                 
 
 
