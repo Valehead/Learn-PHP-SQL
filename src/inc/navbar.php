@@ -42,7 +42,8 @@ session_start();
                         <li><a href="/Learn-PHP-SQL/accounts/register.php" class="dropdown-item">Sign Up</a></li>
                     </ul>
                 </li>
-
+            </ul>
+            
            <?php if(is_user_logged_in()){?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown2" 
@@ -55,7 +56,7 @@ session_start();
                 </li>;
              <?php };?>
                 
-                </ul>
+
 
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
                 <input class="form-control me-2" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
