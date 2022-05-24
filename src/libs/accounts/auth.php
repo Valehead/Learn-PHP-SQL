@@ -106,7 +106,7 @@ function logout(): void
 
         redirect_to('login.php');
     } else {
-        redirect_to('index.php');
+        redirect_to('/Learn-PHP-SQL/index.php');
     };
 
 };
