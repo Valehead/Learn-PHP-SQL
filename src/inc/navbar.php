@@ -45,6 +45,7 @@ session_start();
             </ul>
             
            <?php if(is_user_logged_in()){?>
+            <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown2" 
                     role="button" data-bs-toggle="dropdown" aria-expanded="false"
@@ -54,6 +55,7 @@ session_start();
                         <li><a href="/Learn-PHP-SQL/accounts/logout.php" class="dropdown-item">Log Out</a></li>
                     </ul>
                 </li>;
+            </ul>
              <?php };?>
                 
 
