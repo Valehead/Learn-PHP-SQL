@@ -99,6 +99,7 @@ function is_user_logged_in(): bool
 
 function logout(): void
 {
+    echo is_user_logged_in();
     if(is_user_logged_in()){
 
         unset($_SESSION['username']);
