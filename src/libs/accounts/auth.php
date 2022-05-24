@@ -54,7 +54,7 @@ function login_user(string $email, string $password): bool
     if($user && password_verify($login['password'], $user['password'])){
 
         session_regenerate_id();
-
+        session_start();
 
         $_SESSION['username'] = $user['username'];
 
