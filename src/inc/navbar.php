@@ -44,6 +44,7 @@ session_start();
             </ul>
 
 
+            <?php echo $_SESSION['username'];?>
             <?php if(is_user_logged_in()) {
                 echo "
                 <li class='nav-item dropdown'>
