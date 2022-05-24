@@ -1,4 +1,4 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
+<?php session_start();
  ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
