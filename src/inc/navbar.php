@@ -52,7 +52,7 @@ session_start();
                     href="">My Account</a>
 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <li><a href="" class="dropdown-item">Welcome <?= $_SESSION['username']; ?></a></li>
+                        <li><span class="dropdown-item-text">Welcome <a href="/Learn-PHP-SQL/accounts/my-account.php"><?= $_SESSION['username']; ?></a></span></li>
                         <li><a href="/Learn-PHP-SQL/accounts/logout.php" class="dropdown-item">Log Out</a></li>
                     </ul>
                 </li>;
