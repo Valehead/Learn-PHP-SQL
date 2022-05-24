@@ -49,10 +49,10 @@ session_start();
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown2" 
                     role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                    href=""></a>
+                    href="">My Account</a>
 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <li>Welcome <a href="" class="dropdown-item"><?= $_SESSION['username']; ?></a></li>
+                        <li><a href="" class="dropdown-item">Welcome <?= $_SESSION['username']; ?></a></li>
                         <li><a href="/Learn-PHP-SQL/accounts/logout.php" class="dropdown-item">Log Out</a></li>
                     </ul>
                 </li>;
