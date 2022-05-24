@@ -48,10 +48,11 @@ session_start();
             <?php if(is_user_logged_in()) {
                 echo "
                 <li class='nav-item dropdown'>
-                    <a class='nav-link active' 
+                    <a class='nav-link dropdown-toggle active' id='navbarDropdown2' 
+                    role='button' data-bs-toggle='dropdown' aria-expanded='false'
                     href=''> {$_SESSION['username']}</a>
 
-                    <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                    <ul class='dropdown-menu' aria-labelledby='navbarDropdown2'>
                         <li><a href='' class='dropdown-item'></a></li>
                     </ul>
                 </li>";
