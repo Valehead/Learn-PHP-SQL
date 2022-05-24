@@ -42,10 +42,9 @@ session_start();
                         <li><a href="/Learn-PHP-SQL/accounts/register.php" class="dropdown-item">Sign Up</a></li>
                     </ul>
                 </li>
-            </ul>
 
 
-            <?php echo $_SESSION['username']; echo is_user_logged_in();?>
+
             <?php if(is_user_logged_in()) {
                 echo "
                 <li class='nav-item dropdown'>
@@ -54,12 +53,12 @@ session_start();
                     href=''>{$_SESSION['username']}</a>
 
                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown2'>
-                        <li><a href='/Learn-PHP-SQL/games/show-games.php' class='dropdown-item'>Log Out</a></li>
+                        <li><a href='/Learn-PHP-SQL/accounts/logout.php' class='dropdown-item'>Log Out</a></li>
                     </ul>
                 </li>";
              };?>
                 
-
+                </ul>
 
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
                 <input class="form-control me-2" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">

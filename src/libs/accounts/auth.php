@@ -105,6 +105,8 @@ function logout(): void
         session_destroy();
 
         redirect_to('login.php');
+    } else {
+        redirect_to('index.php');
     };
 
 };
