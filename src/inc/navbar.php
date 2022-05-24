@@ -43,24 +43,11 @@ session_start();
                     </ul>
                 </li>
 
-
-            <?php/* if(is_user_logged_in()) {
-                echo "
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' id='navbarDropdown2' 
-                    role='button' data-bs-toggle='dropdown' aria-expanded='false'
-                    href=''>{$_SESSION['username']}</a>
-
-                    <ul class='dropdown-menu' aria-labelledby='navbarDropdown2'>
-                        <li><a href='/Learn-PHP-SQL/accounts/logout.php' class='dropdown-item'>Log Out</a></li>
-                    </ul>
-                </li>";
-             };*/?>
            <?php if(is_user_logged_in()){?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown2" 
                     role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                    href=""><?php if(is_user_logged_in()){echo $_SESSION['username'];}?></a>
+                    href=""><?= $_SESSION['username'];} ?></a>
 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                         <li><a href="/Learn-PHP-SQL/accounts/logout.php" class="dropdown-item">Log Out</a></li>
