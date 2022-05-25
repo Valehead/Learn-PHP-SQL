@@ -53,7 +53,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 
 
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
-                <input class="form-control me-4" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
+                <input class="form-control <?php echo is_user_logged_in() ? "me-2" : "me-4"; ?>" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
             </form>
 
             <?php if(!is_user_logged_in()){ ?>
