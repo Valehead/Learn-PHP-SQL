@@ -64,7 +64,7 @@ session_start();
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
                 <input class="form-control me-4" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
             </form>
-            <div class="">
+            <div class="mt-md-2">
                 <button class="btn btn-outline-light me-3">Login</button>
                 <button class="btn btn-warning">Sign Up</button>
             </div>
