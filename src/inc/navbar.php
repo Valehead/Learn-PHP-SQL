@@ -1,7 +1,7 @@
 <?php 
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 session_start();
- ?>
+?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
@@ -64,6 +64,9 @@ session_start();
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
                 <input class="form-control me-2" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
             </form>
+
+            <button class="btn btn-outline-light">Login</button>
+            <button class="btn btn-warning">Sign Up</button>
         </div>
     </div>
 
