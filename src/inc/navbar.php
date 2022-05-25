@@ -55,19 +55,22 @@ session_start();
                         <li><span class="dropdown-item-text">Welcome: <a href="/Learn-PHP-SQL/accounts/my-account.php"><?= $_SESSION['username']; ?></a></span></li>
                         <li><a href="/Learn-PHP-SQL/accounts/logout.php" class="dropdown-item">Log Out</a></li>
                     </ul>
-                </li>;
+                </li>
             </ul>
              <?php };?>
                 
 
 
             <form action="/Learn-PHP-SQL/customers/search-customers.php" method="get" class="d-flex">
-                <input class="form-control me-4" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
+                <input class="form-control  me-4" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
             </form>
+
+            <?php if(!is_user_logged_in()){ ?>
             <div class="mt-3 mt-lg-0">
-                <button class="btn btn-outline-light me-3">Login</button>
-                <button class="btn btn-warning">Sign Up</button>
+                <a href="/Learn-PHP-SQL/accounts/login.php"><button class="btn btn-outline-light me-3">Login</button></a>
+                <a href="/Learn-PHP-SQL/accounts/register.php"></a><button class="btn btn-warning">Sign Up</button>
             </div>
+            <?php }; ?>
             
         </div>
     </div>
