@@ -1,8 +1,10 @@
 <?php
     require_once "../src/libs/games/search-game.php";
     
-    //get the id out of the url
-    //$gameId = $_GET['id'];
+    //only allow access to games page if someone is logged in
+    if(!is_user_logged_in()){
+        redirect_to('/Learn-PHP-SQL/accounts/login.php');
+    };
 
     $game = game_search();
 

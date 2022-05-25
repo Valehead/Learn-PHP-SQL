@@ -51,8 +51,10 @@ function good_password(string $password, $password2): int
 //helper function for checking if something is between 2 strlengths
 function is_between(string $data, int $min, int $max): bool
 {
+    //get the length of the string
     $len = mb_strlen($data);
 
+    //find out if it's a valid length
     return $len >= $min && $len <= $max;
 };
 
@@ -68,7 +70,7 @@ function is_alphanumeric(string $data): bool
     return ctype_alnum($data);
 };
 
-//function for checking our password strengthr equirements
+//function for checking our password strength requirements
 function is_secure(string $data): bool
 {
     $pattern = "#.*^(?=.{8,64})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#";
@@ -91,11 +93,15 @@ function unique_username(string $username){
 //reusable for emails and usernames
 function is_unique(string $data, string $table, string $column): bool
 {
+    //declare the conn variable for this scope
     global $conn;
 
+    //escape the value
     $data = $conn->real_escape_string($data);
 
+    //check if the value exists
     $result = $conn->query("SELECT {$column} FROM {$table} WHERE {$column} = '{$data}';");
 
+    //return true or false if the value exists
     return $result->num_rows == 0;
 };

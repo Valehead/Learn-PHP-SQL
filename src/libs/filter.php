@@ -49,11 +49,12 @@ function filterSignUp(array $userData): array
     };
 
 
+    //return the user data and any errors if there are any
     return [$userData, $errors];
 };
 
 
-
+//function for seeing if the login form was filled out correctly
 function filterLogin(array $loginData): array
 {
     $errors = [];
@@ -68,9 +69,8 @@ function filterLogin(array $loginData): array
         $errors['password'] = 'You must enter a password!';
     };
 
+    //return the user data and any errors if there are any
     return [$loginData, $errors];
-
 };
-
 
 ?>

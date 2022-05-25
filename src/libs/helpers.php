@@ -43,6 +43,7 @@ function redirect_with_message(string $url, string $message)
 
 };
 
+//function for sending errors to pages that need them
 function session_flash(...$keys): array
 {
     $data = [];
