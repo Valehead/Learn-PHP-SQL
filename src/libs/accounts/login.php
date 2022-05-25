@@ -36,7 +36,6 @@ if(is_post_request()){
         redirect_to('login.php?message=invalid_login');
     };
 
-    print_r($_SESSION);
 //if the page is loaded with a get request, that means they probably got redirected to
 //here by our error functions. This takes their input data out of the session and puts
 //it back into the form, as well as displays their *error* messages on screen with flash

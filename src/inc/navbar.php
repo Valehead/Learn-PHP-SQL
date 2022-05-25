@@ -68,7 +68,7 @@ session_start();
             <?php if(!is_user_logged_in()){ ?>
             <div class="mt-3 mt-lg-0">
                 <a href="/Learn-PHP-SQL/accounts/login.php"><button class="btn btn-outline-light me-3">Login</button></a>
-                <a href="/Learn-PHP-SQL/accounts/register.php"></a><button class="btn btn-warning">Sign Up</button>
+                <a href="/Learn-PHP-SQL/accounts/register.php"><button class="btn btn-warning">Sign Up</button></a>
             </div>
             <?php }; ?>
             
