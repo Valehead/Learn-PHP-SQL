@@ -5,7 +5,7 @@ session_start();
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
-    <div class="container-fluid mx-1">
+    <div class="container-fluid py-1 mx-2">
         <a href="/Learn-PHP-SQL" class="navbar-brand">Learn-PHP-SQL</a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@ session_start();
                 <input class="form-control me-3" name="searchBox" type="search" id="myNavSearch" placeholder="Search Customers..." aria-label="Search">
             </form>
 
-            <button class="btn btn-outline-light me-2">Login</button>
+            <button class="btn btn-sm btn-outline-light me-2">Login</button>
             <button class="btn btn-warning">Sign Up</button>
         </div>
     </div>
