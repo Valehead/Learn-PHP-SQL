@@ -3,8 +3,17 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 
 if(is_get_request()){
 
-    //sanitize the email & activation code
-    [$inputs, $errors] = filterActivation($_GET);
+    //sanitize the email & activation code if they exist
+    if(isset($_GET['email']) && isset($_GET['activation_code'])){
+
+        [$inputs, $errors] = filterActivation($_GET);
+
+    } else {
+
+        // redirect to the registration page in all other cases
+        redirect_to('register.php');
+        
+    };
 
     //if there aren't any problems
     if (!$errors) {
@@ -25,10 +34,6 @@ if(is_get_request()){
     };
 
 };
-
-// redirect to the registration page in all other cases
-redirect_to('register.php');
-
 
 
 ?>
