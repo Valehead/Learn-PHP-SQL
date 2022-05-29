@@ -58,8 +58,7 @@
 
                                 <?php if(isset($_GET['message']) && $_GET['message'] == 'please_activate'){ ?>
                                     <div class="mb-3 d-flex justify-content-center">
-                                        <h6 class="card-title text-center" style="color: green;">We have sent you a Welcome Email!</h6>
-                                        <h6 class="card-title text-center" style="color: green;">Please verify your account within 24 hours to activate.</h6>
+                                        <h6 class="card-title text-center" style="color: green;">We have sent you a Welcome Email!<BR>Please verify your account within 24 hours to activate.</h6>
                                     </div>
                                 <?php }; ?>
 
