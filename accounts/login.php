@@ -58,7 +58,7 @@
 
 
                                 <div class="form-floating mb-3">
-                                    <input type="email" name="email" id="email" class="form-control" required>
+                                    <input type="email" name="email" id="email" class="form-control" autofocus required>
                                     <label for="email" class="form-label">Email:</label>
                                 </div>              
 
