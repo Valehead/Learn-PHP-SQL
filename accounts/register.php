@@ -46,12 +46,18 @@ if(is_user_logged_in()){
                                     <h2 class="card-title">Sign Up</h2>
                                 </div>
 
+                                <?php if(isset($_GET['message']) && $_GET['message'] == 'register'){ ?>
+                                    <div class="mb-3 d-flex justify-content-center">
+                                        <h6 class="card-title" style="color: red;">That activation link has expired! Please register again.</h6>
+                                    </div>
+                                <?php }; ?>
+
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email:</label>
                                     <input type="email" name="email" id="email" class="form-control <?= error_class($errors, 'email') ?>"
                                      value="<?= $inputs['email'] ?? '' ?>" required>
 
-                                     <small><?= $errors['email'] ?? '' ?></small>
+                                     <small style="color: red;"><?= $errors['email'] ?? '' ?></small>
                                 </div>
 
                                 <div class="mb-3">
@@ -59,7 +65,7 @@ if(is_user_logged_in()){
                                     <input type="text" name="username" id="username" class="form-control <?= error_class($errors, 'username') ?>"
                                      value="<?= $inputs['username'] ?? '' ?>" required>
 
-                                     <small><?= $errors['username'] ?? '' ?></small>
+                                     <small style="color: red;"><?= $errors['username'] ?? '' ?></small>
                                 </div>                                
 
                                 <div class="mb-3">
@@ -67,7 +73,7 @@ if(is_user_logged_in()){
                                     <input type="password" name="password" id="password" class="form-control <?= error_class($errors, 'password') ?>"
                                      value="<?= $inputs['password'] ?? '' ?>" required>
 
-                                     <small><?= $errors['password'] ?? '' ?></small>
+                                     <small style="color: red;"><?= $errors['password'] ?? '' ?></small>
                                 </div>
                                 
                                 <div class="mb-3">
@@ -75,7 +81,7 @@ if(is_user_logged_in()){
                                     <input type="password" name="password2" id="password2" class="form-control <?= error_class($errors, 'password2') ?>"
                                      value="<?= $inputs['password'] ?? '' ?>" required>
 
-                                     <small><?= $errors['password'] ?? '' ?></small>
+                                     <small style="color: red;"><?= $errors['password'] ?? '' ?></small>
                                 </div>
 
                                 <div class="mb-3">
@@ -83,7 +89,7 @@ if(is_user_logged_in()){
                                         <input type="checkbox" name="agree" id="agree" value="checked" <?= $inputs['agree'] ?? '' ?> />
                                         I agree with the <a href="#" title="term of services">terms of service.</a>
                                     </label>
-                                    <small><?= $errors['agree'] ?? '' ?></small>
+                                    <small style="color: red;"><?= $errors['agree'] ?? '' ?></small>
                                 </div>
 
                                 <div class="mb-4 d-flex justify-content-center">

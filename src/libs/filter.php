@@ -73,4 +73,24 @@ function filterLogin(array $loginData): array
     return [$loginData, $errors];
 };
 
+
+//function to see if activation link is valid
+function filterActivation(array $linkData): array
+{
+    //initialize the variable
+    $errors = [];
+
+    //check if the email address is valid
+    if(!is_email($linkData['email'])){
+        $errors['email'] = 'This is not a valid email addresss.';
+    };
+
+    if(isset($linkData['activation_code'])){
+        $errors['activation_code'] = 'This is not a valid activation code.';
+    };
+    
+    //return the user data and any errors if there are any
+    return [$linkData, $errors];
+};
+
 ?>

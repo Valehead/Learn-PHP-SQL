@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
-    <div class="container-fluid py-1 ms-2 me-4">
+    <div class="container-fluid py-1 ms-2 me-5">
         <a href="/Learn-PHP-SQL" class="navbar-brand">Learn-PHP-SQL</a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

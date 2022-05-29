@@ -56,6 +56,20 @@
                                     </div>
                                 <?php }; ?>
 
+                                <?php if(isset($_GET['message']) && $_GET['message'] == 'please_activate'){ ?>
+                                    <div class="mb-3 d-flex justify-content-center">
+                                        <h6 class="card-title" style="color: red;">We have sent you a Welcome Email!
+                                         Please verify your account within 24 hours to activate.</h6>
+                                    </div>
+                                <?php }; ?>
+
+                                <?php if(isset($_GET['message']) && $_GET['message'] == 'welcome'){ ?>
+                                    <div class="mb-3 d-flex justify-content-center">
+                                        <h6 class="card-title" style="color: red;">Your account has been activated successfully!
+                                         Please Login here.</h6>
+                                    </div>
+                                <?php }; ?>
+
 
                                 <div class="form-floating mb-3">
                                     <input type="email" name="email" id="email" class="form-control" autofocus required>

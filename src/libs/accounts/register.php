@@ -29,14 +29,18 @@ if(is_post_request()){
 
     };
 
-    echo "hi";
+    //generate activation code
+    $activation_code = generate_activation_code();
 
     //if there aren't any errors, create the user and send them to the login page
-    //along with the positive confirmation message
-    if(register_user($inputs['email'], $inputs['username'], $inputs['password'])){
+    //along with their activation email
+    if(register_user($inputs['email'], $inputs['username'], $inputs['password'], $activation_code)){
+
+        //send verification email
+        send_activation_email($inputs['email'], $activation_code);
 
         //function to redirect to the login page with just a supplied message
-        redirect_with_message('login.php', 'Your account has been created successfully. Please login here.');
+        redirect_to('login.php?message=please_activate');
 
     };
 
