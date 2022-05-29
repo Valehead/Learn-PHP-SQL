@@ -29,25 +29,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
                     <a class="nav-link <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/games/show-games.php" || 
                     $_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/games/edit-game.php") { echo 'active'; }; ?>" 
                     href="/Learn-PHP-SQL/games/show-games.php">Games</a>
-                </li>
-                
-                <?php if(is_user_logged_in()){?>
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown2" 
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            href="">My Account</a>
-
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown2">
-                                <li><a href="/Learn-PHP-SQL/accounts/my-account.php" class="dropdown-item disabled"><?= $_SESSION['username']; ?></a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a href="" class="dropdown-item disabled">Edit Profile</a></li>
-                                <li><a href="" class="dropdown-item disabled">Settings</a></li>
-                                <li><a href="/Learn-PHP-SQL/accounts/logout.php" class="dropdown-item">Log Out</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                <?php };?>
+                </li>d
             </ul>
             
 
@@ -64,6 +46,24 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
                     <a href="/Learn-PHP-SQL/accounts/register.php"><button class="btn btn-warning">Sign Up</button></a>
                 </div>
             <?php }; ?>
+            
+            <?php if(is_user_logged_in()){?>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown2" 
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                            href="">My Account</a>
+
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown2">
+                                <li><a href="/Learn-PHP-SQL/accounts/my-account.php" class="dropdown-item disabled"><?= $_SESSION['username']; ?></a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a href="" class="dropdown-item disabled">Edit Profile</a></li>
+                                <li><a href="" class="dropdown-item disabled">Settings</a></li>
+                                <li><a href="/Learn-PHP-SQL/accounts/logout.php" class="dropdown-item">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                <?php };?>
             
         </div>
     </div>
