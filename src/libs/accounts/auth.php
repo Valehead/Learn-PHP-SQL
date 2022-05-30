@@ -185,7 +185,7 @@ function send_activation_email(string $email, string $activation_code): void
     $header = "From: no-reply@rhymeswithdallas.com";
 
     // send the email
-    mail($email, $subject, nl2br($message));
+    mail($email, $subject, nl2br($message), $header);
 
 };
 
