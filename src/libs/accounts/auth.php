@@ -1,5 +1,14 @@
 <?php
 
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
 //function for registering a user
 function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24 * 60 * 60, int $is_admin = 0): bool
 {
@@ -173,19 +182,42 @@ function send_activation_email(string $email, string $activation_code): void
     //create the activation link
     $activation_link = "http://localhost/Learn-PHP-SQL/activate.php?email={$email}&activation_code={$activation_code}";
 
-    //set email subject and body
-    $subject = 'Please activate your account';
-    $message = <<<MESSAGE
-            Hi,
-            Please click the following link to activate your account:
-            $activation_link
-            MESSAGE;
+    // //set email subject and body
+    // $subject = 'Please activate your account';
+    // $message = <<<MESSAGE
+    //         Hi,
+    //         Please click the following link to activate your account:
+    //         $activation_link
+    //         MESSAGE;
 
-    // email header
-    $header = "From: no-reply@rhymeswithdallas.com";
+    // // email header
+    // $header = "From: no-reply@rhymeswithdallas.com";
 
-    // send the email
-    mail($email, $subject, nl2br($message), $header);
+    // // send the email
+    // mail($email, $subject, nl2br($message), $header);
+    $mail = new PHPMailer();
+
+try{
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'ssl';
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = '465';
+    $mail->isHTML();
+    $mail->Username = '***REMOVED***';
+    $mail->Password = '***REMOVED***';
+    $mail->SetFrom('no-reply@rhymeswithdallas.com');
+    $mail->Subject = 'Please activate your account';
+    $mail->Body = 'Hi,
+    Please click the following link to activate your account:';
+
+    $mail->AddAddress($email);
+
+    $mail->Send();
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+};
 
 };
 
