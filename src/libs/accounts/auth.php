@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require 'vendor/autoload.php';
+//require 'vendor/autoload.php';
 
 //function for registering a user
 function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24 * 60 * 60, int $is_admin = 0): bool
