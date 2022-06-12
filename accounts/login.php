@@ -64,8 +64,7 @@
 
                                 <?php if(isset($_GET['message']) && $_GET['message'] == 'welcome'){ ?>
                                     <div class="mb-3 d-flex justify-content-center">
-                                        <h6 class="card-title" style="color: red;">Your account has been activated successfully!
-                                         Please Login here.</h6>
+                                        <h6 class="card-title" style="color: green;">Your account has been activated successfully!<BR>Please Login here.</h6>
                                     </div>
                                 <?php }; ?>
 
