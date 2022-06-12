@@ -180,7 +180,7 @@ function generate_activation_code(): string
 function send_activation_email(string $email, string $activation_code): void
 {
     //create the activation link
-    $activation_link = "http://localhost/Learn-PHP-SQL/activate.php?email={$email}&activation_code={$activation_code}";
+    $activation_link = "http://10.6.18.57/Learn-PHP-SQL/accounts/activate.php?email={$email}&activation_code={$activation_code}";
 
     // //set email subject and body
     // $subject = 'Please activate your account';
