@@ -3,6 +3,11 @@
 //Load Composer's autoloader
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/vendor/autoload.php');
 
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\Transport;
+
 
 //function for registering a user
 function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24 * 60 * 60, int $is_admin = 0): bool
@@ -202,7 +207,7 @@ function send_activation_email(string $email, string $activation_code): void
 
     $transport = Transport::fromDsn($dsn);
 
-    $mailer = new Mailer();
+    $mailer = new Mailer($transport);
 
     try {
         $mailer->send($mail);
