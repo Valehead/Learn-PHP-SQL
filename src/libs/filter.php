@@ -89,7 +89,6 @@ function filterActivation(array $linkData): array
         $errors['activation_code'] = 'This is not a valid activation code.';
     };
     
-    print_r($errors);
     //return the user data and any errors if there are any
     return [$linkData, $errors];
 };

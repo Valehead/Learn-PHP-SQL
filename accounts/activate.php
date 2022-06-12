@@ -29,8 +29,9 @@ if(is_get_request()){
         };
     } else {
 
+        print_r($errors);
         // redirect to the registration page if there is an issue
-        redirect_to('register.php?message=register');
+        //redirect_to('register.php?message=register');
     };
 
 };
