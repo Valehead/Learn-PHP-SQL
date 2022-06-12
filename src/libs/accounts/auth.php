@@ -190,7 +190,6 @@ function send_activation_email(string $email, string $activation_code): void
 
     // // send the email
     // mail($email, $subject, nl2br($message), $header);
-    echo $message;
 
     $mail = (new Email())
         ->from('nvales@mpihq.com')
@@ -198,7 +197,6 @@ function send_activation_email(string $email, string $activation_code): void
         ->subject('Welcome to Rip!')
         ->text($message);
 
-    print_r($mail);
 
     $dsn = '***REMOVED***';
 
@@ -206,7 +204,12 @@ function send_activation_email(string $email, string $activation_code): void
 
     $mailer = new Mailer();
 
-    $mailer->send($mail);
+    try {
+        $mailer->send($mail);
+    } catch ($e) {
+        echo "error!";
+        print_r($e.getDebug());
+    };
 };
 
 
