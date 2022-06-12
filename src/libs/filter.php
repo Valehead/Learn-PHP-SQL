@@ -85,8 +85,7 @@ function filterActivation(array $linkData): array
         $errors['email'] = 'This is not a valid email addresss.';
     };
 
-    if(isset($linkData['activation_code'])){
-        echo $linkData['activation_code'];
+    if(!isset($linkData['activation_code'])){
         $errors['activation_code'] = 'This is not a valid activation code.';
     };
     
