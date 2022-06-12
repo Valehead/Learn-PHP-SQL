@@ -206,7 +206,7 @@ function send_activation_email(string $email, string $activation_code): void
 
     try {
         $mailer->send($mail);
-    } catch ($e) {
+    } catch (TransportExceptionInterface $e) {
         echo "error!";
         print_r($e.getDebug());
     };
