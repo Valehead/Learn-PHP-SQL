@@ -3,7 +3,7 @@
 //Load Composer's autoloader
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/vendor/autoload.php');
 
-// use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Mailer;
 // use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
 // use Symfony\Component\Mime\Email;
 // use Symfony\Component\Mailer\Transport;
