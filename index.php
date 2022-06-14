@@ -2,7 +2,6 @@
 require_once "src/libs/customers/display-customers.php";
 require_once "src/libs/games/display-games.php";
 
-//print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -47,6 +46,7 @@ require_once "src/libs/games/display-games.php";
             <!-- start of content row -->
             <div class="row">
 
+            <?php if(is_user_logged_in()) { ?>
                 <!-- new customer form container -->
                 <div class="col-5" id="entryform">
 
@@ -131,9 +131,10 @@ require_once "src/libs/games/display-games.php";
 
                 </div>
                 <!-- end of spacer -->
+                <?php }; ?>
 
                 <!-- start of customer tiles -->
-                <div class="col-5" id="customers">
+                <div class="<?php echo is_user_logged_in() ? "col-5" : "col-12"; ?>" id="customers">
                 <?php
                     // call function to find and display all customers
                     display_customers();
