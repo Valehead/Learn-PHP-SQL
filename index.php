@@ -1,6 +1,12 @@
 <?php
-require_once "src/libs/customers/display-customers.php";
-require_once "src/libs/games/display-games.php";
+    require_once "src/libs/customers/display-customers.php";
+    require_once "src/libs/games/display-games.php";
+
+    //only allow access to games page if someone is logged in
+    if(!is_user_logged_in()){
+        header('Location:/Learn-PHP-SQL/accounts/login.php?message=require_login');
+        exit;
+    };
 
 ?>
 <!DOCTYPE html>

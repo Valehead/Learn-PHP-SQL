@@ -1,8 +1,11 @@
 <?php
     require_once "../src/libs/customers/search-customer.php";
     
-    //get the id out of the url
-    //$search = $_GET['searchBox'];
+    //only allow access to games page if someone is logged in
+    if(!is_user_logged_in()){
+        header('Location:/Learn-PHP-SQL/accounts/login.php?message=require_login');
+        exit;
+    };
 
 
 ?>
