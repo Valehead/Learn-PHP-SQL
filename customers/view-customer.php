@@ -2,8 +2,11 @@
     require_once "../src/libs/customers/search-customer.php";
     require_once "../src/libs/games/search-game.php";
     
-    //get the id out of the url
-    //$customerId = $_GET['id'];
+    //only allow access to games page if someone is logged in
+    if(!is_user_logged_in()){
+        header('Location:/Learn-PHP-SQL/accounts/login.php?message=require_login');
+        exit;
+    };
 
     $customer = customer_search();
 
