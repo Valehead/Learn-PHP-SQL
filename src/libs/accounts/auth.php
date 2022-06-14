@@ -153,7 +153,7 @@ function is_user_active($email): bool
     } else {
 
         //if the user doesn't exist, tell them user/pass invalid
-        header('Location:/Learn-PHP-SQL/accounts/login.php?invalid_login');
+        header('Location:/Learn-PHP-SQL/accounts/login.php?message=invalid_login');
         exit;    
     };
 };
