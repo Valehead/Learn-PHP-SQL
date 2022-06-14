@@ -49,12 +49,14 @@
                                 </ul>
                             </div>
 
+                            <!-- show games section -->
                             <div class="mb-3">
                                 <h4 class="card-title text-center">Games Played</h4>
                                 <div class="d-flex flex-wrap justify-content-center">
                                     <?php gamesPlayed_search(); ?>                                    
                                 </div>
                             </div>
+                            <!-- end of show games section -->
 
                             <div class="mb-3 d-flex justify-content-between">
                                 
