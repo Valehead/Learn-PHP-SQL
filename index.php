@@ -134,7 +134,7 @@ require_once "src/libs/games/display-games.php";
                 <?php }; ?>
 
                 <!-- start of customer tiles -->
-                <div class="<?php echo is_user_logged_in() ? "col-5" : "col-12"; ?>" id="customers">
+                <div class="<?php echo is_user_logged_in() ? "col-5" : ""; ?>" id="customers">
                 <?php
                     // call function to find and display all customers
                     display_customers();

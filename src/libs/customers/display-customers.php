@@ -24,7 +24,7 @@ function display_customers(){
             while($row = $result->fetch_assoc()) {
                 $row['birthday'] = date('F jS',strtotime($row['birthday']));
                 
-                echo "<div class='col'><div class='card mb-3' id='customer'>
+                echo "<div class='col-4'><div class='card mb-3' id='customer'>
                         <div class='card-body'>
                         <h4 class='card-title'>Customer Id: {$row['id']}</h4>
                         <ul class='list-group list-group-flush'>
