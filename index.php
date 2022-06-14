@@ -46,7 +46,6 @@ require_once "src/libs/games/display-games.php";
             <!-- start of content row -->
             <div class="row">
 
-            <?php if(is_user_logged_in()) { ?>
                 <!-- new customer form container -->
                 <div class="col-5" id="entryform">
 
@@ -131,17 +130,16 @@ require_once "src/libs/games/display-games.php";
 
                 </div>
                 <!-- end of spacer -->
-                <?php }; ?>
 
                 <!-- start of customer tiles -->
-                <?php echo is_user_logged_in() ? "<div class='col-5' id='customers'>" : ""; ?>
+                <div class='col-5' id='customers'>
                 
                 <?php
                     // call function to find and display all customers
                     display_customers();
                 ?>
-                
-                <?php echo is_user_logged_in() ? "</div>" : ""; ?>
+
+                </div>
                 <!-- end of customer tiles -->
             </div>
             <!-- end of row -->
