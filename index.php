@@ -2,12 +2,12 @@
     require_once "src/libs/customers/display-customers.php";
     require_once "src/libs/games/display-games.php";
 
+    require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
+
     //only allow access to games page if someone is logged in
     if(!is_user_logged_in()){
-        header('Location:/Learn-PHP-SQL/accounts/login.php?message=require_login');
-        exit;
+        redirect_to('/Learn-PHP-SQL/accounts/login.php?message=require_login');
     };
-
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
