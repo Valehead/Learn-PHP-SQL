@@ -50,9 +50,15 @@
                                     </div>
                                 <?php }; ?>
 
-                                <?php if(isset($_GET['message']) && $_GET['message'] == 'require_login'){ ?>
+                                <?php if(isset($_GET['message']) && $_GET['message'] == 'invalid_login'){ ?>
                                     <div class="mb-3 d-flex justify-content-center">
-                                        <h6 class="card-title" style="color: red;">You must login to view that page!</h6>
+                                        <h6 class="card-title" style="color: red;">Invalid Username or Password!</h6>
+                                    </div>
+                                <?php }; ?>
+
+                                <?php if(isset($_GET['message']) && $_GET['message'] == 'not_active'){ ?>
+                                    <div class="mb-3 d-flex justify-content-center">
+                                        <h6 class="card-title" style="color: red;">Your account hasn't been activated yet. Please check your email.</h6>
                                     </div>
                                 <?php }; ?>
 

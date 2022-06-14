@@ -3,6 +3,8 @@
 //Load Composer's autoloader
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/vendor/autoload.php');
 
+
+//include these
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\Transport;
@@ -72,7 +74,7 @@ function login_user(string $email, string $password): bool
     $user = find_user_by_email($login['email']);
 
     //check if the password entered is correct and if the user is activated
-    if($user && is_user_active($user) && password_verify($login['password'], $user['password'])){
+    if($user && password_verify($login['password'], $user['password'])){
 
         //regen the session
         session_regenerate_id();
@@ -138,9 +140,22 @@ function is_user_logged_in(): bool
 
 
 //helper function to check if user is activated
-function is_user_active($user): bool
+function is_user_active($email): bool
 {
-    return (int)$user['active'] === 1;
+    //check if the user exists
+    $user = find_user_by_email($email);
+
+    //if we got a result, check if the user is active and return that result
+    if($user){
+
+        return (int)$user['active'] === 1;
+
+    } else {
+
+        //if the user doesn't exist, tell them user/pass invalid
+        header('Location:/Learn-PHP-SQL/accounts/login.php?invalid_login');
+        exit;    
+    };
 };
 
 
@@ -181,33 +196,32 @@ function send_activation_email(string $email, string $activation_code): void
     //create the activation link
     $activation_link = "http://10.6.18.57/Learn-PHP-SQL/accounts/activate.php?email={$email}&activation_code={$activation_code}";
 
-    // //set email subject and body
-    // $subject = 'Please activate your account';
+    // //set email body
     $message = <<<MESSAGE
             Hi,
             Please click the following link to activate your account:
             $activation_link
             MESSAGE;
 
-    // // email header
-    // $header = "From: no-reply@rhymeswithdallas.com";
-
-    // // send the email
-    // mail($email, $subject, nl2br($message), $header);
-
+    //initialize mail as a new email object
+    //setup the email details
     $mail = (new Email())
-        ->from('nvales@mpihq.com')
+        ->from('noreply@rhymeswithdallas.com')
         ->to($email)
-        ->subject('Welcome to Rip!')
+        ->subject('Welcome to Rhymes with Dallas!')
         ->text($message);
 
 
+    //dsn string
     $dsn = '***REMOVED***';
 
+    //setup the transport object with the dsn
     $transport = Transport::fromDsn($dsn);
 
+    //create a new mailer object and pass in the transport object
     $mailer = new Mailer($transport);
 
+    //try to send the mail, if not show the error
     try {
         $mailer->send($mail);
     } catch (TransportExceptionInterface $e) {

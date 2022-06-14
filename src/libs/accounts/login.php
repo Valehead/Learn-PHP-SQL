@@ -23,6 +23,13 @@ if(is_post_request()){
 
     };
 
+    //if user isn't active, tell them
+    if(!is_user_active($inputs['email'])){
+
+        //function to redirect to the login page with just a supplied message
+        redirect_to('login.php?message=not_active');
+
+    };
 
     //if there aren't any errors, create the user and send them to the login page
     //along with the positive confirmation message
