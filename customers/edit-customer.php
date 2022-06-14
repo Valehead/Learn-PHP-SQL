@@ -68,14 +68,14 @@
                                     <input type="date" name="birthday" id="birthday" class="form-control" value="<?php echo $customer['birthday']; ?>" required>
                                 </div>
 
-                                <div class="mb-3" id="newCustGames">
-                                    <h3 class="card-title text-center mb-2">What games do they play?</h3>
+                                <div class="mb-4" id="newCustGames">
+                                    <h3 class="card-title text-center mb-3">What games do they play?</h3>
                                     <div class="d-flex flex-wrap justify-content-center">
                                         <?php display_games(); ?>
                                     </div>
                                 </div>
 
-                                
+
                                 <div class="mb-2 d-flex justify-content-between">
                                     <button type="submit" class="btn btn-info" name="submit" id="submit">Update</button>
                                     </form>
