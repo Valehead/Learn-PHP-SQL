@@ -134,10 +134,14 @@ require_once "src/libs/games/display-games.php";
                 <?php }; ?>
 
                 <!-- start of customer tiles -->
+                <?php echo is_user_logged_in() ? "<div class='col-5' id='customers'>" : ""; ?>
+                
                 <?php
                     // call function to find and display all customers
                     display_customers();
                 ?>
+                
+                <?php echo is_user_logged_in() ? "</div>" : ""; ?>
                 <!-- end of customer tiles -->
             </div>
             <!-- end of row -->
