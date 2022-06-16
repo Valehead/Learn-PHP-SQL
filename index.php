@@ -6,7 +6,7 @@
 
     //only allow access to games page if someone is logged in
     if(!is_user_logged_in()){
-        redirect_to('/Learn-PHP-SQL/accounts/login.php?message=require_login');
+        redirect_to('/Learn-PHP-SQL/accounts/login.php');
     };
 ?>
 <!DOCTYPE html>
