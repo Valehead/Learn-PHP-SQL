@@ -38,7 +38,13 @@
                 type: "bar",
                 data: {
                     labels: ["Bill", "Jeff", "Michael", "Tim", "Zuck"], 
-                    datasets: [{label: "Number of Cookies", data: [5, 2, 12, 19, 3]}]
+                    datasets: [{
+                        label: "Number of Cookies", 
+                        data: [5, 2, 12, 19, 3],
+                        backgroundColor: ["red", "blue", "yellow", "green", "pink"],
+                        borderColor: ["red", "blue", "yellow", "green", "pink"],
+                        borderWidth: 1,
+                    }]
                 }
             };
 
