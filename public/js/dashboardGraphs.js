@@ -5,7 +5,7 @@ var configCanvas1 = {
         labels: ["Bill", "Jeff", "Michael", "Tim", "Zuck"],
         datasets: [{
             label: "Number of Cookies",
-            data: [5, 2, 12, 19, 3],
+            data: [5, 2, 12, 22, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
