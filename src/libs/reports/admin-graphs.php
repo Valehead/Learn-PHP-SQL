@@ -10,7 +10,13 @@ function get_all_games(){
 
 
     //build and execute the query
-    $result = $conn->query("SELECT `gameTitle` FROM `games` ORDER BY `id`;");
+    //$result = $conn->query("SELECT `gameTitle` FROM `games` ORDER BY `id`;");
+    $result = $conn->query("SELECT g.gameTitle, COUNT(*) as count FROM games g 
+    right JOIN gamesPlayed p 
+    on g.id = p.gameId
+    GROUP BY g.gameTitle
+    ORDER BY count desc;");
+
 
     //close active connection
     $conn->close();
