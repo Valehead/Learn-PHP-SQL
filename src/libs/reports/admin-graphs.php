@@ -19,7 +19,7 @@ function get_all_games(){
 
 
     //close active connection
-    $conn->close();
+    //$conn->close();
 
     //if we got a valid result....
     if($result){
