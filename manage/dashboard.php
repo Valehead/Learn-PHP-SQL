@@ -30,9 +30,10 @@ foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game
 
         <main class="container mt-5">
             <div class="row">
-                <div class="col-8 justify-content-center">
+                <div class="col-10 justify-content-center">
                     <div class="card mt-5" id="chart1card">
                         <div class="card-body">
+                            <h2 class="card-title">Games Played by our Customers</h2>
                             <canvas id="chart1" style="width:100%;max-width:700px"></canvas>
                             <?php foreach(get_all_games() as $game){echo $game[0];}; ?>
                         </div>
@@ -50,7 +51,7 @@ foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game
                 data: {
                     labels: <?php echo json_encode($gameLabels); ?>,
                     datasets: [{
-                        label: "Most Popular Games",
+                        label: "# of Customers that Play",
                         data: <?php echo json_encode($gameStats); ?>,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.4)',
