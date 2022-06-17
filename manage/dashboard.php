@@ -42,7 +42,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/reports/admin-g
 
         </main>
 
-        <script src="../public/js/dashboardGraphs.js">
+        <script>
             var chartCanvas1 = document.getElementById('chart1');
             var configCanvas1 = {
                 type: "bar",
