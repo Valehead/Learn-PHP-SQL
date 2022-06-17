@@ -30,7 +30,7 @@ foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game
 
         <main class="container mt-5">
             <div class="row">
-                <div class="col-5">
+                <div class="col-8 justify-content-center">
                     <div class="card mt-5" id="chart1card">
                         <div class="card-body">
                             <canvas id="chart1" style="width:100%;max-width:700px"></canvas>
