@@ -20,8 +20,15 @@ function get_all_games(){
 
         //and there is a result including info....
         if($result->num_rows >0){
-
-            return $result;
+            return $result->fetch_array(MYSQLI_NUM);
+            // //iterate over the data and create rows for each game
+            // while($row = $result->fetch_assoc()){
+                
+            //     echo "<tr id='game'>
+            //             <th scope='row'><a href='/Learn-PHP-SQL/games/edit-game.php?id={$row['id']}'>{$row['id']}</a></th>
+            //             <td>{$row['gameTitle']}</td>
+            //           </tr>";
+            // };
         //if we get a result from sql but no data
         } else {
             echo "<tr id='game'>
