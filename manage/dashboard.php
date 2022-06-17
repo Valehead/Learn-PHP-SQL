@@ -50,15 +50,15 @@ foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game
                 data: {
                     labels: <?php echo json_encode($gameLabels); ?>,
                     datasets: [{
-                        label: "Number of Cookies",
-                        data: [5, 2, 12, 19, 3],
+                        label: "Most Popular Games",
+                        data: <?php echo json_encode($gameStats); ?>,
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            'rgba(255, 99, 132, 0.4)',
+                            'rgba(54, 162, 235, 0.4)',
+                            'rgba(255, 206, 86, 0.4)',
+                            'rgba(75, 192, 192, 0.4)',
+                            'rgba(153, 102, 255, 0.4)',
+                            'rgba(255, 159, 64, 0.4)'
                         ],
                         borderColor: [
                             'rgba(255, 99, 132, 1)',
