@@ -31,9 +31,9 @@ foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game
         <main class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-10">
-                    <div class="card mt-5" id="chart1card">
+                    <div class="card shadow p-3 mt-5 rounded" id="chart1card">
 
-                        <h2 class="card-title">Games Played by our Customers</h2>
+                        <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
 
                         <div class="card-body">
                             <canvas id="chart1" style="width:100%;max-width:1000px"></canvas>
