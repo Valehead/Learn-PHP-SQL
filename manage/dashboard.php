@@ -29,8 +29,8 @@ foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game
         <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/src/inc/navbar.php") ?>
 
         <main class="container mt-5">
-            <div class="row">
-                <div class="col-10 justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col-10">
                     <div class="card mt-5" id="chart1card">
                         <div class="card-body">
                             <h2 class="card-title">Games Played by our Customers</h2>
