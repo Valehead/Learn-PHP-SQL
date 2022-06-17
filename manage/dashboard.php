@@ -32,11 +32,13 @@ foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="card mt-5" id="chart1card">
+
+                        <h2 class="card-title">Games Played by our Customers</h2>
+
                         <div class="card-body">
-                            <h2 class="card-title">Games Played by our Customers</h2>
-                            <canvas id="chart1" style="width:100%;max-width:700px"></canvas>
-                            <?php foreach(get_all_games() as $game){echo $game[0];}; ?>
+                            <canvas id="chart1" style="width:100%;max-width:1000px"></canvas>
                         </div>
+                        
                     </div>
                 </div>
             </div>
