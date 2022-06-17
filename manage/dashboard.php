@@ -2,8 +2,9 @@
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/reports/admin-graphs.php');
 
-
-
+$gameLabels = [];
+$gameStats = [];
+foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game[1];};
 
 ?>
 
@@ -47,7 +48,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/reports/admin-g
             var configCanvas1 = {
                 type: "bar",
                 data: {
-                    labels: ["Bill", "Jeff", "Michael", "Tim", "Zuck"],
+                    labels: <?php echo json_encode($gameLabels); ?>,
                     datasets: [{
                         label: "Number of Cookies",
                         data: [5, 2, 12, 19, 3],
