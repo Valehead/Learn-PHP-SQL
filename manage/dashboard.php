@@ -33,7 +33,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/reports/admin-g
                     <div class="card mt-5" id="chart1card">
                         <div class="card-body">
                             <canvas id="chart1" style="width:100%;max-width:700px"></canvas>
-                            <?php print_r(get_all_games()); ?>
+                            <?php foreach(get_all_games() as $game){echo $game;}; ?>
                         </div>
                     </div>
                 </div>
