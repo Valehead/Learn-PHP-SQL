@@ -45,7 +45,8 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                         </div>
                         
                     </div>
-
+                </div>
+                
                 <div class="col-5">
                     <div class="card shadow p-3 mt-5 rounded" id="chart2card">
 
