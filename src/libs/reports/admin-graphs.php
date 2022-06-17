@@ -55,7 +55,7 @@ function how_many_games(){
 
     //build and execute the query
     //$result = $conn->query("SELECT `gameTitle` FROM `games` ORDER BY `id`;");
-    $result = $conn->query("SELECT CONCAT_WS(" ", c.firstName, c.lastName) AS `whole_name`, COUNT(p.customerId) as count FROM customers c 
+    $result = $conn->query("SELECT CONCAT_WS(' ', c.firstName, c.lastName) AS `whole_name`, COUNT(p.customerId) as count FROM customers c 
     right JOIN gamesPlayed p 
     on c.id = p.customerId
     GROUP BY whole_name 
