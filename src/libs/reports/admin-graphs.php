@@ -10,7 +10,7 @@ function get_all_games(){
 
 
     //build and execute the query
-    $result = $conn->query("SELECT * FROM `games` ORDER BY `id`;");
+    $result = $conn->query("SELECT `gameTitle` FROM `games` ORDER BY `id`;");
 
     //close active connection
     $conn->close();
