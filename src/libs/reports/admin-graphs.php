@@ -20,7 +20,7 @@ function get_all_games(){
 
         //and there is a result including info....
         if($result->num_rows >0){
-            return $result->fetch_array(MYSQLI_NUM);
+            return $result->fetch_all(MYSQLI_NUM);
             // //iterate over the data and create rows for each game
             // while($row = $result->fetch_assoc()){
                 
