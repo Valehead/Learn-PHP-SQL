@@ -10,7 +10,6 @@ function get_all_games(){
 
 
     //build and execute the query
-    //$result = $conn->query("SELECT `gameTitle` FROM `games` ORDER BY `id`;");
     $result = $conn->query("SELECT g.gameTitle, COUNT(*) as count FROM games g 
                             right JOIN gamesPlayed p 
                             on g.id = p.gameId
@@ -42,16 +41,15 @@ function how_many_games(){
 
 
     //build and execute the query
-    //$result = $conn->query("SELECT `gameTitle` FROM `games` ORDER BY `id`;");
     $result = $conn->query("SELECT CONCAT_WS(' ', c.firstName, c.lastName) AS `whole_name`, COUNT(p.customerId) as count FROM customers c 
                             right JOIN gamesPlayed p 
                             on c.id = p.customerId
                             GROUP BY whole_name 
-                            ORDER BY count desc");
+                            ORDER BY count desc;");
 
 
     //close active connection
-    $conn->close();
+    //$conn->close();
 
     //if we got a valid result....
     if($result){
@@ -69,6 +67,28 @@ function how_many_games(){
 //customer birthdays graph
 function when_most_birthdays(){
 
+    global $conn;
+
+
+    //build and execute the query
+    $result = $conn->query("SELECT MONTH(birthday) AS birthmonth, COUNT(*) as count
+                            FROM customers
+                            GROUP by birthmonth
+                            order by birthmonth asc;");
+    
+    //close active connection
+    //$conn->close();
+
+
+    //if we got a valid result....
+    if($result){
+
+        //and there is a result including info....
+        if($result->num_rows >0){
+            return $result->fetch_all(MYSQLI_NUM);
+        };
+    };
+    return;
 };
 
 ?>
