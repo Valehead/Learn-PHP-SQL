@@ -135,7 +135,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
 
             
             var chartButton1 = document.getElementById('doughnut');
-            var chartButton1 = document.getElementById('bar');
+            var chartButton2 = document.getElementById('bar');
             chartButton1.click(function() {
             change('doughnut');
             });
