@@ -144,7 +144,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                 }
 
                 // Chart.js modifies the object you pass in. Pass a copy of the object so we can use the original object later
-                var temp = jQuery.extend(true, {}, config);
+                var temp = configCanvas1;
                 temp.type = newType;
                 myChart1 = new Chart(ctx, temp);
             };
