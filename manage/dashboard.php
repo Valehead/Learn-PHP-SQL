@@ -39,7 +39,8 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                     <div class="card shadow p-3 mt-5 rounded" id="chart1card">
 
                         <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
-
+                        <button id='line'>line</button>
+                        <button id='bar'>bar</button>
                         <div class="card-body">
                             <canvas id="chart1" style="width:100%;max-width:800px"></canvas>
                         </div>
@@ -67,7 +68,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
         <script>
             var chartCanvas1 = document.getElementById('chart1');
             var configCanvas1 = {
-                type: "doughnut",
+                type: "bar",
                 data: {
                     labels: <?php echo json_encode($gameLabels); ?>,
                     datasets: [{
@@ -131,6 +132,28 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
             };
 
             var myChart2 = new Chart(chartCanvas2, configCanvas2);
+
+            $("#line").click(function() {
+            change('line');
+            });
+
+            $("#bar").click(function() {
+            change('bar');
+            });
+
+            function change(newType) {
+                var ctx = document.getElementById("chart1");
+
+                // Remove the old chart and all its event handles
+                if (myChart1) {
+                    myChart1.destroy();
+                }
+
+                // Chart.js modifies the object you pass in. Pass a copy of the object so we can use the original object later
+                var temp = jQuery.extend(true, {}, config);
+                temp.type = newType;
+                myChart1 = new Chart(ctx, temp);
+            };
         </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
