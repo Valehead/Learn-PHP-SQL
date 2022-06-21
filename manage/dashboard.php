@@ -10,6 +10,10 @@ $playerLabels = [];
 $playerStats = [];
 foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[] = $player[1];};
 
+$birthdayLabels = [];
+$birthdayStats = [];
+foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = $birthday[0]; $birthdayStats[] = $birthday[1];};
+
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +70,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
             <div class="row justify-content-between">
 
                 <div class="col-6">
-                    <div class="card shadow p-3 rounded" id="chart1card">
+                    <div class="card shadow p-3 rounded" id="chart3card">
 
                         <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
                         <div class="card-body">
@@ -77,7 +81,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                 </div>
 
                 <div class="col-6">
-                    <div class="card shadow p-3 mt-5 rounded" id="chart2card">
+                    <div class="card shadow p-3 rounded" id="chart4card">
 
                         <h2 class="card-title text-center mt-3 mb-2">Customers who Game the Most</h2>
 
@@ -162,6 +166,41 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
             };
 
             var myChart2 = new Chart(chartCanvas2, configCanvas2);
+
+            //chart 3 setup and display
+            var chartCanvas2 = document.getElementById('chart3');
+            var configCanvas2 = {
+                type: "bar",
+                data: {
+                    labels: <?php echo json_encode($birthdayLabels); ?>,
+                    datasets: [{
+                        label: "# of Games Played",
+                        data: <?php echo json_encode($birthdayStats); ?>,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.4)',
+                            'rgba(54, 162, 235, 0.4)',
+                            'rgba(255, 206, 86, 0.4)',
+                            'rgba(75, 192, 192, 0.4)',
+                            'rgba(153, 102, 255, 0.4)',
+                            'rgba(255, 159, 64, 0.4)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                }
+            };
+
+            var myChart3 = new Chart(chartCanvas3, configCanvas3);
 
         </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
