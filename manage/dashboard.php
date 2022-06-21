@@ -33,6 +33,8 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
         <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/src/inc/navbar.php") ?>
 
         <main class="container mt-5">
+
+        <!-- 1st row of graphs -->
             <div class="row justify-content-between">
 
                 <div class="col-6">
@@ -53,6 +55,34 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
 
                         <div class="card-body">
                             <canvas id="chart2" style="width:100%;max-width:800px"></canvas>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2nd row of graphs -->
+            <div class="row justify-content-between">
+
+                <div class="col-6">
+                    <div class="card shadow p-3 rounded" id="chart1card">
+
+                        <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
+                        <div class="card-body">
+                            <canvas id="chart3" style="width:100%;max-width:800px"></canvas>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card shadow p-3 mt-5 rounded" id="chart2card">
+
+                        <h2 class="card-title text-center mt-3 mb-2">Customers who Game the Most</h2>
+
+                        <div class="card-body">
+                            <canvas id="chart4" style="width:100%;max-width:800px"></canvas>
                         </div>
                         
                     </div>
