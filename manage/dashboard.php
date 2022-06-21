@@ -68,7 +68,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
         <script>
             var chartCanvas1 = document.getElementById('chart1');
             var configCanvas1 = {
-                type: "doughnut",
+                type: "bar",
                 data: {
                     labels: <?php echo json_encode($gameLabels); ?>,
                     datasets: [{
@@ -92,6 +92,9 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                         ],
                         borderWidth: 1,
                     }]
+                },
+                options: {
+                    responsive: true,
                 }
             };
             var myChart1 = new Chart(chartCanvas1, configCanvas1);
@@ -122,6 +125,9 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                         ],
                         borderWidth: 1,
                     }]
+                },
+                options: {
+                    responsive: true,
                 }
             };
 
@@ -130,7 +136,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
             
 
             function change(newType) {
-                var ctx = document.getElementById("chart1");
+                var ctx = document.getElementById("chart1").getContext("2d");
 
                 // Remove the old chart and all its event handles
                 if (myChart1) {
