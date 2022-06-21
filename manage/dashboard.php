@@ -67,7 +67,7 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = $birthday[0]; $b
             </div>
 
             <!-- 2nd row of graphs -->
-            <div class="row justify-content-between">
+            <div class="row mt-5 justify-content-between">
 
                 <div class="col-6">
                     <div class="card shadow p-3 rounded" id="chart3card">
