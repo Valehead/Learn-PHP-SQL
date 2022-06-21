@@ -39,8 +39,6 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                     <div class="card shadow p-3 mt-5 rounded" id="chart1card">
 
                         <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
-                        <button id='doughnut' onclick="change('doughnut')">doughnut</button>
-                        <button id='bar' onclick="change('bar')">bar</button>
                         <div class="card-body">
                             <canvas id="chart1" style="width:100%;max-width:800px"></canvas>
                         </div>
