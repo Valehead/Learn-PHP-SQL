@@ -12,7 +12,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
 
 $birthdayLabels = [];
 $birthdayStats = [];
-foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = $birthday[0]; $birthdayStats[] = $birthday[1];};
+foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime(0, 0, 0, $birthday[0], 10)); $birthdayStats[] = $birthday[1];};
 
 ?>
 
@@ -72,7 +72,7 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = $birthday[0]; $b
                 <div class="col-6">
                     <div class="card shadow p-3 rounded" id="chart3card">
 
-                        <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
+                        <h2 class="card-title text-center mt-3 mb-2">Customer Birthdays by Month</h2>
                         <div class="card-body">
                             <canvas id="chart3" style="width:100%;max-width:800px"></canvas>
                         </div>
