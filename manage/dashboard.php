@@ -168,8 +168,8 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = $birthday[0]; $b
             var myChart2 = new Chart(chartCanvas2, configCanvas2);
 
             //chart 3 setup and display
-            var chartCanvas2 = document.getElementById('chart3');
-            var configCanvas2 = {
+            var chartCanvas3 = document.getElementById('chart3');
+            var configCanvas3 = {
                 type: "bar",
                 data: {
                     labels: <?php echo json_encode($birthdayLabels); ?>,
