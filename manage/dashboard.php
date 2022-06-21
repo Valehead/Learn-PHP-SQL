@@ -28,6 +28,10 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     </head>
     <body>
         <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/src/inc/navbar.php") ?>
@@ -144,7 +148,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                 }
 
                 // Chart.js modifies the object you pass in. Pass a copy of the object so we can use the original object later
-                var temp = configCanvas1;
+                var temp = jQuery.extend(true, {}, configCanvas1 );
                 temp.type = newType;
                 myChart1 = new Chart(ctx, temp);
             };
