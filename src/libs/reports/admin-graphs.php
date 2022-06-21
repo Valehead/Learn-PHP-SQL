@@ -64,4 +64,11 @@ function how_many_games(){
     return;
 };
 
+
+
+//customer birthdays graph
+function when_most_birthdays(){
+
+};
+
 ?>
