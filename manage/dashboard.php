@@ -70,6 +70,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
         </main>
 
         <script>
+            //chart 1 setup and display
             var chartCanvas1 = document.getElementById('chart1');
             var configCanvas1 = {
                 type: "bar",
@@ -103,6 +104,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
             };
             var myChart1 = new Chart(chartCanvas1, configCanvas1);
             
+            //chart 2 setup and display
             var chartCanvas2 = document.getElementById('chart2');
             var configCanvas2 = {
                 type: "bar",
@@ -137,21 +139,6 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
 
             var myChart2 = new Chart(chartCanvas2, configCanvas2);
 
-            
-
-            function change(newType) {
-                var ctx = document.getElementById("chart1").getContext("2d");
-
-                // Remove the old chart and all its event handles
-                if (myChart1) {
-                    myChart1.destroy();
-                }
-
-                // Chart.js modifies the object you pass in. Pass a copy of the object so we can use the original object later
-                var temp = jQuery.extend(true, {}, configCanvas1 );
-                temp.type = newType;
-                myChart1 = new Chart(ctx, temp);
-            };
         </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
