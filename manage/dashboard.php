@@ -92,9 +92,6 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                         ],
                         borderWidth: 1,
                     }]
-                },
-                options: {
-                    responsive: true,
                 }
             };
             var myChart1 = new Chart(chartCanvas1, configCanvas1);
@@ -125,9 +122,6 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                         ],
                         borderWidth: 1,
                     }]
-                },
-                options: {
-                    responsive: true,
                 }
             };
 
