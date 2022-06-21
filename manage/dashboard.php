@@ -68,7 +68,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
         <script>
             var chartCanvas1 = document.getElementById('chart1');
             var configCanvas1 = {
-                type: "bar",
+                type: "doughnut",
                 data: {
                     labels: <?php echo json_encode($gameLabels); ?>,
                     datasets: [{
