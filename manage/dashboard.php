@@ -39,7 +39,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
                     <div class="card shadow p-3 mt-5 rounded" id="chart1card">
 
                         <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
-                        <button id='doughnut'>doughnut</button>
+                        <button id='doughnut' onclick="change('doughnut')">doughnut</button>
                         <button id='bar'>bar</button>
                         <div class="card-body">
                             <canvas id="chart1" style="width:100%;max-width:800px"></canvas>
@@ -134,15 +134,6 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
             var myChart2 = new Chart(chartCanvas2, configCanvas2);
 
             
-            var chartButton1 = document.getElementById('doughnut');
-            var chartButton2 = document.getElementById('bar');
-            chartButton1.click(function() {
-            change('doughnut');
-            });
-
-            chartButton2.click(function() {
-            change('bar');
-            });
 
             function change(newType) {
                 var ctx = document.getElementById("chart1");
