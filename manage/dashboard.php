@@ -174,7 +174,7 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
                 data: {
                     labels: <?php echo json_encode($birthdayLabels); ?>,
                     datasets: [{
-                        label: "# of Games Played",
+                        label: "# of Birthdays",
                         data: <?php echo json_encode($birthdayStats); ?>,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.4)',
