@@ -18,8 +18,8 @@ function get_all_games(){
                             ORDER BY count desc;");
 
 
-    //close active connection
-    $conn->close();
+    //don't close active connection, other graphs need it
+    //$conn->close();
 
     //if we got a valid result....
     if($result){
