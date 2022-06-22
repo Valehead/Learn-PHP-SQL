@@ -172,7 +172,7 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
             var myBirthdayChart = new Chart(birthdayChartCanvas, birthdayConfigCanvas);
             
             //game chart 1 setup and display
-            var gamesChartCanvas = document.getElementById('gamesChart');
+            var gamesChartCanvas = document.getElementById('gamesChart').getContext('2d');
             var gamesConfigCanvas = {
                 type: "bar",
                 data: {
