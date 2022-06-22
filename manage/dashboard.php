@@ -15,6 +15,19 @@ $birthdayLabels = [];
 $birthdayStats = [];
 foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime(0, 0, 0, $birthday[0], 10)); $birthdayStats[] = $birthday[1];};
 
+$userLabels = [];
+$userStats = [];
+foreach(when_most_birthdays() as $user){
+
+    if($user[0]){
+        $userLabels[] = 'Active';
+    } else {
+        $userLabels[] = 'Inactive';
+    };
+
+        $userStats[] = $user[1];
+    };
+
 ?>
 
 <!DOCTYPE html>
@@ -84,12 +97,12 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
 
 
                 <div class="col-6">
-                    <div class="card shadow p-3 rounded" id="chart4card">
+                    <div class="card shadow p-3 rounded" id="usersChartCard">
 
-                        <h2 class="card-title text-center mt-3 mb-2">Customers who Game the Most</h2>
+                        <h2 class="card-title text-center mt-3 mb-2">Active Users</h2>
 
                         <div class="card-body">
-                            <canvas id="chart4" style="width:100%;max-width:800px"></canvas>
+                            <canvas id="usersChart" style="width:100%;max-width:800px"></canvas>
                         </div>
                         
                     </div>
@@ -171,8 +184,8 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
 
             var myBirthdayChart = new Chart(birthdayChartCanvas, birthdayConfigCanvas);
             
-            //game chart 1 setup and display
-            var gamesChartCanvas = document.getElementById('gamesChart').getContext('2d');
+            //gamez chart setup and display
+            var gamesChartCanvas = document.getElementById('gamesChart');
             var gamesConfigCanvas = {
                 type: "bar",
                 data: {
@@ -204,6 +217,40 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
                 }
             };
             var myGamesChart = new Chart(gamesChartCanvas, gamesConfigCanvas);
+            
+            //gamez chart setup and display
+            var usersChartCanvas = document.getElementById('usersChart');
+            var usersConfigCanvas = {
+                type: "bar",
+                data: {
+                    labels: <?php echo json_encode($userLabels); ?>,
+                    datasets: [{
+                        label: "# of Users",
+                        data: <?php echo json_encode($userStats); ?>,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.4)',
+                            'rgba(54, 162, 235, 0.4)',
+                            'rgba(255, 206, 86, 0.4)',
+                            'rgba(75, 192, 192, 0.4)',
+                            'rgba(153, 102, 255, 0.4)',
+                            'rgba(255, 159, 64, 0.4)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                }
+            };
+            var myUsersChart = new Chart(usersChartCanvas, usersConfigCanvas);
             
 
         </script>
