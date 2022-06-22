@@ -100,8 +100,9 @@ foreach(how_many_active() as $user){
                     <div class="card shadow p-3 rounded" id="usersChartCard">
 
                         <h2 class="card-title text-center mt-3 mb-2">Active Users</h2>
-                        <div><?php print_r($userLabels);?></div>
                         <div class="card-body">
+                        <div><?php print_r($userLabels);?></div>
+
                             <canvas id="usersChart" style="width:100%;max-width:800px"></canvas>
                         </div>
                         
