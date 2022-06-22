@@ -82,4 +82,29 @@ function when_most_birthdays(){
     return;
 };
 
+
+//active users graph
+function when_most_birthdays(){
+
+    global $conn;
+
+
+    //build and execute the query
+    $result = $conn->query("SELECT active, COUNT(*) as count
+                            FROM users
+                            GROUP by active
+                            order by count asc;");
+
+
+    //if we got a valid result....
+    if($result){
+
+        //and there is a result including info....
+        if($result->num_rows >0){
+            return $result->fetch_all(MYSQLI_NUM);
+        };
+    };
+    return;
+};
+
 ?>
