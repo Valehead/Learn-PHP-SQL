@@ -93,7 +93,7 @@ function how_many_active(){
     $result = $conn->query("SELECT active, COUNT(*) as count
                             FROM users
                             GROUP by active
-                            order by count asc;");
+                            order by count desc;");
 
 
     //if we got a valid result....
