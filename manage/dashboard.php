@@ -39,26 +39,27 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
         <main class="container mt-5">
 
         <!-- 1st row of graphs -->
-            <div class="row justify-content-between">
+            <div class="row mt-5 justify-content-between">
 
                 <div class="col-6">
-                    <div class="card shadow p-3 mt-5 rounded" id="chart1card">
+                    <div class="card shadow p-3 rounded" id="birthdayChartCard">
 
-                        <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
+                        <h2 class="card-title text-center mt-3 mb-2">Customer Birthdays by Month</h2>
                         <div class="card-body">
-                            <canvas id="chart1" style="width:100%;max-width:800px"></canvas>
+                            <canvas id="birthdayChart" style="width:100%;max-width:800px"></canvas>
                         </div>
                         
                     </div>
                 </div>
 
+
                 <div class="col-6">
-                    <div class="card shadow p-3 mt-5 rounded" id="chart2card">
+                    <div class="card shadow p-3 rounded" id="playerChartCard">
 
                         <h2 class="card-title text-center mt-3 mb-2">Customers who Game the Most</h2>
 
                         <div class="card-body">
-                            <canvas id="chart2" style="width:100%;max-width:800px"></canvas>
+                            <canvas id="playerChart" style="width:100%;max-width:800px"></canvas>
                         </div>
                         
                     </div>
@@ -70,15 +71,16 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
             <div class="row mt-5 justify-content-between">
 
                 <div class="col-6">
-                    <div class="card shadow p-3 rounded" id="chart3card">
+                    <div class="card shadow p-3 mt-5 rounded" id="gamesChart">
 
-                        <h2 class="card-title text-center mt-3 mb-2">Customer Birthdays by Month</h2>
+                        <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
                         <div class="card-body">
-                            <canvas id="chart3" style="width:100%;max-width:800px"></canvas>
+                            <canvas id="gamesChart" style="width:100%;max-width:800px"></canvas>
                         </div>
                         
                     </div>
                 </div>
+
 
                 <div class="col-6">
                     <div class="card shadow p-3 rounded" id="chart4card">
@@ -98,43 +100,9 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
         </main>
 
         <script>
-            //chart 1 setup and display
-            var chartCanvas1 = document.getElementById('chart1');
-            var configCanvas1 = {
-                type: "bar",
-                data: {
-                    labels: <?php echo json_encode($gameLabels); ?>,
-                    datasets: [{
-                        label: "# of Customers that Play",
-                        data: <?php echo json_encode($gameStats); ?>,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.4)',
-                            'rgba(54, 162, 235, 0.4)',
-                            'rgba(255, 206, 86, 0.4)',
-                            'rgba(75, 192, 192, 0.4)',
-                            'rgba(153, 102, 255, 0.4)',
-                            'rgba(255, 159, 64, 0.4)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                }
-            };
-            var myChart1 = new Chart(chartCanvas1, configCanvas1);
-            
-            //chart 2 setup and display
-            var chartCanvas2 = document.getElementById('chart2');
-            var configCanvas2 = {
+            //player chart setup and display
+            var playerChartCanvas = document.getElementById('playerChart');
+            var playerConfigCanvas2 = {
                 type: "bar",
                 data: {
                     labels: <?php echo json_encode($playerLabels); ?>,
@@ -165,11 +133,11 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
                 }
             };
 
-            var myChart2 = new Chart(chartCanvas2, configCanvas2);
+            var myPlayerChart = new Chart(playerChartCanvas, playerConfigCanvas2);
 
-            //chart 3 setup and display
-            var chartCanvas3 = document.getElementById('chart3');
-            var configCanvas3 = {
+            //birthday chart setup and display
+            var birthdayChartCanvas = document.getElementById('birthdayChart');
+            var birthdayConfigCanvas = {
                 type: "bar",
                 data: {
                     labels: <?php echo json_encode($birthdayLabels); ?>,
@@ -200,7 +168,42 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
                 }
             };
 
-            var myChart3 = new Chart(chartCanvas3, configCanvas3);
+            var myBirthdayChart = new Chart(birthdayChartCanvas, birthdayConfigCanvas);
+            
+            //game chart 1 setup and display
+            var gamesChartCanvas = document.getElementById('gamesChart');
+            var gamesConfigCanvas = {
+                type: "bar",
+                data: {
+                    labels: <?php echo json_encode($gameLabels); ?>,
+                    datasets: [{
+                        label: "# of Customers that Play",
+                        data: <?php echo json_encode($gameStats); ?>,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.4)',
+                            'rgba(54, 162, 235, 0.4)',
+                            'rgba(255, 206, 86, 0.4)',
+                            'rgba(75, 192, 192, 0.4)',
+                            'rgba(153, 102, 255, 0.4)',
+                            'rgba(255, 159, 64, 0.4)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                }
+            };
+            var myGamesChart = new Chart(gamesChartCanvas, gamesConfigCanvas);
+            
 
         </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
