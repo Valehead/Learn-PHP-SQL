@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/connect.php');
+//require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/connect.php');
 
 
 //for searching games to display on show-games.php
@@ -16,9 +16,6 @@ function get_all_games(){
                             GROUP BY g.gameTitle
                             ORDER BY count desc;");
 
-
-    //don't close active connection, other graphs need it
-    //$conn->close();
 
     //if we got a valid result....
     if($result){
@@ -48,9 +45,6 @@ function how_many_games(){
                             ORDER BY count desc;");
 
 
-    //close active connection
-    //$conn->close();
-
     //if we got a valid result....
     if($result){
 
@@ -75,9 +69,6 @@ function when_most_birthdays(){
                             FROM customers
                             GROUP by birthmonth
                             order by birthmonth asc;");
-    
-    //close active connection
-    //$conn->close();
 
 
     //if we got a valid result....

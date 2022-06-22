@@ -2,6 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/reports/admin-graphs.php');
 
+
 $gameLabels = [];
 $gameStats = [];
 foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game[1];};
