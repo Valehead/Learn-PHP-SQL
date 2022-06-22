@@ -17,7 +17,7 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
 
 $userLabels = [];
 $userStats = [];
-foreach(when_most_birthdays() as $user){
+foreach(how_many_active() as $user){
 
     if($user[0]){
         $userLabels[] = 'Active';
