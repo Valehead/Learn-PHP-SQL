@@ -13,7 +13,7 @@ foreach(how_many_games() as $player){$playerLabels[] = $player[0]; $playerStats[
 
 $birthdayLabels = [];
 $birthdayStats = [];
-foreach(array_reverse(when_most_birthdays()) as $birthday){$birthdayLabels[] = date('F', mktime(0, 0, 0, $birthday[0], 10)); $birthdayStats[] = $birthday[1];};
+foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime(0, 0, 0, $birthday[0], 10)); $birthdayStats[] = $birthday[1];};
 
 $userLabels = [];
 $userStats = [];
