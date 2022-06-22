@@ -84,7 +84,7 @@ function when_most_birthdays(){
 
 
 //active users graph
-function when_most_birthdays(){
+function how_many_active(){
 
     global $conn;
 
