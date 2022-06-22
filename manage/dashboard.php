@@ -72,7 +72,7 @@ foreach(when_most_birthdays() as $birthday){$birthdayLabels[] = date('F', mktime
             <div class="row mt-5 justify-content-between">
 
                 <div class="col-6">
-                    <div class="card shadow p-3 mt-5 rounded" id="gamesChart">
+                    <div class="card shadow p-3 rounded" id="gamesChart">
 
                         <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
                         <div class="card-body">
