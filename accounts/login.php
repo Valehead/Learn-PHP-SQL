@@ -62,6 +62,12 @@
                                     </div>
                                 <?php }; ?>
 
+                                <?php if(isset($_GET['message']) && $_GET['message'] == 'require_admin'){ ?>
+                                    <div class="mb-3 d-flex justify-content-center">
+                                        <h6 class="card-title" style="color: red;">You do not have the required permissions to view this page.<BR>Please contact the site administrator if you think this is incorrect.</h6>
+                                    </div>
+                                <?php }; ?>
+
                                 <?php if(isset($_GET['message']) && $_GET['message'] == 'please_activate'){ ?>
                                     <div class="mb-3 d-flex justify-content-center">
                                         <h6 class="card-title text-center" style="color: green;">We have sent you a Welcome Email!<BR>Please verify your account within 24 hours to activate.</h6>

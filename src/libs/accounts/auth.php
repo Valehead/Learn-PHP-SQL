@@ -81,6 +81,7 @@ function login_user(string $email, string $password): bool
 
         //set the session variables to track that the user is logged in
         $_SESSION['username'] = $user['username'];
+        $_SESSION['email'] = $user['email'];
         $_SESSION['user_id'] = $user['id'];
 
         //return true if login was successful
@@ -101,7 +102,7 @@ function find_user_by_email(string $email)
     global $conn;
     
     //query to find user by email
-    $result = $conn->query("SELECT `id`, `email`, `username`, `password`, `active` FROM `users` WHERE `email` = '{$email}';");
+    $result = $conn->query("SELECT `id`, `email`, `username`, `password`, `active`, `is_admin` FROM `users` WHERE `email` = '{$email}';");
 
 
     if($result){
@@ -155,6 +156,31 @@ function is_user_active($email): bool
         //if the user doesn't exist, tell them user/pass invalid
         header('Location:/Learn-PHP-SQL/accounts/login.php?message=invalid_login');
         exit;    
+    };
+};
+
+//helper function to check if user is an admin
+function is_user_an_admin(): bool
+{
+    if(is_user_logged_in()){
+        //check if the user exists
+        $user = find_user_by_email($_SESSION['email']);
+
+        //if we got a result, check if the user is an admin and return that result
+        if($user){
+
+            return (int)$user['is_admin'] === 1;
+
+        } else {
+
+            //if the user doesn't exist, tell them user/pass invalid
+            header('Location:/Learn-PHP-SQL/accounts/login.php?message=require_admin');
+            exit;    
+        };
+
+    } else {
+        header('/Learn-PHP-SQL/accounts/login.php?message=require_login');
+        exit;
     };
 };
 
@@ -299,5 +325,6 @@ function delete_user_by_id(int $id, int $active = 0)
     return $result;
 
 };
+
 
 ?>
