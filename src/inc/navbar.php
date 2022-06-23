@@ -57,6 +57,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown2">
                                 <li><a href="/Learn-PHP-SQL/accounts/my-account.php" class="dropdown-item disabled"><?= $_SESSION['username']; ?></a></li>
                                 <li><hr class="dropdown-divider"></li>
+                                <?php if(is_user_logged_in()){?><li><a href="/Learn-PHP-SQL/manage/admin.php" class="dropdown-item">Admin</a></li><?php };?>
                                 <li><a href="/Learn-PHP-SQL/manage/dashboard.php" class="dropdown-item">Dashboard</a></li>
                                 <li><a href="" class="dropdown-item disabled">Edit Profile</a></li>
                                 <li><a href="" class="dropdown-item disabled">Settings</a></li>
