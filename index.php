@@ -31,7 +31,7 @@
         
         <?php include("src/inc/navbar.php") ?>
 
-        <main class="container mt-4">
+        <main class="container mt-5">
 
         <?php if(isset($_GET['message']) && $_GET['message'] == 'require_admin'){ ?>
 
@@ -47,7 +47,7 @@
         <?php }; ?> 
 
             <!-- start of content row -->
-            <div class="row mt-3">
+            <div class="row">
 
                 <!-- new customer form container -->
                 <div class="col-5" id="entryform">
