@@ -153,7 +153,7 @@
                         </div>
                     </form>
                     
-                    <div class="customers">
+                    <div id="customers">
                         <?php
                             // call function to find and display all customers
                             display_customers();
