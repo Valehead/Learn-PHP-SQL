@@ -50,7 +50,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
             <?php if(is_user_logged_in()){?>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle <?php if($_SERVER['SCRIPT_NAME']=="/Learn-PHP-SQL/manage/dashboard.php"){echo 'active';}; ?>" id="navbarDropdown2" 
+                            <a class="nav-link dropdown-toggle <?php if(str_contains($_SERVER['SCRIPT_NAME'], "/Learn-PHP-SQL/manage/")){echo 'active';}; ?>" id="navbarDropdown2" 
                             role="button" data-bs-toggle="dropdown" aria-expanded="false"
                             href="">My Account</a>
 
