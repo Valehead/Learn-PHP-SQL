@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/reports/admin-g
 
 //only allow access if admin is logged in
 if(!is_user_an_admin()){
-    redirect_to('/Learn-PHP-SQL/accounts/login.php?message=require_admin');
+    redirect_to('/Learn-PHP-SQL/index.php?message=require_admin');
 };
 
 $gameLabels = [];
