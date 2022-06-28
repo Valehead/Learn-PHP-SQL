@@ -47,7 +47,7 @@
         <?php }; ?> 
 
             <!-- start of content row -->
-            <div class="row">
+            <div class="row mt-3">
 
                 <!-- new customer form container -->
                 <div class="col-5" id="entryform">
