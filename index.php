@@ -32,17 +32,19 @@
         <?php include("src/inc/navbar.php") ?>
 
         <main class="container mt-4">
+
+        <?php if(isset($_GET['message']) && $_GET['message'] == 'require_admin'){ ?>
+
             <!-- start of header row -->
             <div class="row mb-1">
 
-                <?php if(isset($_GET['message']) && $_GET['message'] == 'require_admin'){ ?>
                     <div class="mb-3 d-flex justify-content-center">
                         <h6 class="card-title" style="color: red;">You do not have the required permissions to view this page.<BR>Please contact the site administrator if you think this is incorrect.</h6>
                     </div>
-                <?php }; ?> 
 
             </div>
             <!-- end of haeder row -->
+        <?php }; ?> 
 
             <!-- start of content row -->
             <div class="row">
