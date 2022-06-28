@@ -145,7 +145,14 @@
 
                 <!-- start of customer tiles -->
                 <div class='col-5' id='customers'>
-                
+
+                    <form action="customers/search-customers.php" method="get">
+                        <div class="my-2 d-flex align-items-center justify-content-between">
+                            <input type="search" class="form-control" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
+                            <button type="submit" class="btn btn-secondary btn-sm" id="submit">Search!</button>
+                        </div>
+                    </form>
+
                 <?php
                     // call function to find and display all customers
                     display_customers();
