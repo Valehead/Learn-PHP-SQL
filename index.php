@@ -39,18 +39,7 @@
                     <div class="mb-3 d-flex justify-content-center">
                         <h6 class="card-title" style="color: red;">You do not have the required permissions to view this page.<BR>Please contact the site administrator if you think this is incorrect.</h6>
                     </div>
-                <?php }; ?>
-
-                <!-- search box start -->
-                <div class="col-5 offset-7">
-                    <form action="customers/search-customers.php" method="get">
-                        <div class="my-2 d-flex align-items-center justify-content-between">
-                            <input type="search" class="form-control" name="searchBox" id="mySearch" onkeyup="mySearchFilter();" placeholder="Search for Names...">
-                            <button type="submit" class="btn btn-secondary btn-sm" id="submit">Search!</button>
-                        </div>
-                    </form>
-                </div>
-                <!-- search box end -->      
+                <?php }; ?> 
 
             </div>
             <!-- end of haeder row -->
