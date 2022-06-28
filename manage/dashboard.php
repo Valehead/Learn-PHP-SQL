@@ -2,15 +2,11 @@
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/bootstrap.php');
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/src/libs/reports/admin-graphs.php');
 
-
-//only allow access to games page if someone is logged in
-if(!is_user_logged_in()){
-    redirect_to('/Learn-PHP-SQL/accounts/login.php?message=require_login');
-};
-
+//only allow access if admin is logged in
 if(is_user_an_admin()){
     redirect_to('/Learn-PHP-SQL/accounts/login.php?message=require_admin');
 };
+
 $gameLabels = [];
 $gameStats = [];
 foreach(get_all_games() as $game){$gameLabels[] = $game[0]; $gameStats[] = $game[1];};
