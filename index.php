@@ -144,7 +144,7 @@
                 <!-- end of spacer -->
 
                 <!-- start of customer tiles -->
-                <div class='col-5' id='customers'>
+                <div class='col-5' id='customers-container'>
 
                     <form action="customers/search-customers.php" method="get">
                         <div class="my-2 d-flex align-items-center justify-content-between">
@@ -152,11 +152,14 @@
                             <button type="submit" class="btn btn-secondary btn-sm" id="submit">Search!</button>
                         </div>
                     </form>
+                    
+                    <div class="customers">
+                        <?php
+                            // call function to find and display all customers
+                            display_customers();
+                        ?>
+                    </div>
 
-                <?php
-                    // call function to find and display all customers
-                    display_customers();
-                ?>
 
                 </div>
                 <!-- end of customer tiles -->
