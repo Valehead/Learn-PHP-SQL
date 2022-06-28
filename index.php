@@ -51,7 +51,7 @@
                 <div class="col-5" id="entryform">
 
                     <!-- add new customer card -->
-                    <div class="card">
+                    <div class="card my-2">
 
                         <!-- start of card body -->
                         <div class="card-body" id="newCustCard">
