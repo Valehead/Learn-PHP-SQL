@@ -24,7 +24,7 @@ function search_accounts(){
         };
 
         //create the full select query to search for the input in all customer columns
-        $sql_query = "SELECT `id`, `email`, `username`, `is_admin`, `active`, created_at
+        $sql_query = "SELECT `id`, `email`, `username`, `is_admin`, `active`, `created_at`
          FROM `users` WHERE " . implode(" OR ", $queryAllColumns) . ";";
         //---------------chunk end
 
@@ -78,23 +78,9 @@ function search_accounts(){
 
         //if no search query is given, aka they just went to the show all page
     } else {
-        
-        //blank search to get all customers
-        $searchInput = "";
-
-        //----------------the following chunk of code is for dynamically generating the search query
-        $columns = $conn->query("SELECT `COLUMN_NAME` FROM information_schema.COLUMNS WHERE `TABLE_NAME` = 'customers' AND `TABLE_SCHEMA` = 'ripnship'");
-
-        //build ending like clauses of query for every column in the table
-        //doing this accounts for table growth without having to edit this to search new columns
-        $queryAllColumns = array();
-
-        while ($column = $columns->fetch_assoc()) {
-            $queryAllColumns[] = "`{$column['COLUMN_NAME']}` LIKE '%{$searchInput}%'";
-        };
 
         //create the full select query to search for the input in all customer columns
-        $sql_query = "SELECT * FROM `customers` WHERE " . implode(" OR ", $queryAllColumns) . ";";
+        $sql_query = "SELECT `id`, `email`, `username`, `is_admin`, `active`, `created_at` FROM `users`;";
         //---------------chunk end
 
 
