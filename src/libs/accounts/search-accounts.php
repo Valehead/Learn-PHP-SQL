@@ -55,6 +55,7 @@ function search_accounts(){
 
                 // create a card for the data of each row
                 while($row = $result->fetch_assoc()) {
+                    print_r($row);
                 echo "<tr id='customer'>
                         <th scope='row'><a href='/Learn-PHP-SQL/manage/users/edit-user.php?id={$row['id']}'>{$row['id']}</a></th>
                         <td>{$row['email']}</td>
