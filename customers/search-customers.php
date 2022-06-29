@@ -76,6 +76,7 @@
             };
         </script>    
     </head>
+    
     <body>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] ."/Learn-PHP-SQL/src/inc/navbar.php") ?>
@@ -118,7 +119,6 @@
                 </table>
             </div>
         </div>
-        <!-- customer search display grid start -->
 
 
     </main>
