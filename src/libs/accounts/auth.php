@@ -239,7 +239,7 @@ function send_activation_email(string $email, string $activation_code): void
 
 
     //dsn string
-    $dsn = 'smtp://nvales:TheB3arded1%26@mpihq.com:587';
+    $dsn = $_ENV['EMAIL_DSN'];
 
     //setup the transport object with the dsn
     $transport = Transport::fromDsn($dsn);
