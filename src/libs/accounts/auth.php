@@ -239,7 +239,7 @@ function send_activation_email(string $email, string $activation_code): void
 
 
     //dsn string
-    $dsn = '***REMOVED***';
+    $dsn = $_ENV['EMAIL_DSN'];
 
     //setup the transport object with the dsn
     $transport = Transport::fromDsn($dsn);
