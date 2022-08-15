@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/vendor/autoload.php');
 
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->required(['DB_SERVER', 'DB_USERNAME', 'DB_PASSWORD', 'DB_NAME']);
+//$dotenv->required(['DB_SERVER', 'DB_USERNAME', 'DB_PASSWORD', 'DB_NAME']);
 $dotenv->load();
 
 //work
