@@ -56,12 +56,16 @@ function search_accounts(){
 
                 // create a card for the data of each row
                 while($row = $result->fetch_assoc()) {
+
+                    //convert mysql tinyints into true/false                    
+                $boolAdmin = $row['is_admin'] ? true : false;
+                $boolActive = $row['active'] ? true : false;
                 echo "<tr id='user'>
                         <th scope='row'><a href='/Learn-PHP-SQL/manage/accounts/edit-account.php?id={$row['id']}'>{$row['id']}</a></th>
                         <td>{$row['email']}</td>
                         <td>{$row['username']}</td>
-                        <td>{$row['is_admin']}</td>
-                        <td>{$row['active']}</td>
+                        <td>{$boolAdmin}</td>
+                        <td>{$boolActive}</td>
                         <td>{$row['created_at']}</td>
                     </tr>";
                 };
@@ -112,12 +116,17 @@ function search_accounts(){
 
                 // create a card for the data of each row
                 while($row = $result->fetch_assoc()) {
+                
+                    //convert mysql tinyints into true/false
+                $boolAdmin = $row['is_admin'] ? true : false;
+                $boolActive = $row['active'] ? true : false;
+
                 echo "<tr id='user'>
                     <th scope='row'><a href='/Learn-PHP-SQL/manage/users/edit-user.php?id={$row['id']}'>{$row['id']}</a></th>
                     <td>{$row['email']}</td>
                     <td>{$row['username']}</td>
-                    <td>{boolval($row['is_admin'])}</td>
-                    <td>{$row['active']}</td>
+                    <td>{$boolAdmin}</td>
+                    <td>{$boolActive}</td>
                     <td>{$row['created_at']}</td>
                     </tr>";
                 };
