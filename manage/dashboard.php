@@ -68,11 +68,8 @@ foreach(how_many_active() as $user){
                         </div>
                         
                     </div>
-                </div>
-
-
-                <div class="col-6">
-                    <div class="card shadow p-3 rounded" id="playerChartCard">
+                    
+                    <div class="card shadow mt-5 p-3 rounded" id="playerChartCard">
 
                         <h2 class="card-title text-center mt-3 mb-2">Customers who Game the Most</h2>
 
@@ -81,15 +78,8 @@ foreach(how_many_active() as $user){
                         </div>
                         
                     </div>
-                </div>
-
-            </div>
-
-            <!-- 2nd row of graphs -->
-            <div class="row mt-5 justify-content-between">
-
-                <div class="col-6">
-                    <div class="card shadow p-3 rounded" id="gamesChartCard">
+                    
+                    <div class="card shadow mt-5 p-3 rounded" id="gamesChartCard">
 
                         <h2 class="card-title text-center mt-3 mb-2">Games Played by our Customers</h2>
                         <div class="card-body">
