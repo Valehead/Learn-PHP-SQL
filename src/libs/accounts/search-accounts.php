@@ -2,6 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] .'/Learn-PHP-SQL/connect.php');
 
 
+//searches for all accounts and their columns. then echoes those columns to be used on an admin only page
 function search_accounts(){
 
     //have the functions recognize conn as a global variable
@@ -56,7 +57,7 @@ function search_accounts(){
                 // create a card for the data of each row
                 while($row = $result->fetch_assoc()) {
                 echo "<tr id='user'>
-                        <th scope='row'><a href='/Learn-PHP-SQL/manage/users/edit-user.php?id={$row['id']}'>{$row['id']}</a></th>
+                        <th scope='row'><a href='/Learn-PHP-SQL/manage/accounts/edit-account.php?id={$row['id']}'>{$row['id']}</a></th>
                         <td>{$row['email']}</td>
                         <td>{$row['username']}</td>
                         <td>{$row['is_admin']}</td>
@@ -81,7 +82,7 @@ function search_accounts(){
 
         //create the full select query to search for the input in all customer columns
         $sql_query = "SELECT `id`, `email`, `username`, `is_admin`, `active`, `created_at` FROM `users`;";
-        //---------------chunk end
+
 
 
         /*
@@ -115,7 +116,7 @@ function search_accounts(){
                     <th scope='row'><a href='/Learn-PHP-SQL/manage/users/edit-user.php?id={$row['id']}'>{$row['id']}</a></th>
                     <td>{$row['email']}</td>
                     <td>{$row['username']}</td>
-                    <td>{$row['is_admin']}</td>
+                    <td>{boolval($row['is_admin'])}</td>
                     <td>{$row['active']}</td>
                     <td>{$row['created_at']}</td>
                     </tr>";

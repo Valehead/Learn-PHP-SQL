@@ -224,7 +224,7 @@ foreach(how_many_active() as $user){
             //gamez chart setup and display
             var usersChartCanvas = document.getElementById('usersChart');
             var usersConfigCanvas = {
-                type: "bar",
+                type: "pie",
                 data: {
                     labels: <?php echo json_encode($userLabels); ?>,
                     datasets: [{
