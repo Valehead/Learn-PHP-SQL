@@ -81,7 +81,7 @@ if(!is_user_an_admin()){
 
         <main class="container mt-5">
             <div class="row">
-                <div class="col-4 offset-3">
+                <div class="col-4 offset-7">
                     <!-- search box -->
                     <form action="accounts.php" method="get">
                         <div class="my-2 d-flex align-items-center">

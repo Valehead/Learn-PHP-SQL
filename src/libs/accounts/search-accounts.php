@@ -122,7 +122,7 @@ function search_accounts(){
                 $boolActive = $row['active'] ? "true" : "false";
 
                 echo "<tr id='user'>
-                    <th scope='row'><a href='/Learn-PHP-SQL/manage/users/edit-user.php?id={$row['id']}'>{$row['id']}</a></th>
+                    <th scope='row'><a href='/Learn-PHP-SQL/manage/accounts/edit-user.php?id={$row['id']}'>{$row['id']}</a></th>
                     <td>{$row['email']}</td>
                     <td>{$row['username']}</td>
                     <td>{$boolAdmin}</td>
