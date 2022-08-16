@@ -58,8 +58,8 @@ function search_accounts(){
                 while($row = $result->fetch_assoc()) {
 
                     //convert mysql tinyints into true/false                    
-                $boolAdmin = $row['is_admin'] ? true : false;
-                $boolActive = $row['active'] ? true : false;
+                $boolAdmin = $row['is_admin'] ? "true" : "false";
+                $boolActive = $row['active'] ? "true" : "false";
                 echo "<tr id='user'>
                         <th scope='row'><a href='/Learn-PHP-SQL/manage/accounts/edit-account.php?id={$row['id']}'>{$row['id']}</a></th>
                         <td>{$row['email']}</td>
@@ -118,8 +118,8 @@ function search_accounts(){
                 while($row = $result->fetch_assoc()) {
                 
                     //convert mysql tinyints into true/false
-                $boolAdmin = $row['is_admin'] ? true : false;
-                $boolActive = $row['active'] ? true : false;
+                $boolAdmin = $row['is_admin'] ? "true" : "false";
+                $boolActive = $row['active'] ? "true" : "false";
 
                 echo "<tr id='user'>
                     <th scope='row'><a href='/Learn-PHP-SQL/manage/users/edit-user.php?id={$row['id']}'>{$row['id']}</a></th>
